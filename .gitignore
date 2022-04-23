@@ -1,0 +1,44 @@
+# Anchor
+.anchor
+**/*.rs.bk
+
+# Solana
+test-ledger
+
+# Generated files
+ts/src/gen
+
+# Builds, caches and dependencies
+node_modules
+target
+dist
+build
+.cache
+tmp
+
+# Env files
+.env
+.env.prod*
+
+# Editors
+
+## VS Code
+.vscode/
+.history/
+
+## JetBrains
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
+# OS
+
+## Linux
+*~
+.Trash-*
+
+## MacOS
+.DS_Store
+._*

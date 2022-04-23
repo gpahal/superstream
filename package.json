@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "superstream",
+  "version": "0.1.0",
+  "author": "Garvit Pahal <g10pahal@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "show-key": "solana address -k ./target/deploy/streaming-keypair.json",
+    "clean": "run-p clean:*",
+    "clean:anchor": "anchor clean && rimraf .anchor/",
+    "clean:ts": "pnpm --dir ts/ clean",
+    "clean:ts-gen": "rimraf ts/src/gen/",
+    "build": "run-s build:*",
+    "build:anchor": "anchor build",
+    "build:copy": "mkdir -p ts/src/gen && run-p copy:*",
+    "build:ts": "pnpm --dir ts/ build",
+    "copy:idl": "cp target/idl/streaming.json ts/src/gen/idl.json",
+    "copy:types": "cp target/types/streaming.ts ts/src/gen/types.ts",
+    "lint": "eslint . --ext .ts",
+    "fix": "eslint . --ext .ts --fix"
+  },
+  "devDependencies": {
+    "@project-serum/anchor": "^0.23.0",
+    "@solana/spl-token": "^0.2.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "assert": "^2.0.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^9.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-mocha": "^9.0.2",
+    "typescript": "^4.6.3"
+  }
+}

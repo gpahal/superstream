@@ -1,0 +1,15 @@
+[features]
+seeds = false
+
+[programs.localnet]
+streaming = "GTfyzwZX2vRFcqbTWqiv2k7vNgd6yWq269USRWYbHSB8"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "/Users/gpahal/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
