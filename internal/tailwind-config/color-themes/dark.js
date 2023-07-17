@@ -1,6 +1,6 @@
 const { blueDark, greenDark, redDark, sageDark, yellowDark } = require('@radix-ui/colors')
 
-const { radixColorsWithoutName, black, white } = require('./common')
+const { radixColorsWithoutName, black, white } = require('./common.js')
 
 module.exports = {
   bg: {

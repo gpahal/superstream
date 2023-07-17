@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Metadata } from 'next'
 
+import { Analytics } from '@vercel/analytics/react'
+
 import { monoFont, sansSerifFont } from '@/lib/fonts'
 import { WEBSITE_URL } from '@/lib/metadata'
 import { cn } from '@/lib/styles'
@@ -69,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body className={cn(sansSerifFont.variable, monoFont.variable)} suppressHydrationWarning>
           <main>{children}</main>
           <Toaster />
+          <Analytics />
         </body>
       </RootProviders>
     </html>

@@ -42,6 +42,7 @@
     "@solana/wallet-adapter-react": "^0.15.32",
     "@superstream/client": "workspace:*",
     "@tanstack/react-table": "^8.9.3",
+    "@vercel/analytics": "^1.0.1",
     "class-variance-authority": "^0.6.1",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
