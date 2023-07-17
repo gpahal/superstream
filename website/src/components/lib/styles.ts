@@ -6,7 +6,7 @@ export const linkStyles = cva('underline-offset-4 rounded-md decoration-neutral-
       unstyled: 'no-underline focus-visible:underline',
       highlighted: 'underline hocus-visible:decoration-neutral-8 [&:is(.active)]:decoration-neutral-8',
       'hover-highlighted': 'no-underline hocus-visible:underline [&:is(.active)]:underline',
-      link: 'text-link-10 no-underline hocus-visible:text-link-11',
+      link: 'text-link-11 no-underline hocus-visible:underline',
     },
   },
   defaultVariants: {

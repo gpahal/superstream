@@ -67,7 +67,7 @@ export function DocOnThisPage({ doc }: DocOnThisPageProps) {
                   <Link
                     href={`#${node.id}`}
                     className={cn(
-                      node.id === currentHeadingNodeId ? 'font-normal text-link-10' : 'text-fg/60 hover:text-link-10',
+                      node.id === currentHeadingNodeId ? 'font-normal text-link-11' : 'text-fg/60 hover:text-link-11',
                     )}
                   >
                     {node.text}
@@ -80,8 +80,8 @@ export function DocOnThisPage({ doc }: DocOnThisPageProps) {
                             href={`#${childNode.id}`}
                             className={cn(
                               childNode.id === currentHeadingNodeId
-                                ? 'font-normal text-link-10'
-                                : 'text-fg/60 hover:text-link-10',
+                                ? 'font-normal text-link-11'
+                                : 'text-fg/60 hover:text-link-11',
                             )}
                           >
                             {childNode.text}
