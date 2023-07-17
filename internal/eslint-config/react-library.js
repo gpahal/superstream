@@ -1,13 +1,19 @@
 /** @type {import('eslint').Linter.Config} */
 const config = {
-  extends: ['./base', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:jsx-a11y/recommended'],
+  extends: [
+    './base',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:compat/recommended',
+  ],
   env: {
     browser: true,
   },
   globals: {
     React: 'writable',
   },
-  plugins: ['import', 'react', 'jsx-a11y', 'tailwindcss'],
+  plugins: ['react', 'jsx-a11y', 'compat', 'tailwindcss'],
   settings: {
     react: {
       version: 'detect',
@@ -17,7 +23,6 @@ const config = {
     },
   },
   rules: {
-    'import/no-anonymous-default-export': 'warn',
     'react/no-unknown-property': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
