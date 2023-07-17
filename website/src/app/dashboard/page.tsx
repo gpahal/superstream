@@ -5,8 +5,6 @@ import { generatePageMetadata } from '@/lib/metadata'
 
 import { DashboardPageContent } from './dashboard-page-content'
 
-export const runtime = 'edge'
-
 export const metadata: Metadata = generatePageMetadata({
   pathname: '/dashboard',
   title: 'Superstream Dashboard',
