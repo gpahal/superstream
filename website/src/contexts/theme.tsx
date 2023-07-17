@@ -67,7 +67,7 @@ function ThemeScriptUnmemoized() {
     <script
       id="theme-script"
       dangerouslySetInnerHTML={{
-        __html: `var d=document.documentElement,c=d.classList;var t=JSON.parse(localStorage.getItem('theme')||'');c.remove('light','dark');if(t==='light'){c.add('light');d.style.colorScheme='light'}else if(t==='dark'){c.add('dark');d.style.colorScheme='dark'};`,
+        __html: `var d=document.documentElement,c=d.classList;var t=JSON.parse(localStorage.getItem('theme')||'""');c.remove('light','dark');if(t==='light'){c.add('light');d.style.colorScheme='light'}else if(t==='dark'){c.add('dark');d.style.colorScheme='dark'};`,
       }}
     />
   )

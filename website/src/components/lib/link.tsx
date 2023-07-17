@@ -15,6 +15,8 @@ import { VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/styles'
 import { linkStyles } from '@/components/lib/styles'
 
+const FORCE_EXTERNAL_LINK_PATTERNS = [/\/references/]
+
 export type ActiveLinkState = { isActive: boolean; isChildActive?: boolean }
 export type ActiveLinkClassNameFn = (_: ActiveLinkState) => string | undefined | null
 
@@ -54,6 +56,10 @@ export const Link = React.forwardRef<React.ElementRef<typeof NextLink>, LinkProp
       } else {
         const url = new URL(hrefString, 'http://test.com')
         hrefPathname = url.pathname
+      }
+
+      if (!isExternal && hrefPathname) {
+        isExternal = FORCE_EXTERNAL_LINK_PATTERNS.some((pattern) => hrefPathname && pattern.test(hrefPathname))
       }
 
       setIsExternal(isExternal)
