@@ -8,7 +8,7 @@
     "color-themes/"
   ],
   "dependencies": {
-    "@gpahal/tailwind-color-themes": "^0.0.22",
+    "@gpahal/tailwind-color-themes": "^0.0.23",
     "@gpahal/tailwind-variants": "^0.0.7",
     "@radix-ui/colors": "^1.0.0",
     "@tailwindcss/typography": "^0.5.9",

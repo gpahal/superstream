@@ -44,7 +44,7 @@
   "dependencies": {
     "@coral-xyz/anchor": "0.28.0",
     "@gpahal/logger": "^0.0.13",
-    "@gpahal/std": "^0.0.18",
+    "@gpahal/std": "^0.0.19",
     "@superstream/client": "workspace:*",
     "chalk": "^4.1.2",
     "clean-stack": "^5.2.0",

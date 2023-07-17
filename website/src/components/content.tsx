@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { RenderableTreeNodes, renderReact, Tag } from '@gpahal/markdoc'
+import { RenderableTreeNodes, renderReact, Tag } from '@gpahal/markdoc-react'
 
 import { cn } from '@/lib/styles'
 import { Alert, AlertDescription, AlertProps, AlertTitle } from '@/components/lib/alert'

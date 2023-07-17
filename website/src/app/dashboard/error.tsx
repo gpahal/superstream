@@ -8,8 +8,8 @@ export default function DashboardErrorPage({ error }: { error: Error }) {
   return (
     <ErrorComponent
       statusCode={500}
-      homeHref="/docs"
-      homeLabel="Documentation"
+      homeHref="/dashboard"
+      homeLabel="Dashboard"
       title={`Error: ${getErrorMessage(error)}`}
     />
   )

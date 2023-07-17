@@ -13,11 +13,13 @@ import { NavListHorizontal, NavListHorizontalLinkItems } from '@/components/nav'
 import { GetStartedButton, GetStartedProvider } from './get-started'
 import { HomeLayoutBottomSheet } from './home-layout-bottom-sheet'
 
-const NAV_LINK_ITEMS = [DOCS_NAV_LINK_ITEM, DASHBOARD_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM]
+export const runtime = 'edge'
 
 export const metadata: Metadata = generatePageMetadata({
   pathname: '/',
 })
+
+const NAV_LINK_ITEMS = [DOCS_NAV_LINK_ITEM, DASHBOARD_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM]
 
 export default function HomePage() {
   return (

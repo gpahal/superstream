@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@coral-xyz/anchor": "0.28.0",
-    "@gpahal/std": "^0.0.18",
+    "@gpahal/std": "^0.0.19",
     "@solana/spl-token": "^0.3.8",
     "bs58": "^5.0.0",
     "buffer": "^6.0.3",

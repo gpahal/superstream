@@ -17,7 +17,7 @@ export async function GET() {
           fontWeight: 400,
           width: '100%',
           height: '100%',
-          padding: '80px 48px',
+          padding: '80px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',

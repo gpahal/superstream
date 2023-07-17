@@ -8,8 +8,9 @@ import {
   SearchResultWithHighlight,
   searchWithHighlight,
 } from '@orama/plugin-match-highlight'
+import { z } from 'zod'
 
-import { ContentCollectionMetadata, ContentSearchDocument, FlattenedContentCollection } from '@/lib/content'
+import { ContentSearchDocument, FlattenedContentCollection } from '@/lib/content'
 
 const cache = new Map<string, Promise<OramaWithHighlight>>()
 
@@ -40,7 +41,7 @@ export type ContentCollectionSearchState = {
 
 export function useContentCollectionSearch<TFrontmatterSchema extends FrontmatterSchema>(
   contentPath: string,
-  contentCollectionMetadata: ContentCollectionMetadata<TFrontmatterSchema>,
+  getContentTitle: (frontmatter: z.output<TFrontmatterSchema>) => string,
   contentCollection: FlattenedContentCollection<TFrontmatterSchema>,
   contentSearchDocuments: ContentSearchDocument[],
 ): ContentCollectionSearchState {
@@ -150,7 +151,7 @@ export function useContentCollectionSearch<TFrontmatterSchema extends Frontmatte
                   id: parentPageItem.path,
                   path: parentPageItem.path,
                   pagePath: parentPageItem.path,
-                  title: contentCollectionMetadata.getTitle(parentPageItem.data.frontmatter),
+                  title: getContentTitle(parentPageItem.data.frontmatter),
                   content: '',
                 },
                 positions: [],
@@ -168,7 +169,7 @@ export function useContentCollectionSearch<TFrontmatterSchema extends Frontmatte
                 id: pageItem.path,
                 path: pageItem.path,
                 pagePath: pageItem.path,
-                title: contentCollectionMetadata.getTitle(pageItem.data.frontmatter),
+                title: getContentTitle(pageItem.data.frontmatter),
                 content: '',
               },
               positions: [],
@@ -192,7 +193,7 @@ export function useContentCollectionSearch<TFrontmatterSchema extends Frontmatte
                 id: parentPageItem.path,
                 path: parentPageItem.path,
                 pagePath: parentPageItem.path,
-                title: contentCollectionMetadata.getTitle(parentPageItem.data.frontmatter),
+                title: getContentTitle(parentPageItem.data.frontmatter),
                 content: '',
               },
               positions: [],
@@ -214,7 +215,7 @@ export function useContentCollectionSearch<TFrontmatterSchema extends Frontmatte
           id: item.path,
           path: item.path,
           pagePath: item.path,
-          title: contentCollectionMetadata.getTitle(item.data.frontmatter),
+          title: getContentTitle(item.data.frontmatter),
           content: '',
         },
         positions: [],
@@ -260,7 +261,7 @@ export function useContentCollectionSearch<TFrontmatterSchema extends Frontmatte
     }
 
     return finalResults
-  }, [contentCollectionMetadata, contentCollection, rawResults])
+  }, [getContentTitle, contentCollection, rawResults])
 
   const state = React.useMemo<ContentCollectionSearchState>(
     () => ({

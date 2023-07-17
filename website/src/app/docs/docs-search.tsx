@@ -4,9 +4,10 @@ import * as React from 'react'
 import { useRouter } from 'next/navigation'
 
 import { ExternalLinkIcon, FileIcon, HashIcon } from 'lucide-react'
+import { z } from 'zod'
 
 import { ContentSearchDocument } from '@/lib/content'
-import { DOCS_CONTENT_COLLECTION_METADATA, FlattenedDocs } from '@/lib/docs'
+import { DocsFrontmatterSchema, FlattenedDocs } from '@/lib/docs'
 import { DASHBOARD_NAV_LINK_ITEM, DOCS_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM, HOMEPAGE_NAV_LINK_ITEM } from '@/lib/nav'
 import { cn } from '@/lib/styles'
 import { THEME_ITEMS, useThemeContext } from '@/contexts/theme'
@@ -99,7 +100,7 @@ function DocsSearchButtonCommandDialog({ docsSearchDocuments, docs, ...props }: 
 
   const { search: docsSearch, filteredResults: filteredDocs } = useContentCollectionSearch(
     'docs',
-    DOCS_CONTENT_COLLECTION_METADATA,
+    getContentTitle,
     docs,
     docsSearchDocuments,
   )
@@ -226,6 +227,10 @@ function DocsSearchButtonCommandDialog({ docsSearchDocuments, docs, ...props }: 
       </Command>
     </CommandDialog>
   )
+}
+
+function getContentTitle(frontmatter: z.output<DocsFrontmatterSchema>): string {
+  return frontmatter.title
 }
 
 export type DocsSearchButtonProps = Omit<ButtonProps, 'children'>

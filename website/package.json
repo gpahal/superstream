@@ -18,11 +18,12 @@
     "lint-fix:stylelint": "stylelint \"src/**/*.css\" --fix"
   },
   "dependencies": {
-    "@coral-xyz/anchor": "0.28.1-beta.1",
-    "@coral-xyz/spl-token": "0.28.1-beta.1",
-    "@gpahal/markdoc": "^0.0.45",
-    "@gpahal/std": "^0.0.18",
+    "@coral-xyz/anchor": "0.28.0",
+    "@coral-xyz/spl-token": "0.28.0",
+    "@gpahal/markdoc-react": "^0.0.2",
+    "@gpahal/std": "^0.0.19",
     "@hookform/resolvers": "^3.1.1",
+    "@next/bundle-analyzer": "^13.4.10",
     "@orama/orama": "^1.0.10",
     "@orama/plugin-match-highlight": "^1.0.10",
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -60,7 +61,8 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@gpahal/std-node": "^0.0.18",
+    "@gpahal/markdoc": "^0.0.46",
+    "@gpahal/std-node": "^0.0.19",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",
     "@storybook/addon-links": "^7.0.27",

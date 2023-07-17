@@ -1,27 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import * as React from 'react'
-import { notFound } from 'next/navigation'
 import { ImageResponse, NextRequest } from 'next/server'
 
-import { getFlattenedContentCollectionItemByIndex } from '@/lib/content'
-import { getFlattenedDocBySlugParts, getFlattenedDocs } from '@/lib/docs.server'
 import { ogSize } from '@/lib/og'
 import { loadOgFonts, logoSvgPrimaryDataUrl } from '@/lib/og.server'
 
 export const runtime = 'edge'
 
-type DocPageProps = { params: { slugParts: string[] } }
-
-export async function GET(_: NextRequest, { params: { slugParts } }: DocPageProps) {
-  const doc = getFlattenedDocBySlugParts(slugParts)
-  if (!doc) {
-    return notFound()
-  }
-
-  const docs = getFlattenedDocs()
-  const parent = doc.parentIndex != null ? getFlattenedContentCollectionItemByIndex(docs, doc.parentIndex) : undefined
-
+export async function GET(_: NextRequest) {
   return new ImageResponse(
     (
       <div
@@ -88,32 +75,6 @@ export async function GET(_: NextRequest, { params: { slugParts } }: DocPageProp
           >
             Docs
           </div>
-          {!!parent && (
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  color: '#aaaaaa',
-                }}
-              >
-                /
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                }}
-              >
-                {parent.data.frontmatter.label}
-              </div>
-            </div>
-          )}
         </div>
         <div
           style={{
@@ -131,7 +92,7 @@ export async function GET(_: NextRequest, { params: { slugParts } }: DocPageProp
               fontWeight: 600,
             }}
           >
-            {doc.data.frontmatter.title}
+            Superstream Documentation
           </div>
           <div
             style={{
@@ -142,7 +103,7 @@ export async function GET(_: NextRequest, { params: { slugParts } }: DocPageProp
               color: '#888888',
             }}
           >
-            {doc.data.frontmatter.description}
+            Build apps that stream money in real-time using the Superstream protocol
           </div>
         </div>
       </div>

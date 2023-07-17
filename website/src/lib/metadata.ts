@@ -12,7 +12,7 @@ export const AUTHOR_NAME = 'Garvit Pahal'
 export const AUTHOR_URL = 'https://garvipahal.com'
 export const AUTHOR_TWITTER_USERNAME = '@g10pahal'
 
-export const DEFAULT_IMAGE_PATH = '?v=1'
+export const DEFAULT_IMAGE_PATH = '?v=2'
 
 export function generatePageMetadata({
   pathname,

@@ -91,10 +91,10 @@ importers:
     dependencies:
       '@coral-xyz/anchor':
         specifier: 0.28.0
-        version: 0.28.0
+        version: 0.28.0(encoding@0.1.13)
       '@gpahal/std':
-        specifier: ^0.0.18
-        version: 0.0.18
+        specifier: ^0.0.19
+        version: 0.0.19
       '@solana/spl-token':
         specifier: ^0.3.8
         version: 0.3.8(@solana/web3.js@1.78.0)
@@ -116,13 +116,13 @@ importers:
     dependencies:
       '@coral-xyz/anchor':
         specifier: 0.28.0
-        version: 0.28.0
+        version: 0.28.0(encoding@0.1.13)
       '@gpahal/logger':
         specifier: ^0.0.13
         version: 0.0.13
       '@gpahal/std':
-        specifier: ^0.0.18
-        version: 0.0.18
+        specifier: ^0.0.19
+        version: 0.0.19
       '@superstream/client':
         specifier: workspace:*
         version: link:../client
@@ -187,8 +187,8 @@ importers:
   internal/tailwind-config:
     dependencies:
       '@gpahal/tailwind-color-themes':
-        specifier: ^0.0.22
-        version: 0.0.22(tailwindcss@3.3.3)
+        specifier: ^0.0.23
+        version: 0.0.23(tailwindcss@3.3.3)
       '@gpahal/tailwind-variants':
         specifier: ^0.0.7
         version: 0.0.7(tailwindcss@3.3.3)
@@ -220,10 +220,10 @@ importers:
     devDependencies:
       '@coral-xyz/anchor':
         specifier: 0.28.0
-        version: 0.28.0
+        version: 0.28.0(encoding@0.1.13)
       '@coral-xyz/spl-token':
         specifier: 0.28.0
-        version: 0.28.0
+        version: 0.28.0(encoding@0.1.13)
       '@solana/spl-token':
         specifier: ^0.3.8
         version: 0.3.8(@solana/web3.js@1.78.0)
@@ -255,20 +255,23 @@ importers:
   website:
     dependencies:
       '@coral-xyz/anchor':
-        specifier: 0.28.1-beta.1
-        version: 0.28.1-beta.1(encoding@0.1.13)
+        specifier: 0.28.0
+        version: 0.28.0(encoding@0.1.13)
       '@coral-xyz/spl-token':
-        specifier: 0.28.1-beta.1
-        version: 0.28.1-beta.1(encoding@0.1.13)
-      '@gpahal/markdoc':
-        specifier: ^0.0.45
-        version: 0.0.45(@types/react@18.2.15)(react@18.2.0)
+        specifier: 0.28.0
+        version: 0.28.0(encoding@0.1.13)
+      '@gpahal/markdoc-react':
+        specifier: ^0.0.2
+        version: 0.0.2(@types/react@18.2.15)(react@18.2.0)
       '@gpahal/std':
-        specifier: ^0.0.18
-        version: 0.0.18
+        specifier: ^0.0.19
+        version: 0.0.19
       '@hookform/resolvers':
         specifier: ^3.1.1
         version: 3.1.1(react-hook-form@7.45.1)
+      '@next/bundle-analyzer':
+        specifier: ^13.4.10
+        version: 13.4.10
       '@orama/orama':
         specifier: ^1.0.10
         version: 1.0.10
@@ -375,9 +378,12 @@ importers:
         specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
+      '@gpahal/markdoc':
+        specifier: ^0.0.46
+        version: 0.0.46(@types/react@18.2.15)(react@18.2.0)
       '@gpahal/std-node':
-        specifier: ^0.0.18
-        version: 0.0.18
+        specifier: ^0.0.19
+        version: 0.0.19
       '@storybook/addon-essentials':
         specifier: ^7.0.27
         version: 7.0.27(encoding@0.1.13)(react-dom@18.2.0)(react@18.2.0)
@@ -2798,7 +2804,7 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  /@coral-xyz/anchor@0.28.0:
+  /@coral-xyz/anchor@0.28.0(encoding@0.1.13):
     resolution: {integrity: sha512-kQ02Hv2ZqxtWP30WN1d4xxT4QqlOXYDxmEd3k/bbneqhV3X5QMO4LAtoUFs7otxyivOgoqam5Il5qx81FuI4vw==}
     engines: {node: '>=11'}
     dependencies:
@@ -2823,32 +2829,6 @@ packages:
       - supports-color
       - utf-8-validate
 
-  /@coral-xyz/anchor@0.28.1-beta.1(encoding@0.1.13):
-    resolution: {integrity: sha512-JdKr4IQqY719wts0wzhHIffpAo4fdJ25gPLfFN75d6LMfCKvwPupyDUigaT+ac6UWTw/bDdBbJFY6QSRvlTnrA==}
-    engines: {node: '>=11'}
-    dependencies:
-      '@coral-xyz/borsh': 0.28.0(@solana/web3.js@1.78.0)
-      '@solana/web3.js': 1.78.0(encoding@0.1.13)
-      base64-js: 1.5.1
-      bn.js: 5.2.1
-      bs58: 4.0.1
-      buffer-layout: 1.2.2
-      camelcase: 6.3.0
-      cross-fetch: 3.1.8(encoding@0.1.13)
-      crypto-hash: 1.3.0
-      eventemitter3: 4.0.7
-      js-sha256: 0.9.0
-      pako: 2.1.0
-      snake-case: 3.0.4
-      superstruct: 0.15.5
-      toml: 3.0.0
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
-    dev: false
-
   /@coral-xyz/borsh@0.28.0(@solana/web3.js@1.78.0):
     resolution: {integrity: sha512-/u1VTzw7XooK7rqeD7JLUSwOyRSesPUk0U37BV9zK0axJc1q0nRbKFGFLYCQ16OtdOJTTwGfGp11Lx9B45bRCQ==}
     engines: {node: '>=10'}
@@ -2859,29 +2839,16 @@ packages:
       bn.js: 5.2.1
       buffer-layout: 1.2.2
 
-  /@coral-xyz/spl-token@0.28.0:
+  /@coral-xyz/spl-token@0.28.0(encoding@0.1.13):
     resolution: {integrity: sha512-yIqIUd3+1n28PWiyOQVy7Mh4fb6vGERrs/jMjLvvkpI31sQ7mqESZ/A4SH91I2XcKBJmInvvbiippPdryzWNNQ==}
     dependencies:
-      '@coral-xyz/anchor': 0.28.0
+      '@coral-xyz/anchor': 0.28.0(encoding@0.1.13)
       '@native-to-anchor/buffer-layout': 0.1.0(encoding@0.1.13)
     transitivePeerDependencies:
       - bufferutil
       - encoding
       - supports-color
       - utf-8-validate
-    dev: true
-
-  /@coral-xyz/spl-token@0.28.1-beta.1(encoding@0.1.13):
-    resolution: {integrity: sha512-8mgeBGHI59y24LoRlkHdvR5qdrcqoBsllRwzMY2eFSLXRanmAjQX11+bNg0VPBP2/tZTEJxuAEFj5BpRHqcbNQ==}
-    dependencies:
-      '@coral-xyz/anchor': 0.28.1-beta.1(encoding@0.1.13)
-      '@native-to-anchor/buffer-layout': 0.1.0(encoding@0.1.13)
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
-    dev: false
 
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -3709,10 +3676,20 @@ packages:
       winston: 3.10.0
     dev: false
 
-  /@gpahal/markdoc@0.0.45(@types/react@18.2.15)(react@18.2.0):
-    resolution: {integrity: sha512-6Dhr0Yv5FuyMVEzh/4bQyFZR8BhSLcOM5NogzpPmPelcQ5uao9coCrF6xVueqAJ+sSqyfUZ8rNHqTn2EyC3rMg==}
+  /@gpahal/markdoc-react@0.0.2(@types/react@18.2.15)(react@18.2.0):
+    resolution: {integrity: sha512-6zqLQawLRVij1ZyAoSizMrdJAltUDalZv3Ax9QmEpli5lhcZ7iIw2nn9eUpew79XxGmUdRCTEWSevBWPKqbErQ==}
     dependencies:
-      '@gpahal/std': 0.0.18
+      '@gpahal/std': 0.0.19
+      '@markdoc/markdoc': 0.3.0(@types/react@18.2.15)(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
+    dev: false
+
+  /@gpahal/markdoc@0.0.46(@types/react@18.2.15)(react@18.2.0):
+    resolution: {integrity: sha512-kBxMZRN6D7cfJ6L98fQyk/aOtjw4IEwKN7m/DU5gKJmk1ferzPiU8yLXVDR6fzbpEsLX7cal1guOqibjfaGsbA==}
+    dependencies:
+      '@gpahal/std': 0.0.19
       '@markdoc/markdoc': 0.3.0(@types/react@18.2.15)(react@18.2.0)
       github-slugger: 2.0.0
       js-yaml: 4.1.0
@@ -3722,25 +3699,25 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
       - react
-    dev: false
-
-  /@gpahal/std-node@0.0.18:
-    resolution: {integrity: sha512-GTlR81ZthXKSTpY/znZBuwWtXEyPS88MOLczWcITc9sNDB7T5Y5xQgUzBx/fmuwxHFWt5PGEtzEOeEZ/BfWoiw==}
-    dependencies:
-      '@gpahal/std': 0.0.18
     dev: true
 
-  /@gpahal/std@0.0.18:
-    resolution: {integrity: sha512-l3X6wZeStzx/lu1JwCoSoCqburCb3SesFsU49jNRSxIqx4ImgBWCGE4VOAoRBb0p2UdwDA0Ac3Co0MngUsqgeA==}
+  /@gpahal/std-node@0.0.19:
+    resolution: {integrity: sha512-ZVmzPrKhPaQyEwDM1dBUctEAXXTPtQ+NDziq6i74xKNQHZZxIvD6oMF9vnoA9ORJlDQfJQzy0VNS5xILGUyOkg==}
+    dependencies:
+      '@gpahal/std': 0.0.19
+    dev: true
+
+  /@gpahal/std@0.0.19:
+    resolution: {integrity: sha512-qo77MUi5Hi3mHVE/6OK+HtZ5ycXoNl+JQT82tVC38z+dMGNS3tXKdo9IHuBUGyBFvRkjEo8JUzNQXVkp8cR+xA==}
     dependencies:
       ts-custom-error: 3.3.1
 
-  /@gpahal/tailwind-color-themes@0.0.22(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-I8+SElSvYUPJJnBk2r/FegEFZMHgcbymEUQUa6BC0dm9KOAbqWDnTmUoS289MWMzaabw+eyq5WSXQ95nkNleRA==}
+  /@gpahal/tailwind-color-themes@0.0.23(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-3bZpMZbrEhxxnMD9OrJ6Wiq6JA3c5CcLCKPAa+3f1MRUd1wdyfGFdXSUHOfkLuUUoUETNQj2gznlI8nWnfsiwA==}
     peerDependencies:
       tailwindcss: ^3.3.3
     dependencies:
-      '@gpahal/std': 0.0.18
+      '@gpahal/std': 0.0.19
       color: 4.2.3
       tailwindcss: 3.3.3
     dev: false
@@ -3992,7 +3969,6 @@ packages:
       react: 18.2.0
     optionalDependencies:
       '@types/markdown-it': 12.2.3
-    dev: false
 
   /@mdx-js/react@2.3.0(react@18.2.0):
     resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
@@ -4022,6 +3998,15 @@ packages:
       pump: 3.0.0
       tar-fs: 2.1.1
     dev: true
+
+  /@next/bundle-analyzer@13.4.10:
+    resolution: {integrity: sha512-QwjRH/x1coj8+2Q2suXKez01Irc/rZQXiZ7qE96jj/xR1C+zze6cEdlhWzMlsBFlLmazBhFeOb0PeK6r4dVImA==}
+    dependencies:
+      webpack-bundle-analyzer: 4.7.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
 
   /@next/env@13.4.10:
     resolution: {integrity: sha512-3G1yD/XKTSLdihyDSa8JEsaWOELY+OWe08o0LUYzfuHp1zHDA8SObQlzKt+v+wrkkPcnPweoLH1ImZeUa0A1NQ==}
@@ -4191,6 +4176,10 @@ packages:
       source-map: 0.7.4
       webpack: 5.88.1(esbuild@0.17.19)
     dev: true
+
+  /@polka/url@1.0.0-next.21:
+    resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
+    dev: false
 
   /@radix-ui/colors@1.0.0:
     resolution: {integrity: sha512-l8Rfw7zR6sfPsbXrBq3Xit96Xo+CSFyRFqRX/ls8W/w+HXzbwc5dbVvl+qRjsSIRoC9EiTMRV/QpJHziuTjoqg==}
@@ -7008,7 +6997,6 @@ packages:
 
   /@types/linkify-it@3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
-    dev: false
     optional: true
 
   /@types/lodash@4.14.195:
@@ -7021,12 +7009,10 @@ packages:
     dependencies:
       '@types/linkify-it': 3.0.2
       '@types/mdurl': 1.0.2
-    dev: false
     optional: true
 
   /@types/mdurl@1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
-    dev: false
     optional: true
 
   /@types/mdx@2.0.5:
@@ -7513,7 +7499,6 @@ packages:
   /acorn-walk@8.2.0:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
     engines: {node: '>=0.4.0'}
-    dev: true
 
   /acorn@7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
@@ -7661,6 +7646,7 @@ packages:
 
   /ansi-sequence-parser@1.1.0:
     resolution: {integrity: sha512-lEm8mt52to2fT8GhciPCGeCXACSz2UwIN4X2e2LJSnZ5uAbn2/dsYdOmUXq0AtWS5cpAupysIneExOgH0Vd2TQ==}
+    dev: true
 
   /ansi-styles@3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
@@ -9589,6 +9575,10 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /duplexer@0.1.2:
+    resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
+    dev: false
+
   /duplexify@3.7.1:
     resolution: {integrity: sha512-07z8uv2wMyS51kKhD1KsdXJg5WQ6t93RneqRxUHnskXVtlYYkLqM0gqStQZ3pj073g687jPCHrqNfCzawLYh5g==}
     dependencies:
@@ -10790,7 +10780,7 @@ packages:
 
   /github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
-    dev: false
+    dev: true
 
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -10966,6 +10956,13 @@ packages:
       pumpify: 1.5.1
       through2: 2.0.5
     dev: true
+
+  /gzip-size@6.0.0:
+    resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
+    engines: {node: '>=10'}
+    dependencies:
+      duplexer: 0.1.2
+    dev: false
 
   /handlebars@4.7.7:
     resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
@@ -11995,6 +11992,7 @@ packages:
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
+    dev: true
 
   /jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
@@ -12903,6 +12901,11 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /mrmime@1.0.1:
+    resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
+    engines: {node: '>=10'}
+    dev: false
+
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
@@ -13357,6 +13360,11 @@ packages:
       is-docker: 2.2.1
       is-wsl: 2.2.0
     dev: true
+
+  /opener@1.5.2:
+    resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}
+    hasBin: true
+    dev: false
 
   /optionator@0.9.3:
     resolution: {integrity: sha512-JjCoypp+jKn1ttEFExxhetCKeJt9zhAgAve5FXHixTvFDW/5aEktX9bufBKLRRMdU7bNtpLfcGu94B3cdEJgjg==}
@@ -15133,7 +15141,7 @@ packages:
 
   /reading-time@1.5.0:
     resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
-    dev: false
+    dev: true
 
   /readline@1.3.0:
     resolution: {integrity: sha512-k2d6ACCkiNYz222Fs/iNze30rRJ1iIicW7JuX/7/cozvih6YCkFZH+J6mAFDVgv0dRBaAyr4jDqC95R2y4IADg==}
@@ -15684,6 +15692,7 @@ packages:
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
+    dev: true
 
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
@@ -15723,6 +15732,15 @@ packages:
     dependencies:
       semver: 7.0.0
     dev: true
+
+  /sirv@1.0.19:
+    resolution: {integrity: sha512-JuLThK3TnZG1TAKDwNIqNq6QA2afLOCcm+iE8D1Kj3GA40pSPsxQjjJl0J8X3tsR7T+CP1GavpzLwYkgVLWrZQ==}
+    engines: {node: '>= 10'}
+    dependencies:
+      '@polka/url': 1.0.0-next.21
+      mrmime: 1.0.1
+      totalist: 1.1.0
+    dev: false
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
@@ -16451,6 +16469,11 @@ packages:
   /toml@3.0.0:
     resolution: {integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==}
 
+  /totalist@1.1.0:
+    resolution: {integrity: sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==}
+    engines: {node: '>=6'}
+    dev: false
+
   /tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
@@ -17055,9 +17078,11 @@ packages:
 
   /vscode-oniguruma@1.7.0:
     resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
+    dev: true
 
   /vscode-textmate@8.0.0:
     resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
+    dev: true
 
   /walker@1.0.8:
     resolution: {integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==}
@@ -17083,6 +17108,25 @@ packages:
 
   /webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+
+  /webpack-bundle-analyzer@4.7.0:
+    resolution: {integrity: sha512-j9b8ynpJS4K+zfO5GGwsAcQX4ZHpWV+yRiHDiL+bE0XHJ8NiPYLTNVQdlFYWxtpg9lfAQNlwJg16J9AJtFSXRg==}
+    engines: {node: '>= 10.13.0'}
+    hasBin: true
+    dependencies:
+      acorn: 8.10.0
+      acorn-walk: 8.2.0
+      chalk: 4.1.2
+      commander: 7.2.0
+      gzip-size: 6.0.0
+      lodash: 4.17.21
+      opener: 1.5.2
+      sirv: 1.0.19
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
 
   /webpack-dev-middleware@5.3.3(webpack@5.88.1):
     resolution: {integrity: sha512-hj5CYrY0bZLB+eTO+x/j67Pkrquiy7kWepMHmUMoPsmcUaeEnQJqFzHJOyxgWlq746/wUuA64p9ta34Kyb01pA==}

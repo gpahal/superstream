@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { ChevronRight, MoveLeftIcon, MoveRightIcon } from 'lucide-react'
+import { ChevronRightIcon, MoveLeftIcon, MoveRightIcon } from 'lucide-react'
 
 import {
   getFlattenedContentCollectionItemByIndex,
@@ -17,6 +17,8 @@ import { Content } from '@/components/content'
 
 import { DocOnThisPage } from './doc-on-this-page'
 
+export const runtime = 'edge'
+
 type DocPageProps = { params: { slugParts: string[] } }
 
 export function generateMetadata({ params: { slugParts } }: DocPageProps): Metadata {
@@ -29,7 +31,7 @@ export function generateMetadata({ params: { slugParts } }: DocPageProps): Metad
     pathname: `/docs/${doc.path}`,
     title: `${doc.data.frontmatter.title} - Superstream Documentation`,
     description: doc.data.frontmatter.description,
-    imagePath: `/docs/${doc.path}?v=1`,
+    imagePath: `/docs/${doc.path}?v=2`,
   })
 }
 
@@ -59,7 +61,7 @@ export default function DocPage({ params: { slugParts } }: DocPageProps) {
                 <Link variant="hover-highlighted" href={`/docs/${parent.path}`} className="hover:text-fg">
                   {parent.data.frontmatter.label}
                 </Link>
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRightIcon className="h-4 w-4" />
                 <span className="text-fg">{doc.data.frontmatter.label}</span>
               </div>
             ) : null}

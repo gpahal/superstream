@@ -6,6 +6,7 @@ import {
   formatParseDirectoryResultErrors,
   FrontmatterSchema,
   getRenderableTreeNodeTopLevelSections,
+  linkSchema,
   parseDirectory,
   ParseResultSuccess,
   renderableNodesToString,
@@ -19,7 +20,7 @@ import sizeOf from 'image-size'
 import fetch from 'node-fetch'
 
 import { ContentCollectionMetadata, ContentSearchDocument } from '../src/lib/content'
-import { DOCS_CONTENT_COLLECTION_METADATA } from '../src/lib/docs'
+import { DOCS_FRONTMATTER_SCHEMA, DocsFrontmatterSchema } from '../src/lib/docs'
 
 const PUBLIC_DIR_PATH = path.join(__dirname, '..', 'public')
 const CONTENT_DIR_PATH = path.join(__dirname, '..', 'content')
@@ -140,6 +141,46 @@ function generateContentCollectioSearchDocuments<TFrontmatterSchema extends Fron
   }
 
   return documents
+}
+
+const DOCS_CONTENT_COLLECTION_METADATA: ContentCollectionMetadata<DocsFrontmatterSchema> = {
+  path: 'docs',
+  frontmatterSchema: DOCS_FRONTMATTER_SCHEMA,
+  getTitle: (frontmatter) => frontmatter.title,
+  getDescription: (frontmatter) => frontmatter.description,
+  compareFileMapItems: (a, b) => a.data.frontmatter.position - b.data.frontmatter.position,
+  transformFileName: (_, frontmatter) => frontmatter.slug,
+  transformConfig: {
+    tags: {
+      link: {
+        ...linkSchema,
+        attributes: {
+          ...(linkSchema.attributes || {}),
+          variant: {
+            type: String,
+            default: 'highlighted',
+            matches: ['unstyled', 'highlighted', 'hover-highlighted', 'link'],
+          },
+        },
+      },
+      alert: {
+        render: 'Alert',
+        attributes: {
+          variant: {
+            type: String,
+            default: 'default',
+            matches: ['default', 'info', 'warn', 'error'],
+          },
+        },
+      },
+      badges: {
+        render: 'Badges',
+      },
+      badge: {
+        render: 'Badge',
+      },
+    },
+  },
 }
 
 const CONTENT_COLLECTION_MATADATAS = [DOCS_CONTENT_COLLECTION_METADATA] as const
