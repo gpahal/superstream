@@ -67,13 +67,79 @@ async function generateCollectionDbInner<TFrontmatterSchema extends FrontmatterS
   const result = await parseDirectory(FS_MODULE, collectionContentDirPath, () => 'index.mdoc', {
     frontmatterSchema,
     transformConfig: {
-      ...(transformConfig ? { ...transformConfig, tags: { ...transformConfig.tags } } : {}),
+      ...(transformConfig || {}),
+      tags: {
+        link: {
+          ...linkSchema,
+          attributes: {
+            ...(linkSchema.attributes || {}),
+            variant: {
+              type: String,
+              default: 'highlighted',
+              matches: ['unstyled', 'highlighted', 'hover-highlighted', 'link'],
+            },
+          },
+        },
+        alert: {
+          render: 'Alert',
+          attributes: {
+            variant: {
+              type: String,
+              default: 'default',
+              matches: ['default', 'info', 'warn', 'error'],
+            },
+          },
+        },
+        badges: {
+          render: 'Badges',
+        },
+        badge: {
+          render: 'Badge',
+        },
+        ...(transformConfig?.tags || {}),
+      },
+      ...(transformConfig
+        ? {
+            ...transformConfig,
+            tags: {
+              link: {
+                ...linkSchema,
+                attributes: {
+                  ...(linkSchema.attributes || {}),
+                  variant: {
+                    type: String,
+                    default: 'highlighted',
+                    matches: ['unstyled', 'highlighted', 'hover-highlighted', 'link'],
+                  },
+                },
+              },
+              alert: {
+                render: 'Alert',
+                attributes: {
+                  variant: {
+                    type: String,
+                    default: 'default',
+                    matches: ['default', 'info', 'warn', 'error'],
+                  },
+                },
+              },
+              badges: {
+                render: 'Badges',
+              },
+              badge: {
+                render: 'Badge',
+              },
+              ...transformConfig.tags,
+            },
+          }
+        : {}),
       image: { transformImageSrcAndGetSize },
       codeAndFence: {
         theme: {
           light: 'github-light',
           dark: 'github-dark',
         },
+        wrapperTagName: 'code-block',
       },
     },
     transformFileName: (fileName, fsFileMapFileItem) =>
@@ -85,7 +151,7 @@ async function generateCollectionDbInner<TFrontmatterSchema extends FrontmatterS
     console.error(
       `Error generating collection db for ${collectionPath}:\n\n${formatParseDirectoryResultErrors(result.data)}`,
     )
-    return
+    process.exit(1)
   }
 
   const data = result.data satisfies FileMap<unknown>
@@ -150,37 +216,6 @@ const DOCS_CONTENT_COLLECTION_METADATA: ContentCollectionMetadata<DocsFrontmatte
   getDescription: (frontmatter) => frontmatter.description,
   compareFileMapItems: (a, b) => a.data.frontmatter.position - b.data.frontmatter.position,
   transformFileName: (_, frontmatter) => frontmatter.slug,
-  transformConfig: {
-    tags: {
-      link: {
-        ...linkSchema,
-        attributes: {
-          ...(linkSchema.attributes || {}),
-          variant: {
-            type: String,
-            default: 'highlighted',
-            matches: ['unstyled', 'highlighted', 'hover-highlighted', 'link'],
-          },
-        },
-      },
-      alert: {
-        render: 'Alert',
-        attributes: {
-          variant: {
-            type: String,
-            default: 'default',
-            matches: ['default', 'info', 'warn', 'error'],
-          },
-        },
-      },
-      badges: {
-        render: 'Badges',
-      },
-      badge: {
-        render: 'Badge',
-      },
-    },
-  },
 }
 
 const CONTENT_COLLECTION_MATADATAS = [DOCS_CONTENT_COLLECTION_METADATA] as const

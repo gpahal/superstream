@@ -25,13 +25,13 @@ For a complete working example, see
 
 - Add the dependency in your program's Cargo.toml
 
-```toml
+```toml {% fileName="Cargo.toml" %}
 superstream = { version = "0.2.0", features = ["cpi"] }
 ```
 
 - Invoke Superstream's instructions. In the example below, we are calling Superstream's cancel instruction.
 
-```rs {% showLineNumbers=true %}
+```rs {% fileName="src/lib.rs" showLineNumbers=true %}
 #[program]
 pub mod superstream_cpi_example {
     /// Cancel a stream.

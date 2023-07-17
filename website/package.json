@@ -61,7 +61,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@gpahal/markdoc": "^0.0.46",
+    "@gpahal/markdoc": "^0.0.50",
     "@gpahal/std-node": "^0.0.19",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",

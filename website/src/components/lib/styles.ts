@@ -20,8 +20,8 @@ export const buttonStyles = cva(
     variants: {
       variant: {
         outline:
-          'ring-neutral-7 bg-bg text-fg shadow-sm ring-1 ring-inset hover:border-neutral-8 hover:bg-bg-emphasis focus-visible:ring-offset-0',
-        ghost: 'bg-bg text-fg hover:bg-bg-emphasis',
+          'ring-neutral-7 text-fg shadow-sm ring-1 ring-inset hover:border-neutral-8 hover:bg-bg-emphasis focus-visible:ring-offset-0',
+        ghost: 'text-fg hover:bg-bg-emphasis',
         'link-unstyled': linkStyles({ variant: 'unstyled' }),
         'link-highlighted': linkStyles({ variant: 'highlighted' }),
         'link-hover-highlighted': linkStyles({ variant: 'hover-highlighted' }),

@@ -35,7 +35,7 @@ yarn add @superstream/client
 - Create a `{:ts.entity.name.class}SuperstreamClient`. For more information, view the
 [API documentation](/references/client-sdks/ts/functions/createSuperstreamClient.html)
 
-```ts {% showLineNumbers=true %}
+```ts {% fileName="superstream.ts" showLineNumbers=true %}
 import {
   createSuperstreamClient,
 } from "@superstream/client";
@@ -58,7 +58,7 @@ const client = createSuperstreamClient("devnet", wallet);
 - Fetch streams and do other operations using the client. For more information, view the
 [API documentation](/references/client-sdks/ts/interfaces/SuperstreamClient.html)
 
-```ts {% showLineNumbers=true %}
+```ts {% fileName="superstream.ts" showLineNumbers=true %}
 const streams = await client
   .getAllStreams({
     isPrepaid: true,
@@ -69,7 +69,7 @@ const streams = await client
 - Do operations on streams. For more information, view the
 [API documentation](/references/client-sdks/ts/classes/Stream.html)
 
-```ts {% showLineNumbers=true %}
+```ts {% fileName="superstream.ts" showLineNumbers=true %}
 const stream = streams[0]
 
 // Get stream public key

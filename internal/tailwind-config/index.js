@@ -47,8 +47,8 @@ const config = {
             '--tw-prose-invert-links': 'inherit',
             '--tw-prose-code': 'inherit',
             '--tw-prose-invert-code': 'inherit',
-            '--tw-prose-pre-bg': 'rgb(var(--colors-code-bg))',
-            '--tw-prose-invert-pre-bg': 'rgb(var(--colors-code-bg))',
+            '--tw-prose-pre-bg': 'inherit',
+            '--tw-prose-invert-pre-bg': 'inherit',
             '--tw-prose-pre-code': 'inherit',
             '--tw-prose-invert-pre-code': 'inherit',
             '--tw-prose-quotes': 'rgb(var(--colors-fg) / 0.6)',
@@ -154,14 +154,8 @@ const config = {
               margin: 0,
             },
 
-            'div[data-fence]': {
-              position: 'relative',
-              marginTop: '1.65rem',
-              marginBottom: '1.65rem',
-            },
-
             code: {
-              backgroundColor: 'rgb(var(--colors-code-bg))',
+              backgroundColor: 'rgb(var(--colors-bg-emphasis))',
               padding: '0.25rem 0.5rem',
               borderRadius: '0.25rem',
               fontSize: 'inherit',
@@ -176,12 +170,11 @@ const config = {
             },
 
             pre: {
-              backgroundColor: 'rgb(var(--colors-code-bg))',
               margin: 0,
-              padding: '0.875rem 0',
-              borderRadius: '0.5rem',
+              padding: '0.75rem 0',
 
               '> code': {
+                backgroundColor: 'transparent',
                 borderRadius: 0,
                 paddingLeft: 0,
                 paddingRight: 0,

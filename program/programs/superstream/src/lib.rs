@@ -19,7 +19,7 @@
 //!
 //! - Invoke Superstream's instruction. In the example below, we are calling Superstream's cancel instruction.
 //!
-//! ```rust ignore
+//! ```rs ignore
 //! #[program]
 //! pub mod superstream_cpi_example {
 //!     /// Cancel a stream.

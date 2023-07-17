@@ -36,7 +36,7 @@ yarn add @superstream/client
 - Create a `SuperstreamClient`. For complete API documentation, click
   [here](https://superstream.finance/references/client-sdks/ts/functions/createSuperstreamClient.html)
 
-```typescript
+```ts
 import { createSuperstreamClient } from '@superstream/client'
 
 const client = createSuperstreamClient('devnet', wallet)
@@ -51,14 +51,14 @@ const client = createSuperstreamClient('devnet', wallet)
 - Fetch streams and do other operations using the client. For complete API documentation, click
   [here](https://superstream.finance/references/client-sdks/ts/interfaces/SuperstreamClient.html)
 
-```typescript
+```ts
 const streams = await client.getAllStreams({ isPrepaid: true, recipient: new PublicKey('public-key-base-58') })
 ```
 
 - Do operations on streams. For complete API documentation, click
   [here](https://superstream.finance/references/client-sdks/ts/classes/Stream.html)
 
-```typescript
+```ts
 const stream = streams[0]
 
 // Get stream public key
