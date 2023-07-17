@@ -13,8 +13,6 @@ import { NavListHorizontal, NavListHorizontalLinkItems } from '@/components/nav'
 import { GetStartedButton, GetStartedProvider } from './get-started'
 import { HomeLayoutBottomSheet } from './home-layout-bottom-sheet'
 
-export const runtime = 'edge'
-
 export const metadata: Metadata = generatePageMetadata({
   pathname: '/',
 })

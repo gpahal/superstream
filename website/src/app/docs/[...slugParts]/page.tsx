@@ -17,8 +17,6 @@ import { Content } from '@/components/content'
 
 import { DocOnThisPage } from './doc-on-this-page'
 
-export const runtime = 'edge'
-
 type DocPageProps = { params: { slugParts: string[] } }
 
 export function generateMetadata({ params: { slugParts } }: DocPageProps): Metadata {
