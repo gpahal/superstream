@@ -1,0 +1,91 @@
+---
+position: 1
+slug: ts
+label: Typescript client SDK
+title: Typescript client SDK
+description: A typescript SDK to create and manage real-time payment streams with Superstream
+---
+
+A typescript SDK to interact with on-chain Superstream program. Developers would use this typically when they want to
+create a typescript app and integrate streams into that. It's compatible with browsers and native envs (like React
+Native).
+
+## Quick links
+
+{% badges %}{% badge %}[![Licence](https://img.shields.io/npm/l/@superstream/client.svg)](https://www.npmjs.com/package/@superstream/client){% /badge %}{% badge %}[![npm](https://img.shields.io/npm/v/@superstream/client.svg)](https://www.npmjs.com/package/@superstream/client){% /badge %}{% /badges %}
+
+- {% link href="/references/client-sdks/ts/" variant="link" %}API reference{% /link %}
+- {% link href="https://github.com/gpahal/superstream/tree/main/client" variant="link" %}Github{% /link %}
+
+## Installation
+
+```sh
+# npm
+npm install @superstream/client
+
+# pnpm
+pnpm install @superstream/client
+
+# yarn
+yarn add @superstream/client
+```
+
+## Usage
+
+- Create a `{:ts.entity.name.class}SuperstreamClient`. For complete API documentation, click
+[here](/references/client-sdks/ts/functions/createSuperstreamClient.html)
+
+```ts {% showLineNumbers=true %}
+import {
+  createSuperstreamClient,
+} from "@superstream/client";
+
+const client = createSuperstreamClient("devnet", wallet);
+
+// For mainnet-beta, use:
+//
+// const client = createSuperstreamClient(
+//   "mainnet-beta",
+//   wallet,
+// );
+
+// If you don't need to execute instructions (like creating
+// or cancelling a stream), you can omit the wallet:
+//
+// const client = createSuperstreamClient("devnet");
+```
+
+- Fetch streams and do other operations using the client. For complete API documentation, click
+[here](/references/client-sdks/ts/interfaces/SuperstreamClient.html)
+
+```ts {% showLineNumbers=true %}
+const streams = await client
+  .getAllStreams({
+    isPrepaid: true,
+    recipient: new PublicKey("public-key-base-58"),
+  });
+```
+
+- Do operations on streams. For complete API documentation, click [here](/references/client-sdks/ts/classes/Stream.html)
+
+```ts {% showLineNumbers=true %}
+const stream = streams[0]
+
+// Get stream public key
+stream.getStreamPublicKey()
+// Check is current wallet is this stream's sender
+stream.isSender()
+// ... and other operations
+
+// Get current on-chain time to do even more operations on
+// streams
+const currentTime = await client.mustGetCurrentTime()
+
+// Check if stream has stopped
+stream.hasStopped()
+// Check if stream is solvent
+stream.isSolvent()
+// Cancel stream
+await stream.cancel()
+// ... and other operations
+```

@@ -1,0 +1,136 @@
+---
+position: 1
+slug: program
+label: Superstream program
+title: Superstream program
+description: A Solana on-chain program that maintains the state of payment streams on-chain
+---
+
+A Solana on-chain program that maintains the state of payment streams on-chain. Other Solana on-chain programs can
+interact with it directly using Cross-Program Invocation (CPI for short).
+
+## Quick links
+
+{% badges %}{% badge %}[![Licence](https://img.shields.io/crates/l/superstream.svg)](https://crates.io/crates/superstream){% /badge %}{% badge %}[![Crates.io](https://img.shields.io/crates/v/superstream.svg)](https://crates.io/crates/superstream){% /badge %}{% badge %}[![Docs.rs](https://docs.rs/superstream/badge.svg)](https://docs.rs/superstream/latest/superstream/){% /badge %}{% /badges %}
+
+- {% link href="https://docs.rs/superstream/latest/superstream/" variant="link" %}API reference{% /link %}
+- {% link href="https://github.com/gpahal/superstream/tree/main/program/programs/superstream" variant="link" %}Github{% /link %}
+
+## Usage in CPI (Cross-Program Invocation)
+
+{% alert %}
+For a complete working example, see
+[superstream-cpi-example](https://github.com/gpahal/superstream/tree/main/program/programs/superstream-cpi-example)
+{% /alert %}
+
+- Add the dependency in your program's Cargo.toml
+
+```toml
+superstream = { version = "0.2.0", features = ["cpi"] }
+```
+
+- Invoke Superstream's instructions. In the example below, we are calling Superstream's cancel instruction.
+
+```rs {% showLineNumbers=true %}
+#[program]
+pub mod superstream_cpi_example {
+    /// Cancel a stream.
+    pub fn cancel(
+        ctx: Context<Cancel>,
+        seed: u64,
+        name: String,
+        recipient: Pubkey,
+    ) -> Result<()> {
+        let cpi_program = ctx.accounts.superstream_program
+            .to_account_info();
+        let cpi_accounts = superstream::cpi::accounts::Cancel {
+            stream: ctx.accounts.stream.to_account_info(),
+            signer: ctx.accounts.signer.to_account_info(),
+            sender: ctx.accounts.sender.to_account_info(),
+            mint: ctx.accounts.sender.to_account_info(),
+            signer_token: ctx.accounts.signer_token
+                .to_account_info(),
+            sender_token: ctx.accounts.sender_token
+                .to_account_info(),
+            recipient_token: ctx.accounts.recipient_token
+                .to_account_info(),
+            escrow_token: ctx.accounts.escrow_token
+                .to_account_info(),
+            token_program: ctx.accounts.token_program
+                .to_account_info(),
+        };
+        let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts);
+
+        superstream::cpi::cancel(cpi_ctx, seed, name, recipient)
+    }
+
+    // ... other stuff
+}
+
+/// Accounts struct for cancelling a stream.
+#[derive(Accounts)]
+pub struct Cancel<'info> {
+    /// Stream PDA account.
+    #[account(mut)]
+    pub stream: AccountInfo<'info>,
+
+    /// Signer wallet.
+    pub signer: Signer<'info>,
+
+    /// Stream sender account.
+    pub sender: AccountInfo<'info>,
+    /// SPL token mint account.
+    pub mint: Box<Account<'info, Mint>>,
+
+    /// Associated token account of the signer.
+    #[account(mut)]
+    pub signer_token: Box<Account<'info, TokenAccount>>,
+    /// Associated token account of the sender.
+    #[account(mut)]
+    pub sender_token: Box<Account<'info, TokenAccount>>,
+    /// Associated token account of the recipient.
+    #[account(mut)]
+    pub recipient_token: Box<Account<'info, TokenAccount>>,
+    /// Associated token escrow account holding the funds for
+    /// this stream.
+    #[account(mut)]
+    pub escrow_token: Box<Account<'info, TokenAccount>>,
+
+    /// SPL token program.
+    pub token_program: Program<'info, Token>,
+
+    /// Superstream program.
+    pub superstream_program: Program<
+        'info,
+        superstream::program::Superstream,
+    >,
+}
+
+// ... other stuff
+```
+
+## Deploying and running the program locally
+
+### Prerequisites
+
+- {% link href="https://book.anchor-lang.com/getting_started/installation.html" variant="link" %}Anchor{% /link %}
+
+### Deploying and running the program locally
+
+- Build Solana program
+
+```sh
+pnpm build
+```
+
+- Run Solana test validator
+
+```sh
+solana-test-validator
+```
+
+- Deploy Solana program to the test validator
+
+```sh
+anchor deploy --provider.cluster localnet
+```

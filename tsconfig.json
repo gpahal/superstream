@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "files": [],
+  "references": [{ "path": "program" }, { "path": "client" }, { "path": "inspector" }, { "path": "website" }]
+}

@@ -1,0 +1,25 @@
+[package]
+name = "superstream"
+version = "0.3.3"
+edition = "2021"
+description = "Streaming payments on Solana"
+repository="https://github.com/gpahal/superstream"
+homepage = "https://superstream.finance/"
+documentation = "https://docs.rs/superstream"
+readme = "../../README.md"
+license="MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "superstream"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"

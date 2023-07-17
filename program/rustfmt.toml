@@ -1,0 +1,9 @@
+# Enable commented out configurations after they become stable.
+
+edition = "2021"
+max_width = 120
+# wrap_comments = true
+# comment_width = 120
+# error_on_line_overflow = true
+match_block_trailing_comma = true
+# trailing_comma = "Vertical"

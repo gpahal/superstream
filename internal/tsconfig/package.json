@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "@internal/tsconfig",
+  "files": [
+    "package.json",
+    "base.json",
+    "react-library.js",
+    "nextjs.json"
+  ]
+}

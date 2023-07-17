@@ -1,0 +1,46 @@
+---
+position: 1
+slug: types-of-streams
+label: Types of streams
+title: Types of streams
+description: Learn about the different types of real-time payment streams supported by Superstream
+---
+
+Superstream supports 2 types of streams - prepaid and unbounded.
+
+## Prepaid streams
+
+Prepaid streams require the stream sender to prepay the whole amount upfront on stream creation. Prepaid streams need
+to have a fixed lifetime.
+
+### Example
+
+If you want to pay someone $10 per day for one month - you can create a prepaid stream, put $300 in Superstream's escrow
+account, and the recipient will receive $10 every day. If you decide for some reason you want to cancel the contract,
+the remaining prepaid amount is refunded to your wallet.
+
+## Unbounded streams
+
+Unbounded streams require the stream sender to pay a small deposit amount upfront on stream creation. To make sure the
+stream stays active, the sender has to topup the stream before the escrow account runs out of money. Unbounded streams
+can have a fixed end date, or they can have an unlimited lifetime - only stopping when cancelled.
+
+### Example
+
+If you want to pay someone $10 per day until they leave - you can create an unbounded stream, put $80 in Superstream's
+escrow account, and the recipient will receive $10 every day. To ensure the stream keeps running and the recipient keeps
+getting their money, you can choose to topup the stream with $70 every week.
+
+### What happens if streams aren't topped up in time?
+
+If that happens, they become [insolvent](insolvency). The stream is cancelled and the sender pays a penalty taken out
+from the deposit they paid when creating the stream.
+
+## Which one to use?
+
+Some streams like ESOPs would need to be prepaid because employees would need assurance that some set of tokens are
+locked up in an escrow that will be given to them on the vesting schedule.
+
+Other streams like payroll, subscriptions - which require a cash flow to pay - will be unbounded. It's recommended to
+keep the topup interval low for unbounded streams, so that recipients can be rest assures streams are topped up, and
+they'll keep getting paid.

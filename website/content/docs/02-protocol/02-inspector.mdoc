@@ -1,0 +1,30 @@
+---
+position: 2
+slug: inspector
+label: Superstream Inspector
+title: Superstream Inspector
+description: An off-chain software that monitors and cancels streams when they become insolvent
+---
+
+An off-chain software that monitors the on-chain program and cancels streams when they become
+[insolvent](../resources/insolvency). Anyone can run this software and earn rewards for finding insolvent streams and
+penalizing bad actors in the ecosystem.
+
+## Rewards
+
+Senders of [unbounded streams](../resources/types-of-streams#unbounded-streams) pay a deposit amount upfront. If a
+stream becomes insolvent, this amount is not given back to the stream senders as punishment and distributed as a reward
+to whoever found the insolvent stream.
+
+The exact deposit amount is defined in the smart contract. It is currently equal to 8 hrs of the stream value. For
+example, if someone creates a stream of $10 per hour, the deposit amount would be $80.
+
+The exact value is defined
+[here](https://docs.rs/superstream/latest/superstream/state/constant.DEPOSIT_AMOUNT_PERIOD_IN_SECS.html).
+
+## Quick links
+
+{% badges %}{% badge %}[![Licence](https://img.shields.io/npm/l/@superstream/inspector.svg)](https://www.npmjs.com/package/@superstream/inspector){% /badge %}{% badge %}[![npm](https://img.shields.io/npm/v/@superstream/inspector.svg)](https://www.npmjs.com/package/@superstream/inspector){% /badge %}{% /badges %}
+
+- {% link href="https://github.com/gpahal/superstream/tree/main/inspector#installation" variant="link" %}Installation and usage{% /link %}
+- {% link href="https://github.com/gpahal/superstream/tree/main/inspector" variant="link" %}Github{% /link %}

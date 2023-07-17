@@ -1,0 +1,6 @@
+# Solana
+test-ledger
+.anchor
+
+# Rust
+**/*.rs.bk

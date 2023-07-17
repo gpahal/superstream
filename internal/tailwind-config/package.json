@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "@internal/tailwind-config",
+  "files": [
+    "package.json",
+    "index.js",
+    "postcss.js",
+    "color-themes/"
+  ],
+  "dependencies": {
+    "@gpahal/tailwind-color-themes": "^0.0.22",
+    "@gpahal/tailwind-variants": "^0.0.7",
+    "@radix-ui/colors": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "cssnano": "^6.0.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.0.0",
+    "tailwindcss-animate": "^1.0.6"
+  }
+}

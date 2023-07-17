@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build-program": {
+      "dependsOn": ["^build-program"],
+      "outputs": ["target/**"]
+    },
+    "@superstream/client#build-program": {
+      "dependsOn": ["@superstream/program#build-program", "^build-program"],
+      "outputs": ["src/gen/**"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**", ".next/**", "!.next/cache/**", "docs/**", "public/references/**"]
+    },
+    "start": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["coverage/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "lint": {},
+    "lint-fix": {}
+  }
+}

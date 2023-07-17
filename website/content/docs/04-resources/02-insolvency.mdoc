@@ -1,0 +1,25 @@
+---
+position: 2
+slug: insolvency
+label: Insolvency
+title: Insolvency
+description: What happens when a stream becomes insolvent?
+---
+
+When someone creates an [unbounded stream](types-of-streams#unbounded-streams) on Superstream, it must always be topped
+up (or funded) enough that the recipient can withdraw the whole amount of money that they are owed. If a stream is
+unable to uphold this condition, it is said to be insolvent.
+
+## Example
+
+Suppose Alice wants to pay Bob $100 per hour. She creates an unbounded stream and funds it with $1000. If she forgets to
+fund the stream any further, the stream would become insolvent after 10 hours.
+
+## What happens on insolvency?
+
+Insolvency is bad for obvious reasons - recipients don't get paid what they are promised via payment streams.
+
+To minimise this and punish offenders, Superstream's solution is [Superstream Inspector](../protocol/inspector) - an
+off-chain software that monitors the on-chain program and cancels streams when they become insolvent. Senders of streams
+pay a deposit amount upfront. This amount is not given back to the stream senders as punishment and distributed as a
+reward to whoever found the insolvent stream.

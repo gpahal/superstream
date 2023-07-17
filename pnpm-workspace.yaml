@@ -1,0 +1,6 @@
+packages:
+  - 'program'
+  - 'client'
+  - 'inspector'
+  - 'website'
+  - 'internal/*'

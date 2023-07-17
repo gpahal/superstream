@@ -1,0 +1,14 @@
+{
+  "extends": "@internal/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "types": ["mocha", "chai"],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["migrations", "tests"],
+  "exclude": ["node_modules", "build", "target"]
+}

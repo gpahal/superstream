@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "@internal/stylelint-config",
+  "files": [
+    "package.json",
+    "index.js"
+  ],
+  "dependencies": {
+    "stylelint-config-standard": "^34.0.0"
+  }
+}

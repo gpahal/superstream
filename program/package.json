@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "@superstream/program",
+  "scripts": {
+    "list-keys": "anchor keys list",
+    "clean": "anchor clean && rimraf .anchor/",
+    "build-program": "cross-env NODE_ENV=production anchor build -p superstream",
+    "deploy:anchor:localnet": "pnpm build:anchor && anchor deploy --provider.cluster localnet",
+    "deploy:anchor:devnet": "pnpm build:anchor && anchor deploy --provider.cluster devnet",
+    "deploy:anchor:testnet": "pnpm build:anchor && anchor deploy --provider.cluster testnet",
+    "test": "anchor test",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@coral-xyz/anchor": "0.28.0",
+    "@coral-xyz/spl-token": "0.28.0",
+    "@solana/spl-token": "^0.3.8",
+    "@solana/web3.js": "^1.78.0",
+    "@types/bn.js": "^5.1.1",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "assert": "^2.0.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0"
+  }
+}
