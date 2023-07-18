@@ -13,7 +13,7 @@ const config = {
   singleQuote: true,
   jsxSingleQuote: false,
   plugins: ['@ianvs/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
-  tailwindConfig: './internal/tailwind-config',
+  tailwindConfig: './website/tailwind.config.cjs',
   importOrderTypeScriptVersion: '5.0.0',
   importOrder: [
     '<BUILTIN_MODULES>',
