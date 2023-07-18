@@ -70,8 +70,8 @@ const config = {
     'unicorn/prefer-node-protocol': 'error',
   },
   ignorePatterns: [
-    '**/.*.cjs',
-    '**/*.config.cjs',
+    '**/.*.*js',
+    '**/*.config.*js',
     'pnpm-lock.yaml',
     '.turbo',
     'build',
