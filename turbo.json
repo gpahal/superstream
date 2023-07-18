@@ -1,6 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
+    "clean": {
+      "cache": false
+    },
     "dev": {
       "cache": false,
       "persistent": true
@@ -23,9 +26,6 @@
     "test": {
       "dependsOn": ["build"],
       "outputs": ["coverage/**"]
-    },
-    "clean": {
-      "cache": false
     },
     "lint": {},
     "lint-fix": {}

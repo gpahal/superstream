@@ -32,7 +32,7 @@
   },
   "scripts": {
     "prepublish": "pnpm build",
-    "clean": "rimraf build",
+    "clean": "rimraf .turbo build",
     "dev": "node -r esbuild-register src/cli.ts",
     "build": "pnpm clean && run-s build:*",
     "build:inspector": "cross-env NODE_ENV=production tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",

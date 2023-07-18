@@ -3,7 +3,7 @@
   "name": "@superstream/program",
   "scripts": {
     "list-keys": "anchor keys list",
-    "clean": "anchor clean && rimraf .anchor/",
+    "clean": "anchor clean && rimraf .turbo .anchor",
     "build-program": "cross-env NODE_ENV=production anchor build -p superstream",
     "deploy:anchor:localnet": "pnpm build:anchor && anchor deploy --provider.cluster localnet",
     "deploy:anchor:devnet": "pnpm build:anchor && anchor deploy --provider.cluster devnet",

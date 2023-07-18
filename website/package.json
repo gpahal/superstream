@@ -2,6 +2,7 @@
   "private": true,
   "name": "@superstream/website",
   "scripts": {
+    "clean": "rimraf .turbo .next",
     "dev": "next dev",
     "build": "run-s build:*",
     "build:copy-client-docs": "node --loader esbuild-register/loader -r esbuild-register scripts/copy-client-docs.ts",

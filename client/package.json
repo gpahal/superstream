@@ -30,7 +30,7 @@
   },
   "scripts": {
     "prepublish": "pnpm build",
-    "clean": "rimraf build docs",
+    "clean": "rimraf .turbo build docs",
     "build-program": "rimraf src/gen && node --loader esbuild-register/loader -r esbuild-register scripts/copy-program-files.ts",
     "build": "pnpm clean && run-s build:*",
     "build:client": "run-p build:client:*",
