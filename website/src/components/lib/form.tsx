@@ -137,8 +137,8 @@ FormLabel.displayName = 'FormLabel'
 export type FormControlProps = SlotPrimitive.SlotProps
 
 export const FormControl = React.forwardRef<React.ElementRef<typeof SlotPrimitive.Root>, FormControlProps>(
-  ({ className, ...props }, ref) => {
-    const { error, formItemId, formItemDirection, formDescriptionId, formMessageId } = useFormField()
+  (props, ref) => {
+    const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
     return (
       <SlotPrimitive.Root
@@ -146,7 +146,6 @@ export const FormControl = React.forwardRef<React.ElementRef<typeof SlotPrimitiv
         id={formItemId}
         aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
         aria-invalid={!!error}
-        className={cn(formItemDirection === 'row' ? '' : '', className)}
         {...props}
       />
     )
@@ -164,7 +163,11 @@ export const FormDescription = React.forwardRef<HTMLParagraphElement, FormDescri
       <p
         ref={ref}
         id={formDescriptionId}
-        className={cn('text-sm text-fg/60', formItemDirection !== 'row' && '-mt-1', className)}
+        className={cn(
+          'text-[0.9375rem]/[1.25rem] text-fg-subtle',
+          formItemDirection !== 'row' && 'mt-[-0.2rem]',
+          className,
+        )}
         {...props}
       />
     )
@@ -184,7 +187,12 @@ export const FormMessage = React.forwardRef<HTMLParagraphElement, FormMessagePro
     }
 
     return (
-      <p ref={ref} id={formMessageId} className={cn('text-sm', error && 'text-error-9', className)} {...props}>
+      <p
+        ref={ref}
+        id={formMessageId}
+        className={cn('text-[0.9375rem]/[1.25rem]', error ? 'text-error-9' : 'text-fg-subtle', className)}
+        {...props}
+      >
         {body}
       </p>
     )
@@ -208,7 +216,11 @@ export const FormRootMessage = React.forwardRef<HTMLParagraphElement, FormRootMe
     }
 
     return (
-      <p ref={ref} className={cn('text-sm', error && 'text-error-9', className)} {...props}>
+      <p
+        ref={ref}
+        className={cn('text-[0.9375rem]/[1.25rem]', error ? 'text-error-9' : 'text-fg-subtle', className)}
+        {...props}
+      >
         {body}
       </p>
     )

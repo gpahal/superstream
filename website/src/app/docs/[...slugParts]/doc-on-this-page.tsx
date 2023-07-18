@@ -57,31 +57,31 @@ export function DocOnThisPage({ doc }: DocOnThisPageProps) {
 
   return (
     <div className="hidden xl:sticky xl:right-0 xl:top-[3.5rem] xl:block xl:h-[calc(100vh-3.5rem)] xl:flex-none xl:overflow-y-auto xl:pb-4 xl:pl-8 xl:pr-6 2xl:pl-0">
-      <nav className="xl:w-56 2xl:w-72">
+      <nav className="xl:w-60 2xl:w-72">
         {headingNodes.length > 0 && (
-          <div className="mb-2 space-y-4 px-2 pb-2 pt-6 text-sm/[1.125rem] font-subtlelight lg:pt-8">
-            <p className="font-medium">On this page</p>
+          <div className="mb-2 space-y-3 px-2 pb-2 pt-6 text-sm lg:pt-8">
+            <p className="font-semibold">On this page</p>
             <ol className="space-y-2">
               {headingNodes.map((node) => (
                 <li key={node.id}>
                   <Link
                     href={`#${node.id}`}
                     className={cn(
-                      node.id === currentHeadingNodeId ? 'font-normal text-link-11' : 'text-fg/60 hover:text-link-11',
+                      'font-medium hover:text-link-10',
+                      node.id === currentHeadingNodeId ? 'font-semibold text-link-10' : 'text-fg-subtle',
                     )}
                   >
                     {node.text}
                   </Link>
                   {node.children.length > 0 && (
-                    <ol className="mb-3 mt-1 space-y-2 pl-5">
+                    <ol className="mb-3 mt-1 space-y-1.5 pl-5">
                       {node.children.map((childNode) => (
                         <li key={childNode.id}>
                           <Link
                             href={`#${childNode.id}`}
                             className={cn(
-                              childNode.id === currentHeadingNodeId
-                                ? 'font-normal text-link-11'
-                                : 'text-fg/60 hover:text-link-11',
+                              'hover:text-link-10',
+                              childNode.id === currentHeadingNodeId ? 'font-medium text-link-10' : 'text-fg-subtle',
                             )}
                           >
                             {childNode.text}

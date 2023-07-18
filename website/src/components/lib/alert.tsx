@@ -1,23 +1,22 @@
 import * as React from 'react'
 
 import { cva, VariantProps } from 'class-variance-authority'
-import { AlertTriangleIcon, BanIcon, InfoIcon, LightbulbIcon, LucideIcon, LucideProps } from 'lucide-react'
+import { AlertTriangleIcon, BanIcon, InfoIcon, LucideIcon, LucideProps } from 'lucide-react'
 
 import { cn } from '@/lib/styles'
 
 const alertVariants = cva(
-  'relative flex w-full flex-col gap-2.5 rounded-md border px-4 pb-3 pt-[1.05rem] [&:has(svg)]:pl-11 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-3.5 [&>svg]:top-[1.05rem] [&>svg]:h-[1.125rem] [&>svg]:w-[1.125rem] [&>svg]:text-fg',
+  'relative flex w-full flex-col gap-2.5 rounded-md border px-4 pb-2 pt-[0.8rem] [&:has(svg)]:pl-10 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-3 [&>svg]:top-[0.75rem] [&>svg]:h-[1.25rem] [&>svg]:w-[1.25rem] [&>svg]:text-fg',
   {
     variants: {
       variant: {
-        default: 'bg-bg text-fg rounded-md',
-        info: 'border-info-6 bg-info-3 text-info-9 [&>svg]:text-info-9',
-        warn: 'border-warn-6 bg-warn-3 text-warn-9 [&>svg]:text-warn-9',
-        error: 'border-error-6 bg-error-3 text-error-9 [&>svg]:text-error-9',
+        info: 'border-info-6 bg-info-3 text-info-11 [&>svg]:fill-info-11 [&>svg]:text-info-3',
+        warn: 'border-warn-6 bg-warn-3 text-warn-11 [&>svg]:fill-warn-11 [&>svg]:text-warn-3',
+        error: 'border-error-6 bg-error-3 text-error-11 [&>svg]:fill-error-11 [&>svg]:text-error-3',
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'info',
     },
   },
 )
@@ -67,14 +66,12 @@ export type AlertDefaultIconProps = LucideProps & VariantProps<typeof alertVaria
 
 export function getAlertDefaultIcon({ variant }: { variant: AlertDefaultIconProps['variant'] }): LucideIcon {
   switch (variant) {
-    case 'info':
-      return InfoIcon
     case 'warn':
       return AlertTriangleIcon
     case 'error':
       return BanIcon
     default:
-      return LightbulbIcon
+      return InfoIcon
   }
 }
 

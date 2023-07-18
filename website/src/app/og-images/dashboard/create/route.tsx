@@ -13,7 +13,7 @@ export async function GET(_: NextRequest) {
     (
       <div
         style={{
-          fontFamily: 'Lexend',
+          fontFamily: 'Figtree',
           fontWeight: 400,
           width: '100%',
           height: '100%',
@@ -21,7 +21,7 @@ export async function GET(_: NextRequest) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           backgroundColor: '#f8faf9',
-          color: '#000000',
+          color: '#222222',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -32,25 +32,24 @@ export async function GET(_: NextRequest) {
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            gap: '8px',
-            paddingTop: '26px',
-            paddingBottom: '22px',
+            gap: '10px',
+            paddingTop: '19px',
+            paddingBottom: '21px',
             paddingLeft: '76px',
             paddingRight: '80px',
             borderBottomWidth: '1px',
             borderBottomColor: '#d7dcda',
-            fontSize: '36px',
-            fontWeight: 400,
+            fontSize: '32px',
+            fontWeight: 500,
           }}
         >
           <img
             src={logoSvgPrimaryDataUrl}
             alt="Superstream logo"
             style={{
-              width: '52px',
-              height: '52px',
-              marginTop: '-4px',
-              marginRight: '8px',
+              width: '48px',
+              height: '48px',
+              marginBottom: '-2px',
             }}
           />
           <div
@@ -63,7 +62,7 @@ export async function GET(_: NextRequest) {
           <div
             style={{
               display: 'flex',
-              color: '#aaaaaa',
+              color: '#c0c0c0',
             }}
           >
             /
@@ -88,8 +87,8 @@ export async function GET(_: NextRequest) {
           <div
             style={{
               display: 'flex',
-              fontSize: '52px',
-              fontWeight: 600,
+              fontSize: '56px',
+              fontWeight: 700,
             }}
           >
             Create a new stream
@@ -98,9 +97,10 @@ export async function GET(_: NextRequest) {
             style={{
               width: '960px',
               display: 'flex',
-              fontSize: '40px',
-              fontWeight: 400,
-              color: '#888888',
+              fontSize: '36px',
+              lineHeight: '48px',
+              fontWeight: 500,
+              color: '#808080',
             }}
           >
             Create a new real-time payment stream in less than 2 mins powered

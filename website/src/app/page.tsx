@@ -13,6 +13,8 @@ import { NavListHorizontal, NavListHorizontalLinkItems } from '@/components/nav'
 import { GetStartedButton, GetStartedProvider } from './get-started'
 import { HomeLayoutBottomSheet } from './home-layout-bottom-sheet'
 
+export const runtime = 'edge'
+
 export const metadata: Metadata = generatePageMetadata({
   pathname: '/',
 })
@@ -57,25 +59,25 @@ export default function HomePage() {
                 <div className="mx-auto lg:mx-0">
                   <div className="mx-auto ml-1 flex flex-row items-center justify-center space-x-2 lg:hidden">
                     <Logo variant="primary" className="h-16 w-16 flex-shrink-0" />
-                    <H1 className="-mt-0.5 text-4xl font-semibold tracking-tight">Superstream</H1>
+                    <H1 className="-mt-0.5 text-4xl font-bold">Superstream</H1>
                   </div>
                   <div className="-ml-2 hidden w-auto flex-row items-center space-x-2 lg:flex">
                     <Logo variant="primary" className="h-16 w-16 flex-shrink-0" />
-                    <H1 className="-mt-0.5 text-4xl font-semibold tracking-tight">Superstream</H1>
+                    <H1 className="-mt-0.5 text-4xl font-bold">Superstream</H1>
                   </div>
                 </div>
 
                 <div className="mt-12 w-full lg:mx-0">
                   <div className="mx-auto mt-6 w-full md:max-w-xl lg:mx-0 lg:max-w-2xl">
-                    <H2 className="block text-center text-2xl font-medium md:text-3xl lg:text-left">
+                    <H2 className="block text-center text-2xl font-semibold md:text-3xl lg:text-left">
                       Real-time payment streams on Solana
                     </H2>
-                    <H3 className="mt-1 text-center text-lg font-semilight text-fg/60 md:text-xl lg:text-left">
+                    <H3 className="mt-1 text-center text-lg font-normal text-fg-subtle md:text-xl lg:text-left">
                       Manage payroll, token distributions, vesting, subscriptions, rewards and any composable stream -
                       transparently and efficiently
                     </H3>
                   </div>
-                  <div className="mx-auto mt-12 flex w-full flex-row items-center justify-center space-x-4 lg:mx-0 lg:justify-start">
+                  <div className="mx-auto mt-8 flex w-full flex-row items-center justify-center space-x-4 lg:mx-0 lg:justify-start">
                     <GetStartedButton size="xl" className="w-44" />
                   </div>
                 </div>

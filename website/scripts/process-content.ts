@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-imports */
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
@@ -97,8 +96,8 @@ async function generateCollectionDbInner<TFrontmatterSchema extends FrontmatterS
           attributes: {
             variant: {
               type: String,
-              default: 'default',
-              matches: ['default', 'info', 'warn', 'error'],
+              default: 'info',
+              matches: ['info', 'warn', 'error'],
             },
           },
         },

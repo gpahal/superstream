@@ -28,12 +28,6 @@ const config = {
   plugins: ['@typescript-eslint', 'import', 'unicorn'],
   rules: {
     'no-unused-vars': 'off',
-    'no-restricted-imports': [
-      'error',
-      {
-        patterns: ['..*'],
-      },
-    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {

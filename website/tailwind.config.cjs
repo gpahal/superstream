@@ -1,5 +1,3 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
-
 const darkTheme = require('./color-themes/dark.cjs')
 const lightTheme = require('./color-themes/light.cjs')
 
@@ -8,8 +6,8 @@ const config = {
   content: ['./src/components/**/*.{js,ts,jsx,tsx}', './src/app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['var(--font-sans-serif)', ...fontFamily.sans],
-      mono: ['var(--font-mono)', ...fontFamily.mono],
+      sans: ['var(--font-sans-serif)'],
+      mono: ['var(--font-mono)'],
     },
     fontWeight: {
       inherit: 'inherit',
@@ -22,6 +20,7 @@ const config = {
       subtlemedium: '425',
       semimedium: '450',
       medium: '500',
+      extramedium: '550',
       semibold: '600',
       bold: '700',
       extrabold: '800',
@@ -40,10 +39,10 @@ const config = {
           css: {
             '--tw-prose-headings': 'rgb(var(--colors-fg))',
             '--tw-prose-invert-headings': 'rgb(var(--colors-fg))',
-            '--tw-prose-body': 'rgb(var(--colors-fg) / 0.9)',
-            '--tw-prose-invert-body': 'rgb(var(--colors-fg) / 0.9)',
-            '--tw-prose-lead': 'rgb(var(--colors-fg) / 0.8)',
-            '--tw-prose-invert-lead': 'rgb(var(--colors-fg) / 0.8)',
+            '--tw-prose-body': 'rgb(var(--colors-fg-muted))',
+            '--tw-prose-invert-body': 'rgb(var(--colors-fg-muted))',
+            '--tw-prose-lead': 'rgb(var(--colors-fg-muted) / 0.9)',
+            '--tw-prose-invert-lead': 'rgb(var(--colors-fg-muted) / 0.9)',
             '--tw-prose-links': 'inherit',
             '--tw-prose-invert-links': 'inherit',
             '--tw-prose-code': 'inherit',
@@ -52,20 +51,20 @@ const config = {
             '--tw-prose-invert-pre-bg': 'inherit',
             '--tw-prose-pre-code': 'inherit',
             '--tw-prose-invert-pre-code': 'inherit',
-            '--tw-prose-quotes': 'rgb(var(--colors-fg) / 0.6)',
-            '--tw-prose-invert-quotes': 'rgb(var(--colors-fg) / 0.6)',
+            '--tw-prose-quotes': 'rgb(var(--colors-fg-muted) / 0.75)',
+            '--tw-prose-invert-quotes': 'rgb(var(--colors-fg-muted) / 0.75)',
             '--tw-prose-quote-borders': 'rgb(var(--colors-neutral-6))',
             '--tw-prose-invert-quote-borders': 'rgb(var(--colors-neutral-6))',
             '--tw-prose-th-borders': 'rgb(var(--colors-neutral-7))',
             '--tw-prose-invert-th-borders': 'rgb(var(--colors-neutral-7))',
             '--tw-prose-td-borders': 'rgb(var(--colors-neutral-7))',
             '--tw-prose-invert-td-borders': 'rgb(var(--colors-neutral-7))',
-            '--tw-prose-captions': 'rgb(var(--colors-fg) / 0.6)',
-            '--tw-prose-invert-captions': 'rgb(var(--colors-fg) / 0.6)',
-            '--tw-prose-counters': 'rgb(var(--colors-fg) / 0.4)',
-            '--tw-prose-invert-counters': 'rgb(var(--colors-fg) / 0.4)',
-            '--tw-prose-bullets': 'rgb(var(--colors-fg) / 0.2)',
-            '--tw-prose-invert-bullets': 'rgb(var(--colors-fg) / 0.2)',
+            '--tw-prose-captions': 'rgb(var(--colors-fg-muted) / 0.75)',
+            '--tw-prose-invert-captions': 'rgb(var(--colors-fg-muted) / 0.75)',
+            '--tw-prose-counters': 'rgb(var(--colors-fg-muted) / 0.5)',
+            '--tw-prose-invert-counters': 'rgb(var(--colors-fg-muted) / 0.5)',
+            '--tw-prose-bullets': 'rgb(var(--colors-fg-muted) / 0.325)',
+            '--tw-prose-invert-bullets': 'rgb(var(--colors-fg-muted) / 0.325)',
             '--tw-prose-hr': 'rgb(var(--colors-neutral-6))',
             '--tw-prose-invert-hr': 'rgb(var(--colors-neutral-6))',
             '--tw-prose-bold': 'inherit',
@@ -75,10 +74,14 @@ const config = {
             margin: 0,
             padding: 0,
             fontSize: '1rem',
-            lineHeight: '1.55rem',
-            fontWeight: '350',
+            lineHeight: '1.625rem',
+            fontWeight: '400',
 
-            '*': {
+            strong: {
+              color: 'rgb(var(--colors-fg))',
+              fontWeight: 600,
+            },
+            '*:not(strong)': {
               fontWeight: 'inherit',
             },
             p: {
@@ -86,11 +89,6 @@ const config = {
             },
             "[role='alert'] > div > p": {
               margin: 0,
-            },
-
-            strong: {
-              color: 'rgb(var(--colors-fg))',
-              fontWeight: '550',
             },
 
             'h1, h2, h3, h4, h5, h6': {
@@ -159,7 +157,7 @@ const config = {
               backgroundColor: 'rgb(var(--colors-code-bg))',
               padding: '0.25rem 0.5rem',
               borderRadius: '0.25rem',
-              fontSize: 'inherit',
+              fontSize: '0.875rem',
               lineHeight: 'inherit',
               fontWeight: 400,
             },
@@ -181,7 +179,7 @@ const config = {
                 borderRadius: 0,
                 paddingLeft: 0,
                 paddingRight: 0,
-                fontSize: '0.975rem',
+                fontSize: '0.875rem',
                 lineHeight: '1.5rem',
                 fontWeight: 400,
 
@@ -190,14 +188,12 @@ const config = {
                   paddingRight: '1rem',
                   borderLeftWidth: '2px',
                   borderColor: 'transparent',
-                  lineHeight: '1.6rem',
                 },
                 '[data-line-highlighted]': {
                   backgroundColor: 'rgb(var(--colors-info-5) / 0.4)',
                   paddingLeft: '0.875rem',
                   paddingRight: '1rem',
                   borderColor: 'rgb(var(--colors-info-8))',
-                  lineHeight: '1.6rem',
                 },
               },
 

@@ -47,6 +47,7 @@ import {
   FormMessage,
   FormProvider,
 } from '@/components/lib/form'
+import { H2 } from '@/components/lib/heading'
 import { Input } from '@/components/lib/input'
 import { Link } from '@/components/lib/link'
 import { RadioGroup, RadioGroupItem } from '@/components/lib/radio-group'
@@ -54,13 +55,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Spinner } from '@/components/lib/spinner'
 import { useToastContext } from '@/components/lib/toast'
 
-export function DashboardCreatePageContent() {
+export default function DashboardCreatePageContent() {
   const superstreamClient = useSuperstreamClient()
 
   return superstreamClient ? (
     <CreateStreamForm superstreamClient={superstreamClient} />
   ) : (
-    <div className="flex w-full flex-col items-center justify-center">
+    <div className="mt-10 flex w-full flex-col items-center justify-center">
       <Spinner />
     </div>
   )
@@ -395,7 +396,7 @@ function CreateStreamForm({ superstreamClient }: CreateStreamFormProps) {
     return (
       <div className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center">
         <h3 className="text-xl font-semibold">No tokens found</h3>
-        <div className="mt-1 text-center text-base text-fg/60">
+        <div className="mt-1 text-center text-base text-fg-subtle">
           <p>{`There were no SPL tokens found on ${getClusterDisplayName(cluster)} for your ${
             wallet ? `${wallet.name} ` : ''
           }wallet${wallet ? ` (${shortenPublicKey(wallet.publicKey)})` : ''}`}</p>
@@ -586,7 +587,7 @@ function CreateStreamFormInternal({ superstreamClient, form }: CreateStreamFormI
                 </Link>
               </FormDescription>
               <FormControl>
-                <RadioGroup {...field} onValueChange={setType} className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <RadioGroup {...field} onValueChange={setType} className="mt-1 grid grid-cols-1 gap-4 md:grid-cols-2">
                   <FormItem>
                     <FormControl>
                       <RadioGroupItem
@@ -597,9 +598,9 @@ function CreateStreamFormInternal({ superstreamClient, form }: CreateStreamFormI
                           isPrepaid ? 'border-2 border-info-9' : 'border',
                         )}
                       >
-                        <FormLabel className="flex cursor-pointer flex-col items-start gap-1 text-left font-semilight">
-                          <span className="font-normal">Prepaid</span>
-                          <span className="text-sm text-fg/60">
+                        <FormLabel className="flex cursor-pointer flex-col items-start gap-1 text-left">
+                          <span className="font-extramedium">Prepaid</span>
+                          <span className="text-[0.9375rem]/[1.25rem] font-normal text-fg-subtle">
                             Pay total amount upfront and get refunded on stream cancellation
                           </span>
                         </FormLabel>
@@ -622,9 +623,9 @@ function CreateStreamFormInternal({ superstreamClient, form }: CreateStreamFormI
                           !isPrepaid ? 'border-2 border-info-9' : 'border',
                         )}
                       >
-                        <FormLabel className="flex cursor-pointer flex-col items-start gap-1 text-left font-semilight">
-                          <span className="font-normal">Unbounded</span>
-                          <span className="text-sm text-fg/60">
+                        <FormLabel className="flex cursor-pointer flex-col items-start gap-1 text-left">
+                          <span className="font-extramedium">Unbounded</span>
+                          <span className="text-[0.9375rem]/[1.25rem] font-normal text-fg-subtle">
                             Pay a small deposit amount upfront and keep topping up the stream to keep it running
                           </span>
                         </FormLabel>
@@ -982,10 +983,10 @@ function CreateStreamFormSection({ title, description, children }: CreateStreamF
     <div className="rounded-xl bg-bg p-4 text-fg shadow-sm ring-1 ring-neutral-6/60 sm:px-6 sm:py-4">
       <div className="lg:grid lg:grid-cols-3 lg:gap-6">
         <div className="lg:col-span-1">
-          <h3 className="text-base font-medium leading-6">{title}</h3>
-          {description && <p className="text-sm text-fg/60">{description}</p>}
+          <H2 className="text-xl leading-7">{title}</H2>
+          {description && <p className="text-sm text-fg-subtle">{description}</p>}
         </div>
-        <div className="mt-4 lg:col-span-2 lg:mt-0">
+        <div className="mt-6 lg:col-span-2 lg:mt-0">
           <div className="my-0.5 grid grid-cols-6 gap-x-4 gap-y-5">{children}</div>
         </div>
       </div>

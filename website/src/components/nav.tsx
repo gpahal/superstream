@@ -43,9 +43,9 @@ export function Nav({
           <Link href={logoHref || '/'} className="flex h-6 items-center gap-2">
             <Logo className="h-6 w-6" />
             {logoSubtitle && (
-              <span className="inline-block space-x-[0.1rem] font-semibold">
+              <span className="inline-block space-x-[0.175rem] font-semibold">
                 <span>Superstream</span>
-                <span className="text-fg/30">/</span>
+                <span className="text-neutral-8">/</span>
                 <span>{logoSubtitle}</span>
               </span>
             )}
@@ -118,7 +118,7 @@ export function NavListHorizontalLinkItems({
 export function getActiveNavListHorizontalItemClassName({ isActive }: Pick<ActiveLinkState, 'isActive'>) {
   return cn(
     'flex cursor-pointer items-center gap-1 text-[0.9375rem]/[1.25rem] font-normal',
-    isActive ? 'opacity-100' : 'opacity-60 hover:opacity-90',
+    isActive ? 'opacity-100' : 'opacity-75 hover:opacity-100',
   )
 }
 
@@ -137,7 +137,7 @@ export function NavTocVertical({ className, ...props }: NavTocVerticalProps) {
   return (
     <div className={cn('w-full overflow-y-auto bg-bg', className)}>
       <nav className="w-full">
-        <ul className="mt-0.5 w-full space-y-[1.75rem]" {...props} />
+        <ul className="mt-0.5 w-full space-y-8" {...props} />
       </nav>
     </div>
   )
@@ -158,14 +158,14 @@ export function NavTocVerticalItems<T>({ toc, getItemKey, renderLabel, renderIte
         return (
           <li key={getItemKey(entry.item)} className="w-full">
             {hasChildren ? (
-              <H6 className="block w-full px-4 pb-[0.3rem] text-base font-medium text-fg md:text-sm">
+              <H6 className="mb-1 block w-full px-4 text-base/[1.25rem] font-semibold text-fg md:mb-1.5 md:text-[0.9375rem]/[0.9375rem]">
                 {renderLabel(entry.item)}
               </H6>
             ) : (
               renderItem(entry.item)
             )}
             {entry.children && entry.children.length > 0 && (
-              <ul className="w-full space-y-[0.05rem]">
+              <ul className="w-full">
                 {entry.children.map(({ item }) => (
                   <li key={getItemKey(item)} className="w-full">
                     {renderItem(item)}
@@ -199,7 +199,9 @@ export function NavTocVerticalLinkItems({ linkItems, label, className, ...props 
           {...props}
         >
           {link.label}
-          {link.isExternal && <ExternalLinkIcon className="ml-2 h-[1.05rem] w-[1.05rem] shrink-0 text-fg/40" />}
+          {link.isExternal && (
+            <ExternalLinkIcon className="ml-2 h-[1.05rem] w-[1.05rem] shrink-0 text-fg-subtle/80 md:text-fg-subtle/60" />
+          )}
         </Link>
       )}
     />
@@ -208,7 +210,7 @@ export function NavTocVerticalLinkItems({ linkItems, label, className, ...props 
 
 export function getActiveNavTocVerticalItemClassName({ isActive }: Pick<ActiveLinkState, 'isActive'>) {
   return cn(
-    'flex cursor-pointer items-center justify-between gap-2 rounded px-4 py-1 text-base font-subtlelight md:py-[0.175rem] md:text-sm',
-    isActive ? 'bg-neutral-4 text-fg/80' : 'hover:bg-neutral-4 text-fg/60',
+    'flex cursor-pointer items-center justify-between gap-2 rounded-none px-4 py-1.5 text-base/[1.25rem] text-fg md:py-1 md:rounded md:text-[0.9375rem]/[1.25rem]',
+    isActive ? 'bg-info-3 text-info-11 font-semibold' : 'hocus:bg-neutral-5 hocus:text-fg md:text-fg-subtle',
   )
 }

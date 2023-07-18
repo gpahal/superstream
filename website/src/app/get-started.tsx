@@ -42,19 +42,19 @@ function GetStartedDialog() {
         <Body>
           <div className="flex w-full flex-col divide-y divide-neutral-6 lg:flex-row lg:items-stretch lg:divide-x lg:divide-y-0">
             <GetStartedSection
-              title="Manage and create new payment streams"
-              description="Manage all your real-time payment streams in one place and create new ones in less than 2 mins"
-              linkProps={{
-                href: '/dashboard',
-                children: 'Go to dashboard',
-              }}
-            />
-            <GetStartedSection
               title="Build real-time finance apps"
               description="Build apps that stream money in real-time using the Superstream protocol"
               linkProps={{
                 href: '/docs',
                 children: 'View docs',
+              }}
+            />
+            <GetStartedSection
+              title="Manage and create new payment streams"
+              description="Manage all your real-time payment streams in one place and create new ones in less than 2 mins"
+              linkProps={{
+                href: '/dashboard',
+                children: 'Go to dashboard',
               }}
             />
           </div>
@@ -75,7 +75,7 @@ function GetStartedSection({ title, description, linkProps: { className, ...link
     <div className="flex w-full flex-col items-center justify-between px-4 py-8 md:px-6">
       <div className="flex flex-col items-center">
         <H3 className="text-center">{title}</H3>
-        <p className="mx-auto mt-2 text-center text-fg/75">{description}</p>
+        <p className="mx-auto mt-2 text-center text-fg-subtle">{description}</p>
       </div>
       <Link className={cn(buttonStyles({ variant: 'primary' }), 'mt-4 w-44 lg:mt-8', className)} {...linkProps} />
     </div>

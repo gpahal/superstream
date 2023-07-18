@@ -140,7 +140,7 @@ function WalletAdapterListItem({ adapter, isInstalled }: WalletAdapterListItemPr
             </span>
             {adapter.name}
           </span>
-          {isInstalled && <span className="text-fg/60">Detected</span>}
+          {isInstalled && <span className="text-fg-subtle/80">Detected</span>}
         </span>
       </Button>
     </li>

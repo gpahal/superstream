@@ -20,7 +20,7 @@ export function SearchHit({ hit }: SearchHitProps) {
 
       const end = start + position.length
       highlightedText +=
-        text.slice(currentIndex, start) + '<span class="text-info-9">' + text.slice(start, end) + '</span>'
+        text.slice(currentIndex, start) + '<span class="text-info-10">' + text.slice(start, end) + '</span>'
       currentIndex = end
     })
 

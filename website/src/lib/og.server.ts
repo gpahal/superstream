@@ -5,11 +5,11 @@ export const logoSvgDataUrl =
 
 export type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
-const lexendFontFiles = new Map<FontWeight, URL>([
-  [300, new URL('../../public/fonts/lexend/Lexend-Light.ttf', import.meta.url)],
-  [400, new URL('../../public/fonts/lexend/Lexend-Regular.ttf', import.meta.url)],
-  [500, new URL('../../public/fonts/lexend/Lexend-Medium.ttf', import.meta.url)],
-  [600, new URL('../../public/fonts/lexend/Lexend-SemiBold.ttf', import.meta.url)],
+const figtreeFontFiles = new Map<FontWeight, URL>([
+  [400, new URL('../../public/fonts/figtree/Figtree-Regular.ttf', import.meta.url)],
+  [500, new URL('../../public/fonts/figtree/Figtree-Medium.ttf', import.meta.url)],
+  [600, new URL('../../public/fonts/figtree/Figtree-SemiBold.ttf', import.meta.url)],
+  [700, new URL('../../public/fonts/figtree/Figtree-Bold.ttf', import.meta.url)],
 ])
 
 export type FontOptions = {
@@ -32,11 +32,11 @@ export async function loadOgFonts(): Promise<FontOptions[]> {
 
 async function loadOgFontsInternal() {
   const fonts = [] as FontOptions[]
-  for (const [weight, url] of Array.from(lexendFontFiles.entries())) {
+  for (const [weight, url] of Array.from(figtreeFontFiles.entries())) {
     const resp = await fetch(url)
     const data = await resp.arrayBuffer()
     fonts.push({
-      name: 'Lexend',
+      name: 'Figtree',
       style: 'normal',
       weight,
       data,

@@ -63,7 +63,7 @@ const TYPE_FILTER_ID = 'type'
 const STATUS_FILTER_ID = 'status'
 const PAYMENT_STATUS_FILTER_ID = 'payment-status'
 
-export function DashboardPageContent() {
+export default function DashboardPageContent() {
   const { streams } = useStreamsContext()
 
   return streams && streams.length > 0 ? (
@@ -71,7 +71,7 @@ export function DashboardPageContent() {
   ) : (
     <div className="mx-auto my-8 flex w-full max-w-4xl flex-col items-center">
       <h3 className="text-2xl font-semibold">No streams</h3>
-      <p className="mt-1 text-center text-lg text-fg/60">Get started by creating a new stream</p>
+      <p className="mt-1 text-center text-lg text-fg-subtle">Get started by creating a new stream</p>
       <div className="mt-6">
         <Link variant="unstyled" href="/dashboard/create" className={buttonStyles({ variant: 'primary', size: 'lg' })}>
           Create stream
@@ -386,14 +386,14 @@ function StreamFilterOrSortPopover({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="group font-subtlelight">
+        <Button variant="outline" size="sm" className="group font-normal">
           {`${label}${
             shouldDisplayActiveOptions && activeOptions.length > 0
               ? `: ${activeOptions[0]!.label}${activeOptions.length > 1 ? ` and ${activeOptions.length - 1} more` : ''}`
               : ''
           }`}
           {!shouldDisplayActiveOptions && activeOptions.length > 0 ? (
-            <span className="ml-1 rounded bg-bg-emphasis px-1.5 py-0.5 text-xs font-medium tabular-nums text-fg/60 group-hover:bg-bg-emphasis/80">
+            <span className="ml-1 rounded bg-neutral-6/75 px-1.5 py-0.5 text-xs font-semimedium tabular-nums text-fg">
               {activeOptions.length}
             </span>
           ) : null}
@@ -412,7 +412,7 @@ function StreamFilterOrSortPopover({
             >
               {option.label}
               {shouldNumberOptions && activeOptions.length > 1 && valuesIdx >= 0 ? (
-                <span className="ml-0.5 rounded bg-bg-emphasis px-1.5 py-0.5 text-xs font-medium tabular-nums text-fg/60 group-hover:bg-bg-emphasis/80">
+                <span className="ml-auto rounded bg-bg-emphasis px-1.5 py-0.5 text-sm font-medium tabular-nums text-fg-subtle">
                   {valuesIdx + 1}
                 </span>
               ) : null}
@@ -453,8 +453,8 @@ function StreamFilters({ filterCategories, sortCategory }: StreamsFiltersProps) 
   })
 
   return (
-    <div className="-mx-6 mb-3 space-y-2 md:mx-0">
-      <div className="flex flex-row items-center justify-between">
+    <div className="-mx-4 mb-3 space-y-1.5 md:mx-0">
+      <div className="mb-1 flex flex-row flex-wrap items-start justify-between gap-2">
         <div className="mx-1 md:mx-0">
           <StreamFilterOrSortPopover
             id="sort"
@@ -467,7 +467,7 @@ function StreamFilters({ filterCategories, sortCategory }: StreamsFiltersProps) 
         </div>
 
         <div className="mx-1 md:mx-0">
-          <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-row flex-wrap items-center gap-2">
             {filterCategories.map((filterCategory) => (
               <StreamFilterOrSortPopover key={filterCategory.label} {...filterCategory} />
             ))}
@@ -475,7 +475,7 @@ function StreamFilters({ filterCategories, sortCategory }: StreamsFiltersProps) 
         </div>
       </div>
       {activeFilters.length > 0 && (
-        <div className="flex flex-row flex-wrap items-center text-xs md:-mx-1">
+        <div className="flex flex-row flex-wrap items-center text-sm md:-mx-1">
           {activeFilters.map((activeFilter) => (
             <span
               key={`active-filter-${activeFilter.categoryId}-${activeFilter.value}`}
@@ -489,7 +489,7 @@ function StreamFilters({ filterCategories, sortCategory }: StreamsFiltersProps) 
                 aria-label={`Remove filter for ${activeFilter.categoryLabel}: ${activeFilter.label}`}
                 variant="ghost"
                 shape="square"
-                className="ml-1 h-5 w-5 shrink-0 rounded-full text-fg/60 group-hover:text-fg/80"
+                className="ml-1 h-5 w-5 shrink-0 rounded-full text-fg-subtle group-hover:text-fg"
                 onClick={activeFilter.onRemove}
               >
                 <XIcon className="h-3 w-3" />
@@ -597,7 +597,7 @@ function StreamsTable({ streams, filter, sort }: StreamsTableProps) {
                 <span className="md:hidden">About</span>
               </TableHead>
               <TableHead className="hidden md:table-cell md:w-[15%]">To/From</TableHead>
-              <TableHead className="w-[65%] md:w-[20%]">
+              <TableHead className="hidden md:table-cell md:w-[20%]">
                 <span className="hidden md:table-cell">Weekly value</span>
                 <span className="md:hidden">Value</span>
               </TableHead>
@@ -617,7 +617,7 @@ function StreamsTable({ streams, filter, sort }: StreamsTableProps) {
           </TableBody>
         </Table>
       </div>
-      {filteredStreams.length === 0 && <p className="mt-6 text-base text-fg/60">No streams found</p>}
+      {filteredStreams.length === 0 && <p className="mt-6 text-base text-fg-subtle">No streams found</p>}
 
       <StreamDialog
         at={at}
@@ -660,7 +660,7 @@ function StreamTableRow({ tokens, at, stream, onClick }: StreamsTableRowProps) {
 
   return (
     <TableRow
-      className="cursor-pointer bg-bg text-sm font-subtlelight text-fg hover:bg-bg-emphasis"
+      className="cursor-pointer bg-bg font-subtlelight text-fg hover:bg-bg-emphasis"
       onClick={() => onClick(stream)}
     >
       <TableCell className="hidden md:table-cell">
@@ -676,10 +676,10 @@ function StreamTableRow({ tokens, at, stream, onClick }: StreamsTableRowProps) {
       <TableCell className="max-w-[10rem] sm:max-w-[12rem] md:max-w-[15rem]">
         <span className="inline-flex w-full flex-col gap-1">
           <span className="flex items-center justify-between gap-1.5">
-            <span className="line-clamp-1 text-base font-medium sm:font-subtlelight md:text-sm">{stream.name}</span>
-            <span className="flex items-center gap-1.5 sm:hidden">
+            <span className="line-clamp-1 text-lg font-semibold md:text-base md:font-normal">{stream.name}</span>
+            <span className="flex items-center gap-1.5 md:hidden">
               {statusBadge}
-              {!!paymentStatusBadge && <span className="sm:hidden">{paymentStatusBadge}</span>}
+              {!!paymentStatusBadge && <span>{paymentStatusBadge}</span>}
             </span>
           </span>
           <span className="flex items-center gap-1.5 md:hidden">
@@ -690,28 +690,20 @@ function StreamTableRow({ tokens, at, stream, onClick }: StreamsTableRowProps) {
               <ArrowUpCircleIcon className="h-4 w-4 rotate-45 text-primary-9" />
             )}
           </span>
-          <span className="hidden sm:inline-block md:hidden">{statusBadge}</span>
-          <span className="line-clamp-1 sm:hidden">{`Weekly value: ${formatTokenAmount(amountPerWeek, token)}`}</span>
-          <span className="line-clamp-1 sm:hidden md:hidden">{`Withdrawable: ${formatTokenAmount(
+          <span className="line-clamp-1 md:hidden">{`Weekly value: ${formatTokenAmount(amountPerWeek, token)}`}</span>
+          <span className="line-clamp-1 md:hidden">{`Withdrawable: ${formatTokenAmount(
             amountAvailableToWithdraw,
             token,
           )}`}</span>
         </span>
       </TableCell>
-      <TableCell className="hidden font-mono text-[0.9375rem]/[1.25rem] font-medium tracking-wider md:table-cell">
+      <TableCell className="hidden font-mono text-[0.9375rem]/[1.5rem] tracking-wider md:table-cell">
         <span className="line-clamp-1">{otherAddress}</span>
       </TableCell>
-      <TableCell className="hidden sm:table-cell">
-        <span className="inline-flex flex-col gap-1">
-          <span className="line-clamp-1">
-            <span className="hidden md:table-cell">{formatTokenAmount(amountPerWeek, token)}</span>
-            <span className="md:hidden">{`Weekly: ${formatTokenAmount(amountPerWeek, token)}`}</span>
-          </span>
-          <span className="line-clamp-1 md:hidden">{`Withdrawable: ${formatTokenAmount(
-            amountAvailableToWithdraw,
-            token,
-          )}`}</span>
-          {!!paymentStatusBadge && <span className="md:hidden">{paymentStatusBadge}</span>}
+      <TableCell className="hidden md:table-cell">
+        <span className="line-clamp-1">
+          <span className="hidden md:table-cell">{formatTokenAmount(amountPerWeek, token)}</span>
+          <span className="md:hidden">{`Weekly: ${formatTokenAmount(amountPerWeek, token)}`}</span>
         </span>
       </TableCell>
       <TableCell className="hidden md:table-cell">
@@ -901,11 +893,11 @@ function StreamDialog({ at, stream, isOpen, setIsOpen }: StreamDialogProps) {
   const sections = [
     <dl key="basic" className="grid grid-cols-1 gap-x-2 gap-y-3 sm:grid-cols-2">
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Type</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Type</dt>
         <dd className="mt-0.5 text-sm">{stream?.isPrepaid ? 'Prepaid' : 'Topup when needed'}</dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Direction</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Direction</dt>
         <dd className="mt-0.5 flex flex-row items-center space-x-1.5 text-left text-sm">
           <span>{isSender ? 'Outgoing' : 'Incoming'}</span>
           {isSender ? (
@@ -916,51 +908,51 @@ function StreamDialog({ at, stream, isOpen, setIsOpen }: StreamDialogProps) {
         </dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">{isSender ? 'To' : 'From'}</dt>
+        <dt className="text-sm font-medium text-fg-subtle">{isSender ? 'To' : 'From'}</dt>
         <dd className="mt-0.5 text-sm">{otherAddress}</dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Status</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Status</dt>
         <dd className="mt-0.5 text-sm">{statusBadge}</dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">{hasStarted ? 'Started at' : 'Starts at'}</dt>
+        <dt className="text-sm font-medium text-fg-subtle">{hasStarted ? 'Started at' : 'Starts at'}</dt>
         <dd className="mt-0.5 text-sm">{startsAt}</dd>
       </div>
       {(showEndsAt || showEndedAt) && (
         <div className="sm:col-span-1">
-          <dt className="text-sm font-medium text-fg/60">{showEndsAt ? 'Ends at' : 'Ended at'}</dt>
+          <dt className="text-sm font-medium text-fg-subtle">{showEndsAt ? 'Ends at' : 'Ended at'}</dt>
           <dd className="mt-0.5 text-sm">{endsAt}</dd>
         </div>
       )}
       {showCancelledAt && (
         <div className="sm:col-span-1">
-          <dt className="text-sm font-medium text-fg/60">Cancelled at</dt>
+          <dt className="text-sm font-medium text-fg-subtle">Cancelled at</dt>
           <dd className="mt-0.5 text-sm">{cancelledAt}</dd>
         </div>
       )}
     </dl>,
     <dl key="payment" className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2">
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Token</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Token</dt>
         <dd className="mt-0.5 text-sm">{mint}</dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Payment amount on stream start</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Payment amount on stream start</dt>
         <dd className="mt-0.5 text-sm">{initialAmount}</dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Payment interval</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Payment interval</dt>
         <dd className="mt-0.5 text-sm">{flowInterval}</dd>
       </div>
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Payment amount per interval</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Payment amount per interval</dt>
         <dd className="mt-0.5 text-sm">{flowRate}</dd>
       </div>
     </dl>,
     <dl key="withdraw" className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2">
       <div className="sm:col-span-1">
-        <dt className="text-sm font-medium text-fg/60">Withdrawable amount</dt>
+        <dt className="text-sm font-medium text-fg-subtle">Withdrawable amount</dt>
         <dd className="mt-0.5 text-sm">{formatTokenAmount(amountAvailableToWithdraw, token)}</dd>
       </div>
       {canWithdraw && (
@@ -974,13 +966,13 @@ function StreamDialog({ at, stream, isOpen, setIsOpen }: StreamDialogProps) {
     <dl key="topup">
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2">
         <div className="sm:col-span-1">
-          <dt className="text-sm font-medium text-fg/60">Total topup</dt>
+          <dt className="text-sm font-medium text-fg-subtle">Total topup</dt>
           <dd className="mt-0.5 text-sm">{formatTokenAmount(stream?.totalTopupAmount || BN_ZERO, token)}</dd>
         </div>
         <div className="sm:col-span-1 sm:col-start-1">
-          <dt className="flex flex-row space-x-2 text-sm font-medium text-fg/60">
+          <dt className="flex flex-row space-x-2 text-sm font-medium text-fg-subtle">
             <span>Topup remaining</span>
-            {topupRemainingSecs && <span className="text-fg/60">{`(${topupRemainingSecs})`}</span>}
+            {topupRemainingSecs && <span className="text-fg-subtle">{`(${topupRemainingSecs})`}</span>}
             <span>{paymentStatusBadge}</span>
           </dt>
           <dd className="mt-0.5 text-sm">
@@ -1000,7 +992,7 @@ function StreamDialog({ at, stream, isOpen, setIsOpen }: StreamDialogProps) {
       </div>
       {canTopup && (
         <div className="mt-2 w-full text-sm">
-          <dt className="text-sm font-medium text-fg/60">Topup</dt>
+          <dt className="text-sm font-medium text-fg-subtle">Topup</dt>
           <dd className="mt-1 w-full text-sm">
             <FormProvider {...topupForm}>
               <form onSubmit={handleTopupSubmit} className="flex w-full items-center">

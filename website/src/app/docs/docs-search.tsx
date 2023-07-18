@@ -156,7 +156,7 @@ function DocsSearchButtonCommandDialog({ docsSearchDocuments, docs, ...props }: 
                   className="flex-start"
                 >
                   <SearchHit hit={item} />
-                  {item.item.isExternal ? <ExternalLinkIcon className="ml-auto h-4 w-4 text-fg/50" /> : null}
+                  {item.item.isExternal ? <ExternalLinkIcon className="ml-auto h-4 w-4 text-fg-subtle/80" /> : null}
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -248,7 +248,7 @@ export function DocsSearchButton({ onClick, className, ...props }: DocsSearchBut
       variant="ghost"
       onClick={onClickWrapper}
       className={cn(
-        'relative w-full justify-start bg-neutral-6/50 text-sm text-fg/60 hover:bg-neutral-6/30 sm:pr-12 md:w-44 lg:w-72',
+        'relative w-full justify-start bg-neutral-6/50 text-sm text-fg-subtle hover:bg-neutral-6/30 sm:pr-12 md:w-44 lg:w-72',
         className,
       )}
       {...props}

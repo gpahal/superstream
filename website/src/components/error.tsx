@@ -29,7 +29,7 @@ export function ErrorComponent({
         <div className="flex flex-col items-center md:ml-6 md:items-start">
           <div className="flex flex-col items-center md:items-start md:border-l md:pl-6">
             <H1 className="text-center font-medium md:text-left">{title || getDefaultTitle(statusCode, statusText)}</H1>
-            <p className="mt-1.5 text-center text-fg/60 md:text-left">
+            <p className="mt-1.5 text-center text-fg-subtle md:text-left">
               {description || getDefaultDescription(statusCode)}
             </p>
           </div>

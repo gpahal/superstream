@@ -25,6 +25,16 @@ export const badgeVariants = cva(
 export type BadgeProps = React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof badgeVariants>
 
 export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(({ className, variant, ...props }, ref) => {
-  return <div ref={ref} className={cn(badgeVariants({ variant }), className)} {...props} />
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        badgeVariants({ variant }),
+        'inline-flex items-center rounded-md px-2.5 py-[0.275rem] text-[0.8rem]/[0.8rem] font-medium shadow-sm ring-1 ring-inset',
+        className,
+      )}
+      {...props}
+    />
+  )
 })
 Badge.displayName = 'Badge'

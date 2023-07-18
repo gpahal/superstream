@@ -164,7 +164,7 @@ export const DialogDescription = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   DialogDescriptionProps
 >(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description ref={ref} className={cn('text-sm text-fg/60', className)} {...props} />
+  <DialogPrimitive.Description ref={ref} className={cn('text-sm text-fg-subtle', className)} {...props} />
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 

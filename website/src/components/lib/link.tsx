@@ -128,7 +128,7 @@ const BasicSmoothScollLink = React.forwardRef<React.ElementRef<typeof NextLink>,
       onClick?.(e)
     }
 
-    return <NextLink ref={ref} scroll={false} onClick={onClickWrapper} className="" {...props} />
+    return <NextLink ref={ref} scroll={false} onClick={onClickWrapper} {...props} />
   },
 )
 BasicSmoothScollLink.displayName = 'BasicSmoothScollLink'

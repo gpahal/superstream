@@ -8,7 +8,7 @@ export function getFlattenedContentCollectionItemBySlug<TFrontmatterSchema exten
   collectionMap: ContentCollectionMap<TFrontmatterSchema>,
   slug: string,
 ): FlattenedContentCollectionItem<TFrontmatterSchema> | undefined {
-  const doc = collectionMap.get(slug)
+  const doc = collectionMap.get(decodeURIComponent(slug))
   return doc ? collection[doc.index] : undefined
 }
 

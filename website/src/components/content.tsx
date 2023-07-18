@@ -141,9 +141,9 @@ function ContentCodeBlock({ hideHeader, className, children, ...props }: Content
   return (
     <div className={cn('relative flex flex-col overflow-hidden rounded-md border bg-code-bg', className)} {...props}>
       {!hideHeader && finalName && Icon ? (
-        <div className="flex h-9 w-full flex-row items-center justify-between gap-4 border-b px-4 text-sm font-normal text-fg/75">
+        <div className="flex h-9 w-full flex-row items-center justify-between gap-4 border-b px-4 text-sm font-normal text-fg">
           <div className="flex items-center gap-2">
-            <Icon className="h-4 w-4 text-fg/60" />
+            <Icon className="h-4 w-4 text-fg-subtle" />
             {finalName}
           </div>
         </div>
@@ -154,7 +154,7 @@ function ContentCodeBlock({ hideHeader, className, children, ...props }: Content
         variant="ghost"
         shape="square"
         className={cn(
-          'absolute right-2.5 h-8 w-8 shrink-0 text-fg/60 hocus-visible:text-fg/100',
+          'absolute right-2.5 h-8 w-8 shrink-0 text-fg-subtle hocus-visible:text-fg',
           finalName && Icon ? 'top-0.5' : 'top-[0.3rem]',
         )}
         onClick={isCopied ? undefined : onClick}
@@ -207,8 +207,8 @@ function ContentCodeBlockGroup({ defaultValue, className, children, ...props }: 
     >
       <TabsList className="px-1">
         {childrenProps.map(({ Icon, label }, i) => (
-          <TabsTrigger key={i} value={String(i)} className="gap-2 font-normal">
-            {!hasCommonIcon && <Icon className="h-4 w-4 text-fg/60" />}
+          <TabsTrigger key={i} value={String(i)} className="gap-2 text-sm font-normal">
+            {!hasCommonIcon && <Icon className="h-3.5 w-3.5 text-fg-subtle" />}
             {label}
           </TabsTrigger>
         ))}

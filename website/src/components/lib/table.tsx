@@ -6,7 +6,11 @@ export type TableProps = React.HTMLAttributes<HTMLTableElement>
 
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(({ className, ...props }, ref) => (
   <div className="w-full overflow-auto">
-    <table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
+    <table
+      ref={ref}
+      className={cn('right-1 w-full caption-bottom overflow-hidden text-base ring-inset ring-neutral-11', className)}
+      {...props}
+    />
   </div>
 ))
 Table.displayName = 'Table'
@@ -14,7 +18,9 @@ Table.displayName = 'Table'
 export type TableHeaderProps = React.HTMLAttributes<HTMLTableSectionElement>
 
 export const TableHeader = React.forwardRef<HTMLTableSectionElement, TableHeaderProps>(
-  ({ className, ...props }, ref) => <thead ref={ref} className={cn('[&_tr]:border-b', className)} {...props} />,
+  ({ className, ...props }, ref) => (
+    <thead ref={ref} className={cn('bg-bg-emphasis [&_tr]:border-b', className)} {...props} />
+  ),
 )
 TableHeader.displayName = 'TableHeader'
 
@@ -29,7 +35,7 @@ export type TableFooterProps = React.HTMLAttributes<HTMLTableSectionElement>
 
 export const TableFooter = React.forwardRef<HTMLTableSectionElement, TableFooterProps>(
   ({ className, ...props }, ref) => (
-    <tfoot ref={ref} className={cn('text-neutral-neutral-1 bg-neutral-12 font-medium', className)} {...props} />
+    <tfoot ref={ref} className={cn('bg-neutral-12 font-medium text-neutral-1', className)} {...props} />
   ),
 )
 TableFooter.displayName = 'TableFooter'
@@ -51,7 +57,7 @@ export const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
   <th
     ref={ref}
     className={cn(
-      'h-10 bg-bg-emphasis px-2 text-left align-middle font-medium text-fg/80 first:pl-4 last:pr-4 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+      'h-10 bg-transparent px-2 text-left align-middle text-[0.9375rem]/[1.25rem] font-medium text-fg-subtle first:pl-4 last:pr-4 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
       className,
     )}
     {...props}
@@ -77,7 +83,7 @@ export type TableCaptionProps = React.HTMLAttributes<HTMLTableCaptionElement>
 
 export const TableCaption = React.forwardRef<HTMLTableCaptionElement, TableCaptionProps>(
   ({ className, ...props }, ref) => (
-    <caption ref={ref} className={cn('mt-4 text-sm text-fg/60', className)} {...props} />
+    <caption ref={ref} className={cn('mt-4 text-sm text-fg-subtle', className)} {...props} />
   ),
 )
 TableCaption.displayName = 'TableCaption'

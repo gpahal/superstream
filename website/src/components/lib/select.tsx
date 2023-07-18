@@ -26,7 +26,7 @@ export const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrim
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(
-        'flex h-9 w-full items-center justify-between rounded-md bg-transparent px-3 py-1 text-sm text-fg shadow-sm ring-1 ring-inset ring-neutral-7 placeholder:text-opacity-40 focus:outline-none focus:ring-2 focus:ring-info-10 disabled:cursor-not-allowed disabled:opacity-50',
+        'flex h-9 w-full items-center justify-between rounded-md bg-transparent px-3 py-1 text-base text-fg shadow-sm ring-1 ring-inset ring-neutral-7 placeholder:text-opacity-40 focus:outline-none focus:ring-2 focus:ring-info-10 disabled:cursor-not-allowed disabled:opacity-50',
         className,
       )}
       {...props}
@@ -75,7 +75,7 @@ export type SelectLabelProps = SelectPrimitive.SelectLabelProps
 
 export const SelectLabel = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Label>, SelectLabelProps>(
   ({ className, ...props }, ref) => (
-    <SelectPrimitive.Label ref={ref} className={cn('px-2 py-1.5 text-sm font-semibold', className)} {...props} />
+    <SelectPrimitive.Label ref={ref} className={cn('px-2 py-1.5 text-base font-semibold', className)} {...props} />
   ),
 )
 SelectLabel.displayName = SelectPrimitive.Label.displayName
@@ -87,7 +87,7 @@ export const SelectItem = React.forwardRef<React.ElementRef<typeof SelectPrimiti
     <SelectPrimitive.Item
       ref={ref}
       className={cn(
-        'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 hocus:bg-info-4',
+        'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-base outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 hocus:bg-info-4',
         className,
       )}
       {...props}

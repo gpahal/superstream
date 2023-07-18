@@ -40,7 +40,7 @@ export function ThemeButton() {
             {item.label}
             {item.theme === theme && (
               <DropdownMenuItemIconWrapper className="ml-auto">
-                <CheckIcon className="text-fg/50" />
+                <CheckIcon className="text-fg-subtle/80" />
               </DropdownMenuItemIconWrapper>
             )}
           </DropdownMenuItem>
@@ -70,7 +70,7 @@ export function ThemeNavTocVericalItems({ onThemeItemClick }: ThemeNavTocVerical
       renderItem={(item) => (
         <Button
           variant="ghost"
-          className={cn(getActiveNavTocVerticalItemClassName({ isActive: false }), 'h-auto w-full py-0')}
+          className={cn(getActiveNavTocVerticalItemClassName({ isActive: false }), 'h-auto w-full py-0 font-normal')}
           onClick={() => {
             setTheme(item.theme)
             onThemeItemClick?.(item)
@@ -83,7 +83,9 @@ export function ThemeNavTocVericalItems({ onThemeItemClick }: ThemeNavTocVerical
             )}
           >
             {item.label}
-            {item.theme === theme && <CheckIcon className="h-[1.05rem] w-[1.05rem] text-fg/40" />}
+            {item.theme === theme && (
+              <CheckIcon className="h-[1.05rem] w-[1.05rem] text-fg-subtle/80 md:text-fg-subtle/60" />
+            )}
           </span>
         </Button>
       )}

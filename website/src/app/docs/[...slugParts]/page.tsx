@@ -17,6 +17,8 @@ import { Content } from '@/components/content'
 
 import { DocOnThisPage } from './doc-on-this-page'
 
+export const runtime = 'edge'
+
 type DocPageProps = { params: { slugParts: string[] } }
 
 export function generateMetadata({ params: { slugParts } }: DocPageProps): Metadata {
@@ -29,7 +31,7 @@ export function generateMetadata({ params: { slugParts } }: DocPageProps): Metad
     pathname: `/docs/${doc.path}`,
     title: `${doc.data.frontmatter.title} - Superstream Documentation`,
     description: doc.data.frontmatter.description,
-    imagePath: `/docs/${doc.path}?v=2`,
+    imagePath: `/docs/${doc.path}?v=5`,
   })
 }
 
@@ -53,9 +55,9 @@ export default function DocPage({ params: { slugParts } }: DocPageProps) {
     <>
       <div className="flex min-w-0 flex-1 pt-6 lg:pt-8">
         <article className="mx-auto w-full px-6 pb-4 md:pl-10 lg:max-w-4xl lg:pl-12 xl:px-[3.25rem]">
-          <div className="mb-6 flex flex-col gap-3">
+          <div className="mb-6 flex flex-col gap-2">
             {parent ? (
-              <div className="flex flex-row items-center gap-1 text-fg/60 md:hidden">
+              <div className="flex flex-row items-center gap-1 text-sm text-fg-subtle md:hidden">
                 <Link variant="hover-highlighted" href={`/docs/${parent.path}`} className="hover:text-fg">
                   {parent.data.frontmatter.label}
                 </Link>
@@ -66,7 +68,7 @@ export default function DocPage({ params: { slugParts } }: DocPageProps) {
             <header className="flex flex-col gap-[0.2rem]">
               <H1>{doc.data.frontmatter.title}</H1>
               {children && children.length > 0 ? (
-                <div className="text-lg leading-[1.6rem] text-fg/60">{doc.data.frontmatter.description}</div>
+                <div className="text-lg leading-[1.6rem] text-fg-subtle">{doc.data.frontmatter.description}</div>
               ) : null}
             </header>
           </div>
@@ -83,7 +85,7 @@ export default function DocPage({ params: { slugParts } }: DocPageProps) {
                       className="flex flex-col rounded-md p-4 shadow-sm ring-1 ring-inset ring-neutral-6 hover:bg-bg-emphasis"
                     >
                       <span className="-mt-1 text-lg font-semibold">{childDoc.data.frontmatter.label}</span>
-                      <span className="text-base text-fg/60">{childDoc.data.frontmatter.description}</span>
+                      <span className="text-base text-fg-subtle">{childDoc.data.frontmatter.description}</span>
                     </Link>
                   ))}
                 </div>
@@ -99,7 +101,7 @@ export default function DocPage({ params: { slugParts } }: DocPageProps) {
                         <Link
                           variant="hover-highlighted"
                           href={`/docs/${prev.path}`}
-                          className="flex items-center gap-1.5 text-base font-medium text-fg/60 hover:text-fg"
+                          className="flex items-center gap-1.5 text-base font-medium text-fg-subtle hover:text-fg"
                         >
                           <MoveLeftIcon className="h-4 w-4" />
                           {prev.data.frontmatter.label}
@@ -115,7 +117,7 @@ export default function DocPage({ params: { slugParts } }: DocPageProps) {
                         <Link
                           variant="hover-highlighted"
                           href={`/docs/${next.path}`}
-                          className="flex items-center gap-1.5 text-base font-medium text-fg/60 hover:text-fg"
+                          className="flex items-center gap-1.5 text-base font-medium text-fg-subtle hover:text-fg"
                         >
                           {next.data.frontmatter.label}
                           <MoveRightIcon className="h-4 w-4" />

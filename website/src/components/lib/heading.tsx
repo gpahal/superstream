@@ -15,7 +15,7 @@ export const H1 = React.forwardRef<HTMLHeadingElement, HeadingProps>(({ classNam
 ))
 H1.displayName = 'H1'
 
-export const h2Styles = cva('text-2xl font-semibold tracking-[-0.015em]')
+export const h2Styles = cva('text-2xl font-semibold tracking-[-0.0125em]')
 
 export const H2 = React.forwardRef<HTMLHeadingElement, HeadingProps>(({ className, children, ...props }, ref) => (
   <h2 ref={ref} className={cn(h2Styles(), className)} {...props}>

@@ -17,7 +17,7 @@ export const metadata: Metadata = generatePageMetadata({
   pathname: '/docs',
   title: 'Superstream Documentation',
   description: 'Build apps that stream money in real-time using the Superstream protocol',
-  imagePath: '/docs?v=2',
+  imagePath: '/docs?v=5',
 })
 
 const NAV_LINK_ITEMS = [HOMEPAGE_NAV_LINK_ITEM, DASHBOARD_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM]

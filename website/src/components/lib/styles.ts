@@ -1,12 +1,12 @@
 import { cva } from 'class-variance-authority'
 
-export const linkStyles = cva('underline-offset-4 rounded-md decoration-neutral-7 hocus-visible:outline-none', {
+export const linkStyles = cva('underline-offset-[3px] rounded-md decoration-neutral-7 hocus-visible:outline-none', {
   variants: {
     variant: {
       unstyled: 'no-underline focus-visible:underline',
       highlighted: 'underline hocus-visible:decoration-neutral-8 [&:is(.active)]:decoration-neutral-8',
       'hover-highlighted': 'no-underline hocus-visible:underline [&:is(.active)]:underline',
-      link: 'text-link-11 no-underline hocus-visible:underline',
+      link: 'text-link-10 no-underline hocus-visible:underline',
     },
   },
   defaultVariants: {
@@ -15,7 +15,7 @@ export const linkStyles = cva('underline-offset-4 rounded-md decoration-neutral-
 })
 
 export const buttonStyles = cva(
-  'relative inline-flex items-center justify-center font-semimedium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-info-10 focus-visible:ring-offset-1',
+  'relative inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-info-10 focus-visible:ring-offset-1',
   {
     variants: {
       variant: {
