@@ -80,6 +80,18 @@ async function generateCollectionDbInner<TFrontmatterSchema extends FrontmatterS
             },
           },
         },
+        'code-block': {
+          render: 'CodeBlock',
+          attributes: {
+            'data-content': { type: String },
+            'data-name': { type: String },
+            'data-language': { type: String },
+            'data-variant': { type: String },
+          },
+        },
+        'code-block-group': {
+          render: 'CodeBlockGroup',
+        },
         alert: {
           render: 'Alert',
           attributes: {
@@ -98,41 +110,6 @@ async function generateCollectionDbInner<TFrontmatterSchema extends FrontmatterS
         },
         ...(transformConfig?.tags || {}),
       },
-      ...(transformConfig
-        ? {
-            ...transformConfig,
-            tags: {
-              link: {
-                ...linkSchema,
-                attributes: {
-                  ...(linkSchema.attributes || {}),
-                  variant: {
-                    type: String,
-                    default: 'highlighted',
-                    matches: ['unstyled', 'highlighted', 'hover-highlighted', 'link'],
-                  },
-                },
-              },
-              alert: {
-                render: 'Alert',
-                attributes: {
-                  variant: {
-                    type: String,
-                    default: 'default',
-                    matches: ['default', 'info', 'warn', 'error'],
-                  },
-                },
-              },
-              badges: {
-                render: 'Badges',
-              },
-              badge: {
-                render: 'Badge',
-              },
-              ...transformConfig.tags,
-            },
-          }
-        : {}),
       image: { transformImageSrcAndGetSize },
       codeAndFence: {
         theme: {

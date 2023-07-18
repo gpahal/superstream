@@ -12,6 +12,7 @@ const config = {
       mono: ['var(--font-mono)', ...fontFamily.mono],
     },
     fontWeight: {
+      inherit: 'inherit',
       thin: '100',
       extralight: '200',
       light: '300',
@@ -155,7 +156,7 @@ const config = {
             },
 
             code: {
-              backgroundColor: 'rgb(var(--colors-bg-emphasis))',
+              backgroundColor: 'rgb(var(--colors-code-bg))',
               padding: '0.25rem 0.5rem',
               borderRadius: '0.25rem',
               fontSize: 'inherit',
@@ -170,8 +171,10 @@ const config = {
             },
 
             pre: {
+              backgroundColor: 'rgb(var(--colors-code-bg))',
               margin: 0,
-              padding: '0.75rem 0',
+              padding: '0.5rem 0 0.55rem 0',
+              borderRadius: 0,
 
               '> code': {
                 backgroundColor: 'transparent',

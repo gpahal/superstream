@@ -14,4 +14,7 @@ module.exports = {
   warn: radixColorsWithoutName(yellow, black),
   error: radixColorsWithoutName(red, white),
   link: radixColorsWithoutName(blue),
+  code: {
+    bg: sage.sage2,
+  },
 }
