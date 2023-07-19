@@ -55,7 +55,7 @@
   }
 
   html {
-    @apply min-w-[28rem] antialiased;
+    @apply min-w-[24rem] antialiased;
   }
 
   body {

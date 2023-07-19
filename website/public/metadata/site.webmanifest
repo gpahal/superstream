@@ -1,6 +1,7 @@
 {
   "name": "Superstream",
   "short_name": "Superstream",
+  "start_url": "https://superstream.finance",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
