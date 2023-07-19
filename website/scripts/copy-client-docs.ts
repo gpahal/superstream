@@ -1,7 +1,8 @@
 import path from 'node:path'
 
-import { getErrorMessage } from '@gpahal/std/error'
 import { copy, remove } from 'fs-extra'
+
+import { getErrorMessage } from '@gpahal/std/error'
 
 const CLIENT_DIR_PATH = path.join(__dirname, '..', '..', 'client')
 const CLIENT_DOCS_DIR_PATH = path.join(CLIENT_DIR_PATH, 'docs')

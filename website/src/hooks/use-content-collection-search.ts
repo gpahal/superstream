@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { FrontmatterSchema } from '@gpahal/markdoc'
 import { create, insertMultiple, SearchParams } from '@orama/orama'
 import {
   afterInsert as highlightAfterInsert,
@@ -9,6 +8,8 @@ import {
   searchWithHighlight,
 } from '@orama/plugin-match-highlight'
 import { z } from 'zod'
+
+import { FrontmatterSchema } from '@gpahal/markdoc'
 
 import { ContentSearchDocument, FlattenedContentCollection } from '@/lib/content'
 

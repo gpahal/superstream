@@ -1,3 +1,5 @@
+import { z } from 'zod'
+
 import { FrontmatterSchema, ParseResultSuccess, TransformConfig } from '@gpahal/markdoc'
 import {
   FileMap,
@@ -7,7 +9,6 @@ import {
   FlattenedFileMapIndex,
   FlattenedFileMapIndexItem,
 } from '@gpahal/std/fs'
-import { z } from 'zod'
 
 import { Toc } from '@/lib/toc'
 

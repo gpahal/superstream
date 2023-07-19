@@ -1,5 +1,6 @@
-import { Logger } from '@gpahal/logger'
 import { Command, OptionValues } from 'commander'
+
+import { Logger } from '@gpahal/logger'
 
 import { getError, getErrorExitCode } from '@/lib/error'
 import { runCommand } from '@/command'

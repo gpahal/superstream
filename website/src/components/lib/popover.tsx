@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { isFunction } from '@gpahal/std/function'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
+
+import { isFunction } from '@gpahal/std/function'
 
 import { cn } from '@/lib/styles'
 

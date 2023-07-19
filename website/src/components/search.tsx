@@ -74,7 +74,6 @@ export function SearchHit({ hit }: SearchHitProps) {
   const highlightDocument = () => {
     const highlightedDocument = { ...hit.document }
 
-    // eslint-disable-next-line @typescript-eslint/no-for-in-array
     for (const property in hit.positions) {
       if (hit.positions[property]) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment

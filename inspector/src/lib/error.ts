@@ -1,5 +1,6 @@
-import { getErrorMessage } from '@gpahal/std/error'
 import ExtendableError from 'ts-error'
+
+import { getErrorMessage } from '@gpahal/std/error'
 
 export class UnknownError extends ExtendableError {
   constructor(error?: unknown) {

@@ -1,6 +1,7 @@
 import { BN } from '@coral-xyz/anchor'
-import { getErrorMessage } from '@gpahal/std/error'
 import { Stream, StreamPagination } from '@superstream/client'
+
+import { getErrorMessage } from '@gpahal/std/error'
 
 import { sleep } from '@/lib/time'
 import Command from '@/command'

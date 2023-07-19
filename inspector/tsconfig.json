@@ -1,5 +1,5 @@
 {
-  "extends": "@internal/tsconfig/base.json",
+  "extends": "@gpahal/tsconfig/base.json",
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,

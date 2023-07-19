@@ -1,6 +1,7 @@
 import { Wallet as NodeWallet } from '@coral-xyz/anchor'
-import { Logger } from '@gpahal/logger'
 import { createSuperstreamClient, SuperstreamClient } from '@superstream/client'
+
+import { Logger } from '@gpahal/logger'
 
 import { clusterToWeb3Cluster } from '@/lib/cluster'
 import { ExitError, getError, getErrorExitCode } from '@/lib/error'
@@ -50,15 +51,9 @@ export default abstract class Command<T extends GlobalOptions> {
     throw new ExitError(message, exitCode)
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  async catch(error: Error): Promise<void> {}
+  async catch(_error: Error): Promise<void> {}
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  async finally(error?: Error, exitCode?: number): Promise<void> {}
+  async finally(_error?: Error, _exitCode?: number): Promise<void> {}
 }
 
 export async function runCommand<T extends GlobalOptions>(command: Command<T>): Promise<void> {

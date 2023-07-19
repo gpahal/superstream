@@ -3,7 +3,6 @@
 import * as React from 'react'
 import { usePathname } from 'next/navigation'
 
-import { trim } from '@gpahal/std/string'
 import {
   CheckCircleIcon,
   CheckIcon,
@@ -12,6 +11,8 @@ import {
   ExternalLinkIcon,
   XCircleIcon,
 } from 'lucide-react'
+
+import { trim } from '@gpahal/std/string'
 
 import {
   DASHBOARD_CREATE_STREAM_NAV_LINK_ITEM,

@@ -2,10 +2,11 @@
 
 import * as React from 'react'
 
-import { isFunction } from '@gpahal/std/function'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { VariantProps } from 'class-variance-authority'
 import { XIcon } from 'lucide-react'
+
+import { isFunction } from '@gpahal/std/function'
 
 import { cn } from '@/lib/styles'
 import { useWindowViewport } from '@/contexts/window-viewport-context'

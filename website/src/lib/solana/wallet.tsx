@@ -1,8 +1,6 @@
 import * as React from 'react'
 
 import { web3 } from '@coral-xyz/anchor'
-import { getErrorMessage } from '@gpahal/std/error'
-import { shorten } from '@gpahal/std/string'
 import {
   Adapter,
   MessageSignerWalletAdapter as MessageSignerWalletAdapterLib,
@@ -16,6 +14,9 @@ import {
   useWallet as useWalletLib,
   WalletProvider as WalletProviderLib,
 } from '@solana/wallet-adapter-react'
+
+import { getErrorMessage } from '@gpahal/std/error'
+import { shorten } from '@gpahal/std/string'
 
 import { useCluster } from '@/lib/solana/cluster'
 import { useToastContext } from '@/components/lib/toast'

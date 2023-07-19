@@ -21,7 +21,6 @@ describe('superstream', () => {
   const provider = AnchorProvider.env()
   setProvider(provider)
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   const program = workspace.Superstream as Program<Superstream>
   const sender = provider.wallet
 

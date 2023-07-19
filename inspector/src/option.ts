@@ -1,6 +1,7 @@
 import { web3 } from '@coral-xyz/anchor'
-import { getErrorMessage } from '@gpahal/std/error'
 import { Command, Option, OptionValues } from 'commander'
+
+import { getErrorMessage } from '@gpahal/std/error'
 
 import { Cluster, DEFAULT_CLUSTER, parseCluster } from '@/lib/cluster'
 import { readKeypair } from '@/lib/keypair'

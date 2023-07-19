@@ -1,7 +1,8 @@
 import * as React from 'react'
 
-import { isFunction } from '@gpahal/std/function'
 import { MenuIcon } from 'lucide-react'
+
+import { isFunction } from '@gpahal/std/function'
 
 import { cn } from '@/lib/styles'
 import { Body } from '@/components/lib/body'

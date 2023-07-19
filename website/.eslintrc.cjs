@@ -1,6 +1,6 @@
 /** @type {import("eslint").Linter.Config} */
 const config = {
-  extends: ['@internal/eslint-config/nextjs'],
+  extends: ['@gpahal/eslint-config/nextjs-app'],
 }
 
 module.exports = config

@@ -1,4 +1,5 @@
 import { AnchorError } from '@coral-xyz/anchor'
+
 import { getErrorMessage } from '@gpahal/std/error'
 
 export function getAnchorErrorMessage(error: unknown): string {

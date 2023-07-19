@@ -1,5 +1,5 @@
 {
-  "extends": "@internal/tsconfig/base.json",
+  "extends": "@gpahal/tsconfig/base.json",
   "compilerOptions": {
     "target": "es6",
     "lib": ["esnext"],

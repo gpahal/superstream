@@ -2,8 +2,9 @@ import * as React from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { web3 } from '@coral-xyz/anchor'
-import { isUrl } from '@gpahal/std/url'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
+
+import { isUrl } from '@gpahal/std/url'
 
 import { useLocalStorage } from '@/hooks/use-local-storage'
 
