@@ -3,7 +3,7 @@
   "name": "superstream",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "prepush": "run-p lint fmt-check && pnpm build-program && pnpm build && ./scripts/verify-no-git-changes.sh",
+    "pre-push": "run-p lint fmt-check && pnpm build-program && pnpm build && ./scripts/verify-no-git-changes.sh",
     "turbo": "turbo",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
