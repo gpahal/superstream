@@ -11,6 +11,7 @@
     "start": "cross-env NODE_ENV=production next start",
     "storybook": "storybook dev -p 6006",
     "storybook-build": "cross-env NODE_ENV=production storybook build",
+    "type-check": "tsc --noEmit",
     "lint": "run-s lint:*",
     "lint:app": "eslint .",
     "lint:stylelint": "stylelint \"src/**/*.css\"",

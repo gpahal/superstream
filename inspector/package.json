@@ -38,6 +38,7 @@
     "build:inspector": "cross-env NODE_ENV=production tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "build:docs": "node --loader esbuild-register/loader -r esbuild-register scripts/generate-docs.ts",
     "start": "cross-env NODE_ENV=production node build/cli.js",
+    "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
   },

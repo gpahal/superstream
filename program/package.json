@@ -9,6 +9,7 @@
     "deploy:anchor:devnet": "pnpm build:anchor && anchor deploy --provider.cluster devnet",
     "deploy:anchor:testnet": "pnpm build:anchor && anchor deploy --provider.cluster testnet",
     "test": "anchor test",
+    "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
   },

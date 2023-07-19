@@ -9,6 +9,7 @@
     "dev": "turbo run dev",
     "build-program": "turbo run build-program",
     "build": "turbo run build",
+    "type-check": "turbo run type-check",
     "lint": "turbo run lint",
     "lint-fix": "turbo run lint-fix",
     "fmt": "prettier \"**/*.{js,mjs,cjs,jsx,ts,tsx,css,json,md,mdx}\" --write",

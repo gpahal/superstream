@@ -38,6 +38,7 @@
     "build:client:esm": "cross-env NODE_ENV=production tsc -p tsconfig.esm.json && tsc-alias -p tsconfig.esm.json",
     "build:esnure-remote-origin": "git config remote.origin.url >&- || git remote add origin git@github.com:gpahal/superstream.git",
     "build:docs": "typedoc src/index.ts --out ./docs --excludePrivate --sort source-order --treatWarningsAsErrors",
+    "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
   },
