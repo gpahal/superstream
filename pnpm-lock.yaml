@@ -15,11 +15,11 @@ importers:
         specifier: ^0.0.5
         version: 0.0.5(@babel/core@7.22.9)(eslint@8.45.0)(tailwindcss@3.3.3)(typescript@5.1.6)
       '@gpahal/prettier-config':
-        specifier: ^0.0.3
-        version: 0.0.3
+        specifier: ^0.0.4
+        version: 0.0.4
       '@gpahal/tsconfig':
-        specifier: ^0.0.9
-        version: 0.0.9
+        specifier: ^0.0.11
+        version: 0.0.11
       '@turbo/gen':
         specifier: ^1.10.9
         version: 1.10.9(@types/node@20.4.2)(typescript@5.1.6)
@@ -262,8 +262,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       lucide-react:
-        specifier: ^0.261.0
-        version: 0.261.0(react@18.2.0)
+        specifier: ^0.262.0
+        version: 0.262.0(react@18.2.0)
       next:
         specifier: ^13.4.10
         version: 13.4.10(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
@@ -2519,8 +2519,8 @@ packages:
       - react
     dev: true
 
-  /@gpahal/prettier-config@0.0.3:
-    resolution: {integrity: sha512-1BTtemWPjJBiHiK/8AUKZ+0f5Zo9ydEzDdNqb3Ei7sZqyJWspbpIjaqL5hyWL6Xpr9SPbRGRv9ld3pz3/NyKYQ==}
+  /@gpahal/prettier-config@0.0.4:
+    resolution: {integrity: sha512-sg/lMmMxZvRkuobpVUT95oXXQPAV1cnKh3s2QRrVQQWaYbSrLirTfJzOeRQWNoXSqE1YJKzwAfbcdcn9yohp4A==}
     dependencies:
       '@ianvs/prettier-plugin-sort-imports': 4.1.0(prettier@3.0.0)
       prettier: 3.0.0
@@ -2599,8 +2599,8 @@ packages:
       tailwindcss: 3.3.3
     dev: true
 
-  /@gpahal/tsconfig@0.0.9:
-    resolution: {integrity: sha512-5xfq8E86nXMR38pD0qIjydC/pdLZeK3fsicFq0QSojHh2akF9rhXXxbO7brM8SryT52ZOCrwj37hBU0aDkrdFw==}
+  /@gpahal/tsconfig@0.0.11:
+    resolution: {integrity: sha512-IDP5WoEudzYHTscaD/YJJ9LgY+nGcw5ZKwkPvAxTsZ8gzIdl6ZaGWjPRgQvmkk5gq61LC8tgW3+7vsrORfYEdQ==}
     dev: true
 
   /@hapi/hoek@9.3.0:
@@ -11389,8 +11389,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lucide-react@0.261.0(react@18.2.0):
-    resolution: {integrity: sha512-gzxEvIxf8+hGbm2ZQU/VP5TxTcnTu3ODDmYoS3a53wC4gkW9ukxmexKjTcZUzz3q8ema+DMwmPypx9Z0Bvvxog==}
+  /lucide-react@0.262.0(react@18.2.0):
+    resolution: {integrity: sha512-eCuQyuZOqlIYLtZGZm7KOzk0p4E2XoLGOrKjYtsVqkgdW+IieGLAdhDZUB//dX+qiCVNNK1mTPleSdGDzgaUsw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:

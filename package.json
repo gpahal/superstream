@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@gpahal/eslint-config": "^0.0.5",
-    "@gpahal/prettier-config": "^0.0.3",
-    "@gpahal/tsconfig": "^0.0.9",
+    "@gpahal/prettier-config": "^0.0.4",
+    "@gpahal/tsconfig": "^0.0.11",
     "@turbo/gen": "^1.10.9",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.4.2",
