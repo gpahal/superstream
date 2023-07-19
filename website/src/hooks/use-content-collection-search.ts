@@ -1,17 +1,17 @@
 import * as React from 'react'
 
-import { create, insertMultiple, SearchParams } from '@orama/orama'
+import { create, insertMultiple, type SearchParams } from '@orama/orama'
 import {
   afterInsert as highlightAfterInsert,
-  OramaWithHighlight,
-  SearchResultWithHighlight,
   searchWithHighlight,
+  type OramaWithHighlight,
+  type SearchResultWithHighlight,
 } from '@orama/plugin-match-highlight'
-import { z } from 'zod'
+import type { z } from 'zod'
 
-import { FrontmatterSchema } from '@gpahal/markdoc'
+import type { FrontmatterSchema } from '@gpahal/markdoc'
 
-import { ContentSearchDocument, FlattenedContentCollection } from '@/lib/content'
+import type { ContentSearchDocument, FlattenedContentCollection } from '@/lib/content'
 
 const cache = new Map<string, Promise<OramaWithHighlight>>()
 

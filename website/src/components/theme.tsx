@@ -3,7 +3,7 @@
 import { CheckIcon, MoonIcon, SunIcon } from 'lucide-react'
 
 import { cn } from '@/lib/styles'
-import { THEME_ITEMS, ThemeItem, useThemeContext } from '@/contexts/theme'
+import { THEME_ITEMS, useThemeContext, type ThemeItem } from '@/contexts/theme'
 import { Button } from '@/components/lib/button'
 import {
   DropdownMenu,

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { shortenPublicKeyBase58, useWalletContext, Wallet } from '@/lib/solana/wallet'
+import { shortenPublicKeyBase58, useWalletContext, type Wallet } from '@/lib/solana/wallet'
 import { useToastContext } from '@/components/lib/toast'
 
 export type WalletAction = {

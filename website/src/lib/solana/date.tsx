@@ -2,7 +2,12 @@ import * as React from 'react'
 
 import { BN } from '@coral-xyz/anchor'
 
-import { formatDurationSeconds, formatTimeFromMillis, parseCountAndTimePeriodToMillis, TimePeriod } from '@/lib/date'
+import {
+  formatDurationSeconds,
+  formatTimeFromMillis,
+  parseCountAndTimePeriodToMillis,
+  type TimePeriod,
+} from '@/lib/date'
 import { useSuperstreamClient } from '@/lib/solana/superstream'
 import { useInterval } from '@/hooks/use-interval'
 

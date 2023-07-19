@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { BN } from '@coral-xyz/anchor'
-import { ENV, TokenInfo, TokenListProvider as TokenListProviderLib } from '@solana/spl-token-registry'
+import { ENV, TokenListProvider as TokenListProviderLib, type TokenInfo } from '@solana/spl-token-registry'
 import Decimal from 'decimal.js'
 
 import { getErrorMessage } from '@gpahal/std/error'
 
-import { Cluster, ClusterType, useCluster } from '@/lib/solana/cluster'
+import { ClusterType, useCluster, type Cluster } from '@/lib/solana/cluster'
 
 const clusterTypeToENV: Map<ClusterType, ENV> = new Map<ClusterType, ENV>([
   [ClusterType.MAINNET_BETA, ENV.MainnetBeta],

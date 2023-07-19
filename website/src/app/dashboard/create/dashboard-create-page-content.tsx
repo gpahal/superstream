@@ -5,10 +5,10 @@ import { useRouter, useSearchParams } from 'next/navigation'
 
 import { BN, web3 } from '@coral-xyz/anchor'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { BN_TWO, BN_ZERO, MAX_STREAM_NAME_LENGTH, SuperstreamClient } from '@superstream/client'
+import { BN_TWO, BN_ZERO, MAX_STREAM_NAME_LENGTH, type SuperstreamClient } from '@superstream/client'
 import { addDays, addHours } from 'date-fns'
 import { CheckIcon } from 'lucide-react'
-import { useForm, UseFormReturn } from 'react-hook-form'
+import { useForm, type UseFormReturn } from 'react-hook-form'
 import { z } from 'zod'
 
 import {
@@ -28,7 +28,7 @@ import {
 import { getAnchorErrorMessage } from '@/lib/solana/error'
 import { useStreamsContext } from '@/lib/solana/streams'
 import { useSuperstreamClient } from '@/lib/solana/superstream'
-import { TokenAccountDetails, useTokenAccountsContext } from '@/lib/solana/token-accounts'
+import { useTokenAccountsContext, type TokenAccountDetails } from '@/lib/solana/token-accounts'
 import { formatTokenAmount, parseTokenAmount } from '@/lib/solana/tokens'
 import { shortenPublicKey, useWalletContext } from '@/lib/solana/wallet'
 import { zPublicKey, zTokenAmount } from '@/lib/solana/zod'
@@ -36,7 +36,7 @@ import { cn } from '@/lib/styles'
 import { zStringRequired, zTimePeriod, zTimePeriodCount } from '@/lib/zod'
 import { useCurrentTime } from '@/hooks/use-current-time'
 import { Button } from '@/components/lib/button'
-import { Checkbox, CheckedState } from '@/components/lib/checkbox'
+import { Checkbox, type CheckedState } from '@/components/lib/checkbox'
 import { DateTimeInput } from '@/components/lib/date-time-input'
 import {
   FormControl,

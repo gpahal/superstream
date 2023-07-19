@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import dashboardScreenshot from '@public/images/dashboard-screenshot.png'
 

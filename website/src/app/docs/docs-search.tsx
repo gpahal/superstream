@@ -4,21 +4,20 @@ import * as React from 'react'
 import { useRouter } from 'next/navigation'
 
 import { ExternalLinkIcon, FileIcon, HashIcon } from 'lucide-react'
-import { z } from 'zod'
+import type { z } from 'zod'
 
-import { ContentSearchDocument } from '@/lib/content'
-import { DocsFrontmatterSchema, FlattenedDocs } from '@/lib/docs'
+import type { ContentSearchDocument } from '@/lib/content'
+import type { DocsFrontmatterSchema, FlattenedDocs } from '@/lib/docs'
 import { DASHBOARD_NAV_LINK_ITEM, DOCS_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM, HOMEPAGE_NAV_LINK_ITEM } from '@/lib/nav'
 import { cn } from '@/lib/styles'
 import { THEME_ITEMS, useThemeContext } from '@/contexts/theme'
 import { useContentCollectionSearch } from '@/hooks/use-content-collection-search'
-import { DisclosureState, useDisclosure } from '@/hooks/use-disclosure'
+import { useDisclosure, type DisclosureState } from '@/hooks/use-disclosure'
 import { useSearch } from '@/hooks/use-search'
-import { Button, ButtonProps } from '@/components/lib/button'
+import { Button, type ButtonProps } from '@/components/lib/button'
 import {
   Command,
   CommandDialog,
-  CommandDialogProps,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -26,6 +25,7 @@ import {
   CommandItemIconWrapper,
   CommandList,
   CommandSeparator,
+  type CommandDialogProps,
 } from '@/components/lib/command'
 import { Kbd } from '@/components/lib/kbd'
 import { SearchHit } from '@/components/search'

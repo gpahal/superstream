@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { create, insertMultiple, SearchParams } from '@orama/orama'
+import { create, insertMultiple, type SearchParams } from '@orama/orama'
 import {
   afterInsert as highlightAfterInsert,
-  OramaWithHighlight,
-  SearchResultWithHighlight,
   searchWithHighlight,
+  type OramaWithHighlight,
+  type SearchResultWithHighlight,
 } from '@orama/plugin-match-highlight'
 
 export type SearchDocument = {

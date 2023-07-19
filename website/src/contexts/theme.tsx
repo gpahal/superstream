@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { LaptopIcon, LucideIcon, MoonIcon, SunIcon } from 'lucide-react'
+import { LaptopIcon, MoonIcon, SunIcon, type LucideIcon } from 'lucide-react'
 
 import { isServer } from '@/lib/env'
 import { useLocalStorage } from '@/hooks/use-local-storage'

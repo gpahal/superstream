@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 
-import { FlattenedDoc } from '@/lib/docs'
-import { Toc } from '@/lib/toc'
+import type { FlattenedDoc } from '@/lib/docs'
+import type { Toc } from '@/lib/toc'
 import { LayoutBottomSheet } from '@/components/layout'
-import { NavTocVerticalLinkItems, NavTocVerticalLinkItemsProps } from '@/components/nav'
+import { NavTocVerticalLinkItems, type NavTocVerticalLinkItemsProps } from '@/components/nav'
 import { ThemeNavTocVericalItems } from '@/components/theme'
 
 import { DocsNavTocVertical } from './docs-nav-toc-vertical'

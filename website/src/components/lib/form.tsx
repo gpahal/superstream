@@ -2,22 +2,22 @@
 
 import * as React from 'react'
 
-import * as LabelPrimitive from '@radix-ui/react-label'
+import type * as LabelPrimitive from '@radix-ui/react-label'
 import * as SlotPrimitive from '@radix-ui/react-slot'
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import {
   Controller,
-  ControllerProps,
-  FieldError,
-  FieldPath,
-  FieldValues,
   FormProvider as FormProviderLib,
-  FormProviderProps as FormProviderLibProps,
   useFormContext,
+  type ControllerProps,
+  type FieldError,
+  type FieldPath,
+  type FieldValues,
+  type FormProviderProps as FormProviderLibProps,
 } from 'react-hook-form'
 
 import { cn } from '@/lib/styles'
-import { Label, LabelProps } from '@/components/lib/label'
+import { Label, type LabelProps } from '@/components/lib/label'
 
 export type FormProviderProps<
   TFieldValues extends FieldValues = FieldValues,

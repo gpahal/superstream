@@ -3,7 +3,7 @@ import * as React from 'react'
 import { getReasonPhrase } from 'http-status-codes'
 
 import { H1 } from '@/components/lib/heading'
-import { Link, LinkProps } from '@/components/lib/link'
+import { Link, type LinkProps } from '@/components/lib/link'
 
 export type ErrorComponentProps = {
   statusCode: number

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getFlattenedContentCollectionToc } from '@/lib/content'
 import { getDocsSearchDocuments, getFlattenedDocs } from '@/lib/docs.server'

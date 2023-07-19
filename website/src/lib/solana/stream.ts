@@ -1,4 +1,4 @@
-import { BN } from '@coral-xyz/anchor'
+import type { BN } from '@coral-xyz/anchor'
 import { Stream } from '@superstream/client'
 
 export type StreamFilter = (stream: Stream, at: BN) => boolean

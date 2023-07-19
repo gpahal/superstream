@@ -1,9 +1,9 @@
-import { AnchorProvider, BN, IdlAccounts, Program, ProgramAccount, web3 } from '@coral-xyz/anchor'
+import { AnchorProvider, BN, Program, web3, type IdlAccounts, type ProgramAccount } from '@coral-xyz/anchor'
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token'
 
 import { getErrorMessage } from '@gpahal/std/error'
 
-import { SuperstreamClient } from '@/client'
+import type { SuperstreamClient } from '@/client'
 import {
   DEPOSIT_AMOUNT_PERIOD_IN_SECS_BN,
   MAX_STREAM_NAME_LENGTH,
@@ -11,15 +11,15 @@ import {
   STREAM_ACCOUNT_SEED,
   SUPERSTREAM_PROGRAM_ID,
 } from '@/constants'
-import { StreamFilters, streamFiltersToAnchorFilters } from '@/filters'
+import { streamFiltersToAnchorFilters, type StreamFilters } from '@/filters'
 import idl from '@/gen/idl.json'
-import { Superstream } from '@/gen/types'
+import type { Superstream } from '@/gen/types'
 import { StreamPagination } from '@/pagination'
 import { Stream } from '@/stream'
 import { BN_ONE, BN_TEN, BN_TWO, BN_ZERO } from '@/utils/bn'
 import { getOrCreateAssociatedTokenAccount, mustGetAssociatedTokenAccount } from '@/utils/spl'
 import { getCurrentTimeInSecsBN, getCurrentTimeInSecsBNOrUndefined } from '@/utils/time'
-import { NO_OP_WALLET, Wallet } from '@/utils/wallet'
+import { NO_OP_WALLET, type Wallet } from '@/utils/wallet'
 
 export type StreamAccount = IdlAccounts<Superstream>['stream']
 

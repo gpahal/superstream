@@ -1,6 +1,6 @@
-import { Position } from '@orama/plugin-match-highlight'
+import type { Position } from '@orama/plugin-match-highlight'
 
-import { RawSearchHit } from '@/hooks/use-search'
+import type { RawSearchHit } from '@/hooks/use-search'
 
 export type SearchHitProps = {
   hit: RawSearchHit

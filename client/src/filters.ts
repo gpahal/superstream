@@ -1,4 +1,4 @@
-import { web3 } from '@coral-xyz/anchor'
+import type { web3 } from '@coral-xyz/anchor'
 import bs58 from 'bs58'
 
 // prettier-ignore

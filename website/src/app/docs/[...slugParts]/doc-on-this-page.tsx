@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { FlattenedDoc } from '@/lib/docs'
+import type { FlattenedDoc } from '@/lib/docs'
 import { cn } from '@/lib/styles'
 import { Link } from '@/components/lib/link'
 

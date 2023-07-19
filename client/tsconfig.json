@@ -1,6 +1,9 @@
 {
   "extends": "@gpahal/tsconfig/base.json",
   "compilerOptions": {
+    "target": "es6",
+    "lib": ["esnext"],
+    "module": "esnext",
     "baseUrl": "src",
     "paths": {
       "@/*": ["./*"]

@@ -1,13 +1,13 @@
 import * as React from 'react'
 
-import { web3 } from '@coral-xyz/anchor'
+import type { web3 } from '@coral-xyz/anchor'
 import {
-  Adapter,
-  MessageSignerWalletAdapter as MessageSignerWalletAdapterLib,
-  SignerWalletAdapter as SignerWalletAdapterLib,
   WalletError,
-  WalletName,
   WalletReadyState,
+  type Adapter,
+  type MessageSignerWalletAdapter as MessageSignerWalletAdapterLib,
+  type SignerWalletAdapter as SignerWalletAdapterLib,
+  type WalletName,
 } from '@solana/wallet-adapter-base'
 import {
   ConnectionProvider,

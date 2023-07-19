@@ -3,14 +3,14 @@
 import * as React from 'react'
 
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { XIcon } from 'lucide-react'
 
 import { isFunction } from '@gpahal/std/function'
 
 import { cn } from '@/lib/styles'
 import { useWindowViewport } from '@/contexts/window-viewport-context'
-import { Button, ButtonProps } from '@/components/lib/button'
+import { Button, type ButtonProps } from '@/components/lib/button'
 
 export type DialogProps = DialogPrimitive.DialogProps
 

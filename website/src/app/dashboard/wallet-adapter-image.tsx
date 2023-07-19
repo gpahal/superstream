@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { WalletAdapter } from '@/lib/solana/wallet'
+import type { WalletAdapter } from '@/lib/solana/wallet'
 
 export type WalletAdapterImageProps = Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
   adapter: WalletAdapter

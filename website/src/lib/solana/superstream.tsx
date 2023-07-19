@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { createSuperstreamClient, SuperstreamClient } from '@superstream/client'
+import { createSuperstreamClient, type SuperstreamClient } from '@superstream/client'
 
 import { getWeb3ClusterNameOrUrl, useCluster } from '@/lib/solana/cluster'
 import { useSignerWallet } from '@/lib/solana/wallet'

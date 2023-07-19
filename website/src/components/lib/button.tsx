@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { VariantProps } from 'class-variance-authority'
+import type { VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/styles'
 import { Spinner } from '@/components/lib/spinner'

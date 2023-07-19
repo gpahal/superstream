@@ -1,4 +1,4 @@
-import { Command, OptionValues } from 'commander'
+import { Command, type OptionValues } from 'commander'
 
 import { Logger } from '@gpahal/logger'
 
@@ -9,9 +9,9 @@ import StatsCommand from '@/commands/stats'
 import {
   addGlobalCommonOptions,
   addGlobalOptionsWithWallet,
-  GlobalOptions,
   parseGlobalCommonOptions,
   parseGlobalOptionsWithWallet,
+  type GlobalOptions,
 } from '@/option'
 
 const DEFAULT_LOGGER = new Logger()

@@ -1,6 +1,6 @@
-import { BN, web3 } from '@coral-xyz/anchor'
-import { TokenInfo } from '@solana/spl-token-registry'
-import { z } from 'zod'
+import { web3, type BN } from '@coral-xyz/anchor'
+import type { TokenInfo } from '@solana/spl-token-registry'
+import type { z } from 'zod'
 
 import { parseTokenAmount } from '@/lib/solana/tokens'
 

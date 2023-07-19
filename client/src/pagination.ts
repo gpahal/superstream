@@ -1,8 +1,8 @@
-import { web3 } from '@coral-xyz/anchor'
+import type { web3 } from '@coral-xyz/anchor'
 
-import { SuperstreamClientInternal } from '@/client-internal'
-import { StreamFilters } from '@/filters'
-import { Stream } from '@/stream'
+import type { SuperstreamClientInternal } from '@/client-internal'
+import type { StreamFilters } from '@/filters'
+import type { Stream } from '@/stream'
 
 /**
  * Stream pagination options used {@link StreamPagination.getStreams | StreamPagination.getStreams}.

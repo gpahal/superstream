@@ -1,7 +1,7 @@
-import { FrontmatterSchema } from '@gpahal/markdoc'
+import type { FrontmatterSchema } from '@gpahal/markdoc'
 import { pathPartsToPath } from '@gpahal/std/fs'
 
-import { ContentCollectionMap, FlattenedContentCollection, FlattenedContentCollectionItem } from '@/lib/content'
+import type { ContentCollectionMap, FlattenedContentCollection, FlattenedContentCollectionItem } from '@/lib/content'
 
 export function getFlattenedContentCollectionItemBySlug<TFrontmatterSchema extends FrontmatterSchema>(
   collection: FlattenedContentCollection<TFrontmatterSchema>,

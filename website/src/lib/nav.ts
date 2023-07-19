@@ -1,4 +1,4 @@
-import { Toc } from '@/lib/toc'
+import type { Toc } from '@/lib/toc'
 
 export type NavLinkItem = {
   href: string

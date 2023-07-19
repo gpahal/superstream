@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { cva, VariantProps } from 'class-variance-authority'
-import { AlertTriangleIcon, BanIcon, InfoIcon, LucideIcon, LucideProps } from 'lucide-react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { AlertTriangleIcon, BanIcon, InfoIcon, type LucideIcon, type LucideProps } from 'lucide-react'
 
 import { cn } from '@/lib/styles'
 

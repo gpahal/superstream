@@ -7,7 +7,7 @@ import { formatUrl } from 'next/dist/shared/lib/router/utils/format-url'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { VariantProps } from 'class-variance-authority'
+import type { VariantProps } from 'class-variance-authority'
 
 import { isFunction } from '@gpahal/std/function'
 import { isString } from '@gpahal/std/string'

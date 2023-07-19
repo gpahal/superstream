@@ -55,7 +55,7 @@ import {
 import { ClusterMenu } from './cluster-menu'
 import { ConnectWallet } from './connect-wallet'
 import { WalletAdapterImage } from './wallet-adapter-image'
-import { WalletAction, WalletMenu } from './wallet-menu'
+import { WalletMenu, type WalletAction } from './wallet-menu'
 
 const NAV_LINK_ITEMS = [DASHBOARD_STREAMS_NAV_LINK_ITEM, DASHBOARD_CREATE_STREAM_NAV_LINK_ITEM]
 

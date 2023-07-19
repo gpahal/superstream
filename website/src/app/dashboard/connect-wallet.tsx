@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import { ChevronDownIcon } from 'lucide-react'
 
-import { useWalletContext, WalletAdapter } from '@/lib/solana/wallet'
+import { useWalletContext, type WalletAdapter } from '@/lib/solana/wallet'
 import { cn } from '@/lib/styles'
 import { useDisclosure } from '@/hooks/use-disclosure'
 import { Button } from '@/components/lib/button'

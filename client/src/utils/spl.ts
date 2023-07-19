@@ -1,11 +1,11 @@
-import { AnchorProvider, web3 } from '@coral-xyz/anchor'
+import { web3, type AnchorProvider } from '@coral-xyz/anchor'
 import {
   AccountLayout,
   ASSOCIATED_TOKEN_PROGRAM_ID,
   createAssociatedTokenAccountInstruction,
   getAssociatedTokenAddress,
-  RawAccount,
   TOKEN_PROGRAM_ID,
+  type RawAccount,
 } from '@solana/spl-token'
 
 export async function fetchTokenAccount(

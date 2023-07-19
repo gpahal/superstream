@@ -1,11 +1,11 @@
 import { Wallet as NodeWallet } from '@coral-xyz/anchor'
-import { createSuperstreamClient, SuperstreamClient } from '@superstream/client'
+import { createSuperstreamClient, type SuperstreamClient } from '@superstream/client'
 
 import { Logger } from '@gpahal/logger'
 
 import { clusterToWeb3Cluster } from '@/lib/cluster'
 import { ExitError, getError, getErrorExitCode } from '@/lib/error'
-import { GlobalOptions, isGlobalOptionsWithWallet } from '@/option'
+import { isGlobalOptionsWithWallet, type GlobalOptions } from '@/option'
 
 export default abstract class Command<T extends GlobalOptions> {
   protected options: T

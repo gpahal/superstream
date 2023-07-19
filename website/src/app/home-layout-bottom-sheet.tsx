@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 import { LayoutBottomSheet as LayoutBottomSheetLib } from '@/components/layout'
-import { NavTocVertical, NavTocVerticalLinkItems, NavTocVerticalLinkItemsProps } from '@/components/nav'
+import { NavTocVertical, NavTocVerticalLinkItems, type NavTocVerticalLinkItemsProps } from '@/components/nav'
 
 export type HomeLayoutBottomSheetProps = NavTocVerticalLinkItemsProps
 

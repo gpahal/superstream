@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { findTimePeriod, parseTimePeriodCount, TimePeriod } from '@/lib/date'
+import { findTimePeriod, parseTimePeriodCount, type TimePeriod } from '@/lib/date'
 
 export function zStringRequired(name: string, skipTrimCheck?: boolean) {
   return z

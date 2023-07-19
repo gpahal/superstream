@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { Input, InputProps } from '@/components/lib/input'
+import { Input, type InputProps } from '@/components/lib/input'
 
 export type DateTimeInputProps = Omit<InputProps, 'type' | 'defaultValue' | 'value' | 'onChange' | 'min' | 'max'> & {
   hideTimeInput?: boolean

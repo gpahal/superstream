@@ -1,7 +1,7 @@
-import { z } from 'zod'
+import type { z } from 'zod'
 
-import { FrontmatterSchema, ParseResultSuccess, TransformConfig } from '@gpahal/markdoc'
-import {
+import type { FrontmatterSchema, ParseResultSuccess, TransformConfig } from '@gpahal/markdoc'
+import type {
   FileMap,
   FileMapIndex,
   FileMapIndexItem,
@@ -10,7 +10,7 @@ import {
   FlattenedFileMapIndexItem,
 } from '@gpahal/std/fs'
 
-import { Toc } from '@/lib/toc'
+import type { Toc } from '@/lib/toc'
 
 export type ContentData<TFrontmatterSchema extends FrontmatterSchema> = ParseResultSuccess<TFrontmatterSchema>
 

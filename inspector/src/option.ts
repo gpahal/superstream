@@ -1,5 +1,5 @@
-import { web3 } from '@coral-xyz/anchor'
-import { Command, Option, OptionValues } from 'commander'
+import type { web3 } from '@coral-xyz/anchor'
+import { Option, type Command, type OptionValues } from 'commander'
 
 import { getErrorMessage } from '@gpahal/std/error'
 

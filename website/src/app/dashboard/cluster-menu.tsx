@@ -1,14 +1,14 @@
 import * as React from 'react'
 
 import {
-  Cluster,
-  ClusterStatus,
   DEVNET_CLUSTER,
   LOCALNET_CLUSTER,
   serializeCluster,
   TESTNET_CLUSTER,
   useClusterContext,
   useClusterStatus,
+  type Cluster,
+  type ClusterStatus,
 } from '@/lib/solana/cluster'
 import { useToastContext } from '@/components/lib/toast'
 

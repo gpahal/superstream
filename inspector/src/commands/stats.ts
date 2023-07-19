@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 
 import Command from '@/command'
-import { GlobalCommonOptions } from '@/option'
+import type { GlobalCommonOptions } from '@/option'
 
 export type StatsResponse = {
   totalCount: number

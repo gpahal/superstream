@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { notFound } from 'next/navigation'
-import { ImageResponse, NextRequest } from 'next/server'
+import { ImageResponse, type NextRequest } from 'next/server'
 
 import { getFlattenedContentCollectionItemByIndex } from '@/lib/content'
 import { getFlattenedDocBySlugParts, getFlattenedDocs } from '@/lib/docs.server'

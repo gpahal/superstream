@@ -1,11 +1,11 @@
-import { BN } from '@coral-xyz/anchor'
-import { Stream, StreamPagination } from '@superstream/client'
+import type { BN } from '@coral-xyz/anchor'
+import type { Stream, StreamPagination } from '@superstream/client'
 
 import { getErrorMessage } from '@gpahal/std/error'
 
 import { sleep } from '@/lib/time'
 import Command from '@/command'
-import { GlobalOptionsWithWallet } from '@/option'
+import type { GlobalOptionsWithWallet } from '@/option'
 
 const PAGE_SIZE = 25
 

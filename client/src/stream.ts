@@ -1,7 +1,7 @@
-import { BN, web3 } from '@coral-xyz/anchor'
+import { web3, type BN } from '@coral-xyz/anchor'
 import { formatDistanceToNow } from 'date-fns'
 
-import { StreamAccount, SuperstreamClientInternal } from '@/client-internal'
+import type { StreamAccount, SuperstreamClientInternal } from '@/client-internal'
 import { LOW_TOPUP_WARNING_PERIOD_IN_SECS } from '@/constants'
 import { StreamPaymentStatus, StreamStatus } from '@/stream-status'
 import { BN_ZERO } from '@/utils/bn'

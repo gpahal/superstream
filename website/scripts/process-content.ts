@@ -7,20 +7,20 @@ import fetch from 'node-fetch'
 
 import {
   formatParseDirectoryResultErrors,
-  FrontmatterSchema,
   getRenderableTreeNodeTopLevelSections,
   linkSchema,
   parseDirectory,
-  ParseResultSuccess,
   renderableNodesToString,
   renderableNodeToString,
+  type FrontmatterSchema,
+  type ParseResultSuccess,
 } from '@gpahal/markdoc'
 import { FS_MODULE } from '@gpahal/std-node/fs'
-import { createFlattenedFileMapIndex, FileMap, FlattenedFileMapIndex } from '@gpahal/std/fs'
+import { createFlattenedFileMapIndex, type FileMap, type FlattenedFileMapIndex } from '@gpahal/std/fs'
 import { isAbsoluteUrl } from '@gpahal/std/url'
 
-import { ContentCollectionMetadata, ContentSearchDocument } from '../src/lib/content'
-import { DOCS_FRONTMATTER_SCHEMA, DocsFrontmatterSchema } from '../src/lib/docs'
+import type { ContentCollectionMetadata, ContentSearchDocument } from '../src/lib/content'
+import { DOCS_FRONTMATTER_SCHEMA, type DocsFrontmatterSchema } from '../src/lib/docs'
 
 const PUBLIC_DIR_PATH = path.join(__dirname, '..', 'public')
 const CONTENT_DIR_PATH = path.join(__dirname, '..', 'content')

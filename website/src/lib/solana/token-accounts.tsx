@@ -1,12 +1,12 @@
 import * as React from 'react'
 
-import { AnchorProvider, IdlAccounts, web3 } from '@coral-xyz/anchor'
+import { AnchorProvider, web3, type IdlAccounts } from '@coral-xyz/anchor'
 import { SPL_TOKEN_PROGRAM_ID, splTokenProgram } from '@coral-xyz/spl-token'
-import { TokenInfo } from '@solana/spl-token-registry'
+import type { TokenInfo } from '@solana/spl-token-registry'
 
-import { Cluster, useCluster } from '@/lib/solana/cluster'
-import { Tokens, useTokensContext } from '@/lib/solana/tokens'
-import { SignerWallet, useSignerWallet } from '@/lib/solana/wallet'
+import { useCluster, type Cluster } from '@/lib/solana/cluster'
+import { useTokensContext, type Tokens } from '@/lib/solana/tokens'
+import { useSignerWallet, type SignerWallet } from '@/lib/solana/wallet'
 
 export type SplTokenProgram = ReturnType<typeof splTokenProgram>
 export type SplToken = SplTokenProgram['idl']

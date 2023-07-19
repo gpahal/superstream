@@ -10,12 +10,12 @@ import { Button } from '@/components/lib/button'
 import {
   Dialog,
   DialogContent,
-  DialogContentProps,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  type DialogContentProps,
 } from '@/components/lib/dialog'
-import { Nav, NavProps } from '@/components/nav'
+import { Nav, type NavProps } from '@/components/nav'
 
 export type LayoutProps = React.HTMLAttributes<HTMLDivElement> & {
   navProps: NavProps

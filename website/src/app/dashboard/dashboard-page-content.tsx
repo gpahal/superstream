@@ -3,9 +3,9 @@
 import * as React from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
-import { BN, web3 } from '@coral-xyz/anchor'
+import { web3, type BN } from '@coral-xyz/anchor'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { TokenInfo } from '@solana/spl-token-registry'
+import type { TokenInfo } from '@solana/spl-token-registry'
 import { BN_ZERO, compareFnStreamStatus, Stream, StreamPaymentStatus, StreamStatus } from '@superstream/client'
 import { ArrowUpCircleIcon, ChevronDownIcon, XIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
@@ -25,11 +25,11 @@ import {
   andStreamSorts,
   DEFAULT_STREAM_SORT,
   reverseStreamSort,
-  StreamFilter,
-  StreamFilterCategory,
-  StreamSort,
   streamSortByName,
-  StreamSortCategory,
+  type StreamFilter,
+  type StreamFilterCategory,
+  type StreamSort,
+  type StreamSortCategory,
 } from '@/lib/solana/stream'
 import { useStreamsContext } from '@/lib/solana/streams'
 import { formatTokenAmount, parseTokenAmount, useClusterTokens } from '@/lib/solana/tokens'
@@ -44,8 +44,8 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuContentProps,
   DropdownMenuTrigger,
+  type DropdownMenuContentProps,
 } from '@/components/lib/dropdown-menu'
 import { Footer } from '@/components/lib/footer'
 import { FormControl, FormField, FormItem, FormMessage, FormProvider } from '@/components/lib/form'

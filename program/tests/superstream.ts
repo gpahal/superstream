@@ -1,6 +1,6 @@
 import { ok, strictEqual } from 'node:assert'
 
-import { AnchorError, AnchorProvider, BN, Program, setProvider, web3, workspace } from '@coral-xyz/anchor'
+import { AnchorError, AnchorProvider, BN, setProvider, web3, workspace, type Program } from '@coral-xyz/anchor'
 import { splTokenProgram } from '@coral-xyz/spl-token'
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
@@ -13,7 +13,7 @@ import {
   TOKEN_PROGRAM_ID,
 } from '@solana/spl-token'
 
-import { Superstream } from '@/target/types/superstream'
+import type { Superstream } from '@/target/types/superstream'
 
 const STREAM_ACCOUNT_SEED = 'stream'
 

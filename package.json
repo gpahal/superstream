@@ -16,10 +16,10 @@
     "fmt-check": "prettier \"**/*.{js,mjs,cjs,jsx,ts,tsx,css,json,md,mdx}\" --check"
   },
   "devDependencies": {
-    "@gpahal/eslint-config": "^0.0.4",
+    "@gpahal/eslint-config": "^0.0.5",
     "@gpahal/prettier-config": "^0.0.3",
-    "@gpahal/tsconfig": "^0.0.6",
-    "@turbo/gen": "^1.10.8",
+    "@gpahal/tsconfig": "^0.0.9",
+    "@turbo/gen": "^1.10.9",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.4.2",
     "cross-env": "^7.0.3",
@@ -34,7 +34,7 @@
     "simple-git-hooks": "^2.8.1",
     "tsc-alias": "^1.8.7",
     "tsc-files": "^1.1.4",
-    "turbo": "^1.10.8",
+    "turbo": "^1.10.9",
     "typescript": "^5.1.6"
   },
   "resolutions": {

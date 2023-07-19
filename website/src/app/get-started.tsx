@@ -3,12 +3,12 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/styles'
-import { DisclosureState, useDisclosure } from '@/hooks/use-disclosure'
+import { useDisclosure, type DisclosureState } from '@/hooks/use-disclosure'
 import { Body } from '@/components/lib/body'
-import { Button, ButtonProps } from '@/components/lib/button'
+import { Button, type ButtonProps } from '@/components/lib/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/lib/dialog'
 import { H3 } from '@/components/lib/heading'
-import { Link, LinkProps } from '@/components/lib/link'
+import { Link, type LinkProps } from '@/components/lib/link'
 import { buttonStyles } from '@/components/lib/styles'
 
 type GetStartedContextValue = DisclosureState

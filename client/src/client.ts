@@ -1,10 +1,10 @@
-import { AnchorProvider, BN, web3 } from '@coral-xyz/anchor'
+import type { AnchorProvider, BN, web3 } from '@coral-xyz/anchor'
 
 import { SuperstreamClientInternal } from '@/client-internal'
-import { StreamFilters } from '@/filters'
-import { StreamPagination } from '@/pagination'
-import { Stream } from '@/stream'
-import { Wallet } from '@/utils/wallet'
+import type { StreamFilters } from '@/filters'
+import type { StreamPagination } from '@/pagination'
+import type { Stream } from '@/stream'
+import type { Wallet } from '@/utils/wallet'
 
 /**
  * Superstream client is a client used to interact with on-chain Superstream stream data - fetch streams, create new

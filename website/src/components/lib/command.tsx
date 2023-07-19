@@ -6,7 +6,7 @@ import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
 
 import { cn } from '@/lib/styles'
-import { Dialog, DialogContent, DialogProps } from '@/components/lib/dialog'
+import { Dialog, DialogContent, type DialogProps } from '@/components/lib/dialog'
 import { Kbd } from '@/components/lib/kbd'
 
 export type CommandProps = React.ComponentPropsWithoutRef<typeof CommandPrimitive>

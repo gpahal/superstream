@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { ChevronRightIcon, MoveLeftIcon, MoveRightIcon } from 'lucide-react'
@@ -8,7 +8,7 @@ import {
   getNextLeafFlattenedContentCollectionItemByIndex,
   getPrevLeafFlattenedContentCollectionItemByIndex,
 } from '@/lib/content'
-import { FlattenedDoc } from '@/lib/docs'
+import type { FlattenedDoc } from '@/lib/docs'
 import { getFlattenedDocBySlugParts, getFlattenedDocs } from '@/lib/docs.server'
 import { generatePageMetadata } from '@/lib/metadata'
 import { H1 } from '@/components/lib/heading'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { web3 } from '@coral-xyz/anchor'
-import { BN_ZERO, Stream, SuperstreamClient } from '@superstream/client'
+import type { web3 } from '@coral-xyz/anchor'
+import { BN_ZERO, type Stream, type SuperstreamClient } from '@superstream/client'
 
 import { DEFAULT_STREAM_SORT } from '@/lib/solana/stream'
 import { useSuperstreamClient } from '@/lib/solana/superstream'

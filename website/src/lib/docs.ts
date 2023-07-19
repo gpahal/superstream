@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import {
+import type {
   ContentCollection,
   ContentCollectionItem,
   ContentCollectionMap,

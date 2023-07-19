@@ -4,11 +4,11 @@ import * as React from 'react'
 
 import { ExternalLinkIcon } from 'lucide-react'
 
-import { createNavLinkItemsToc, NavLinkItem } from '@/lib/nav'
+import { createNavLinkItemsToc, type NavLinkItem } from '@/lib/nav'
 import { cn } from '@/lib/styles'
-import { Toc } from '@/lib/toc'
+import type { Toc } from '@/lib/toc'
 import { H6 } from '@/components/lib/heading'
-import { ActiveLinkState, Link, LinkProps } from '@/components/lib/link'
+import { Link, type ActiveLinkState, type LinkProps } from '@/components/lib/link'
 import { Logo } from '@/components/logo'
 
 export type NavProps = React.HTMLAttributes<HTMLElement> & {

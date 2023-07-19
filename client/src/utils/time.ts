@@ -1,4 +1,4 @@
-import { BN, web3 } from '@coral-xyz/anchor'
+import { BN, type web3 } from '@coral-xyz/anchor'
 
 /**
  * Get the current Solana on-chain time in seconds. If there is an issue fetching the time, an error is thrown.

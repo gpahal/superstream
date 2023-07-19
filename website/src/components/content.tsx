@@ -9,19 +9,19 @@ import {
   FileCogIcon,
   FileJson2Icon,
   FileTextIcon,
-  LucideIcon,
   TerminalIcon,
+  type LucideIcon,
 } from 'lucide-react'
 
-import { RenderableTreeNodes, renderReact, Tag } from '@gpahal/markdoc-react'
+import { renderReact, Tag, type RenderableTreeNodes } from '@gpahal/markdoc-react'
 
 import { cn } from '@/lib/styles'
-import { Alert, AlertDescription, AlertProps, AlertTitle } from '@/components/lib/alert'
+import { Alert, AlertDescription, AlertTitle, type AlertProps } from '@/components/lib/alert'
 import { Button } from '@/components/lib/button'
 import { H1, H2, H3, H4, H5, H6 } from '@/components/lib/heading'
-import { Image, ImageProps } from '@/components/lib/image'
-import { Link, LinkProps } from '@/components/lib/link'
-import { Tabs, TabsContent, TabsList, TabsProps, TabsTrigger } from '@/components/lib/tabs'
+import { Image, type ImageProps } from '@/components/lib/image'
+import { Link, type LinkProps } from '@/components/lib/link'
+import { Tabs, TabsContent, TabsList, TabsTrigger, type TabsProps } from '@/components/lib/tabs'
 
 export type ContentComponents = Record<string, React.ElementType>
 

@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation'
 
 import { trim } from '@gpahal/std/string'
 
-import { FlattenedDoc } from '@/lib/docs'
+import type { FlattenedDoc } from '@/lib/docs'
 import { PROGRAM_API_NAV_LINK_ITEM, TS_SDK_API_NAV_LINK_ITEM } from '@/lib/nav'
-import { getFirstLeafTocItem, Toc } from '@/lib/toc'
+import { getFirstLeafTocItem, type Toc } from '@/lib/toc'
 import { Link } from '@/components/lib/link'
 import {
   getActiveNavTocVerticalItemClassName,

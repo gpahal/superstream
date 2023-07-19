@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import * as React from 'react'
-import { ImageResponse, NextRequest } from 'next/server'
+import { ImageResponse, type NextRequest } from 'next/server'
 
 import { ogSize } from '@/lib/og'
 import { loadOgFonts, logoSvgPrimaryDataUrl } from '@/lib/og.server'
