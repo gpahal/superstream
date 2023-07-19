@@ -1,4 +1,4 @@
-const baseConfig = require('@gpahal/tailwind-config/base')
+const baseConfig = require('@gpahal/tailwindcss-config/base')
 
 /** @type {import('tailwindcss').Config} */
 const config = baseConfig

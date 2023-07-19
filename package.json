@@ -3,7 +3,7 @@
   "name": "superstream",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "pre-push": "run-p lint fmt-check && pnpm build-program && pnpm build && ./scripts/verify-no-git-changes.sh",
+    "pre-push": "run-p type-check lint fmt-check && pnpm build-program && pnpm build && ./scripts/verify-no-git-changes.sh",
     "turbo": "turbo",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
@@ -16,9 +16,9 @@
     "fmt-check": "prettier \"**/*.{js,mjs,cjs,jsx,ts,tsx,css,json,md,mdx}\" --check"
   },
   "devDependencies": {
-    "@gpahal/eslint-config": "^0.0.2",
-    "@gpahal/prettier-config": "^0.0.1",
-    "@gpahal/tsconfig": "^0.0.2",
+    "@gpahal/eslint-config": "^0.0.4",
+    "@gpahal/prettier-config": "^0.0.3",
+    "@gpahal/tsconfig": "^0.0.6",
     "@turbo/gen": "^1.10.8",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.4.2",

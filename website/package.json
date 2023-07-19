@@ -67,7 +67,7 @@
     "@gpahal/markdoc": "^0.0.52",
     "@gpahal/std-node": "^0.0.19",
     "@gpahal/stylelint-config": "^0.0.1",
-    "@gpahal/tailwind-config": "^0.0.1",
+    "@gpahal/tailwindcss-config": "^0.0.1",
     "@radix-ui/colors": "^1.0.0",
     "@storybook/addon-essentials": "^7.1.0",
     "@storybook/addon-interactions": "^7.1.0",
