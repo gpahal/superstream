@@ -2,8 +2,8 @@
 src/gen
 public/references
 
-# Node.js
-pnpm-*.yaml
+# Config files
+color-themes
 
 # Turbo
 .turbo
