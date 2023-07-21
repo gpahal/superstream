@@ -188,7 +188,7 @@ function DocsSearchButtonCommandDialog({ docsSearchDocuments, docs, ...props }: 
                                 onSelect={() => {
                                   runCommand(() => router.push(`/docs/${sectionItem.document.path}`))
                                 }}
-                                className="items-start py-1.5 pl-5"
+                                className="items-start py-1.5 pl-7 md:pl-5"
                               >
                                 <CommandItemIconWrapper>
                                   <HashIcon />

@@ -58,7 +58,6 @@ import { WalletAdapterImage } from './wallet-adapter-image'
 import { WalletMenu, type WalletAction } from './wallet-menu'
 
 const NAV_LINK_ITEMS = [DASHBOARD_STREAMS_NAV_LINK_ITEM, DASHBOARD_CREATE_STREAM_NAV_LINK_ITEM]
-
 const NAV_QUICK_LINK_ITEMS = [HOMEPAGE_NAV_LINK_ITEM, DOCS_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM]
 
 export type DashboardLayoutContentProps = {

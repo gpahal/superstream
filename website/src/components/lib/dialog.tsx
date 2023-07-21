@@ -20,7 +20,7 @@ export type DialogTriggerProps = DialogPrimitive.DialogTriggerProps
 
 export const DialogTrigger = DialogPrimitive.Trigger
 
-export const dialogPortalVariants = cva('absolute z-50 flex min-h-screen', {
+export const dialogPortalVariants = cva('absolute z-50 flex', {
   variants: {
     variant: {
       default: 'items-end justify-center md:items-center',
@@ -44,7 +44,9 @@ const DialogPortal = ({ variant, className, children, ...props }: DialogPortalPr
         className={cn(dialogPortalVariants({ variant }), className)}
         style={{
           width,
+          maxWidth: width,
           height,
+          maxHeight: height,
           top: pageTop,
           left: pageLeft,
         }}
@@ -70,7 +72,7 @@ const DialogOverlay = React.forwardRef<React.ElementRef<typeof DialogPrimitive.O
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
 export const dialogContentVariants = cva(
-  'relative z-50 flex w-full flex-col gap-4 rounded-none bg-bg p-4 shadow transition-all duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 md:p-6',
+  'relative z-50 flex w-full flex-col gap-4 rounded-none bg-bg p-4 pb-6 shadow transition-all duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 md:p-6',
   {
     variants: {
       variant: {

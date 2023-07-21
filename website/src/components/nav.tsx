@@ -44,8 +44,8 @@ export function Nav({
             <Logo className="h-6 w-6" />
             {logoSubtitle && (
               <span className="inline-block space-x-[0.175rem] font-semibold">
-                <span>Superstream</span>
-                <span className="text-neutral-8">/</span>
+                <span className="hidden md:inline-block">Superstream</span>
+                <span className="hidden text-neutral-8 md:inline-block">/</span>
                 <span>{logoSubtitle}</span>
               </span>
             )}
@@ -158,7 +158,7 @@ export function NavTocVerticalItems<T>({ toc, getItemKey, renderLabel, renderIte
         return (
           <li key={getItemKey(entry.item)} className="w-full">
             {hasChildren ? (
-              <H6 className="mb-1 block w-full px-4 text-base/[1.25rem] font-semibold text-fg md:mb-1.5 md:text-[0.9375rem]/[0.9375rem]">
+              <H6 className="mb-1.5 block w-full px-4 text-base/[1.25rem] font-bold text-fg md:text-[0.9375rem]/[0.9375rem] md:font-semibold">
                 {renderLabel(entry.item)}
               </H6>
             ) : (
@@ -210,7 +210,7 @@ export function NavTocVerticalLinkItems({ linkItems, label, className, ...props 
 
 export function getActiveNavTocVerticalItemClassName({ isActive }: Pick<ActiveLinkState, 'isActive'>) {
   return cn(
-    'flex cursor-pointer items-center justify-between gap-2 rounded-none px-4 py-1.5 text-base/[1.25rem] text-fg md:py-1 md:rounded md:text-[0.9375rem]/[1.25rem]',
-    isActive ? 'bg-info-3 text-info-11 font-semibold' : 'hocus:bg-neutral-5 hocus:text-fg md:text-fg-subtle',
+    'flex cursor-pointer items-center justify-between gap-2 rounded-none pr-4 py-2 pl-6 md:pl-4 text-base/[1.25rem] text-fg/80 md:rounded md:text-[0.9375rem]/[1.25rem]',
+    isActive ? 'bg-info-3 text-info-11 text-fg' : 'hocus:bg-neutral-5 hocus:text-fg md:text-fg-subtle',
   )
 }

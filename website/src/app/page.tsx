@@ -19,7 +19,8 @@ export const metadata: Metadata = generatePageMetadata({
   pathname: '/',
 })
 
-const NAV_LINK_ITEMS = [DOCS_NAV_LINK_ITEM, DASHBOARD_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM]
+const NAV_LINK_ITEMS = [DOCS_NAV_LINK_ITEM, DASHBOARD_NAV_LINK_ITEM]
+const NAV_QUICK_LINK_ITEMS = [DOCS_NAV_LINK_ITEM, DASHBOARD_NAV_LINK_ITEM, GITHUB_NAV_LINK_ITEM]
 
 export default function HomePage() {
   return (
@@ -42,9 +43,11 @@ export default function HomePage() {
         bottomNavProps={{
           children: (
             <div className="flex flex-1 items-center justify-between">
-              <GetStartedButton />
+              <NavListHorizontal>
+                <NavListHorizontalLinkItems linkItems={NAV_LINK_ITEMS} />
+              </NavListHorizontal>
               <div className="flex flex-row items-center">
-                <HomeLayoutBottomSheet linkItems={NAV_LINK_ITEMS} label="Quick links" />
+                <HomeLayoutBottomSheet linkItems={NAV_QUICK_LINK_ITEMS} label="Quick links" />
               </div>
             </div>
           ),

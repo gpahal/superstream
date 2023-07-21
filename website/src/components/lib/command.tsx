@@ -54,7 +54,7 @@ export const CommandInput = React.forwardRef<
       )}
       {...props}
     />
-    <Kbd>Esc</Kbd>
+    <Kbd className="hidden md:inline-block">Esc</Kbd>
   </div>
 ))
 CommandInput.displayName = CommandPrimitive.Input.displayName
@@ -87,7 +87,7 @@ export const CommandGroup = React.forwardRef<React.ElementRef<typeof CommandPrim
     <CommandPrimitive.Group
       ref={ref}
       className={cn(
-        'my-3 mb-1 overflow-hidden p-1 text-fg first:mt-0 last:mb-0 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-1 [&_[cmdk-group-heading]]:text-base [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-fg md:[&_[cmdk-group-heading]]:text-[0.9375rem]',
+        'my-4 overflow-hidden p-1 text-fg first:mt-1 last:mb-0 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-0.5 [&_[cmdk-group-heading]]:text-base [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-fg md:[&_[cmdk-group-heading]]:pb-1 md:[&_[cmdk-group-heading]]:text-[0.9375rem]',
         className,
       )}
       {...props}
@@ -114,7 +114,7 @@ export const CommandItem = React.forwardRef<React.ElementRef<typeof CommandPrimi
     <CommandPrimitive.Item
       ref={ref}
       className={cn(
-        'relative flex min-h-[2rem] cursor-pointer select-none items-center gap-2.5 rounded-sm px-2 py-1.5 text-base outline-none aria-selected:bg-neutral-4 aria-selected:text-fg data-[disabled]:pointer-events-none data-[disabled]:opacity-50 md:text-[0.9375rem]',
+        'relative flex min-h-[2rem] cursor-pointer select-none items-center gap-2.5 rounded-sm py-2 pl-4 pr-2 text-base outline-none aria-selected:bg-neutral-4 aria-selected:text-fg data-[disabled]:pointer-events-none data-[disabled]:opacity-50 md:py-1.5 md:pl-2 md:text-[0.9375rem]',
         className,
       )}
       {...props}
