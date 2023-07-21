@@ -91,4 +91,9 @@
 
     --moz-osx-font-smoothing: initial;
   }
+
+  pre,
+  code {
+    @apply font-mono;
+  }
 }
