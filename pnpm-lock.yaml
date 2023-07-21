@@ -293,8 +293,8 @@ importers:
         specifier: ^0.0.19
         version: 0.0.19
       '@gpahal/stylelint-config':
-        specifier: ^0.0.1
-        version: 0.0.1(stylelint@15.10.2)
+        specifier: ^0.0.2
+        version: 0.0.2(stylelint@15.10.2)
       '@gpahal/tailwindcss-color-themes':
         specifier: ^0.0.1
         version: 0.0.1(tailwindcss@3.3.3)
@@ -2576,8 +2576,8 @@ packages:
     dependencies:
       ts-custom-error: 3.3.1
 
-  /@gpahal/stylelint-config@0.0.1(stylelint@15.10.2):
-    resolution: {integrity: sha512-dqUFRSS3wjyFGOmoT6lsTpgD0fY/YSrPTtPYiYPj29R4D4CY7U9R0lZ6wHgX6LBr6Jid08HvmHqf5DdX7yf+fg==}
+  /@gpahal/stylelint-config@0.0.2(stylelint@15.10.2):
+    resolution: {integrity: sha512-3AzX98TGSlnOf/KmHmreEh+4LLY+m2TikVM3w38VIGRcELAtHuo3e2pnGuw0dJYoD0odbQZFofThM6TEPfMDIA==}
     dependencies:
       stylelint-config-standard: 34.0.0(stylelint@15.10.2)
     transitivePeerDependencies:
