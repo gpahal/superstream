@@ -67,8 +67,6 @@ export function generatePageMetadata({
   const metadata: Partial<Metadata> = {
     title: browserTitle,
     description,
-    openGraph,
-    twitter,
     authors: {
       name: AUTHOR_NAME,
       url: AUTHOR_URL,
@@ -76,6 +74,8 @@ export function generatePageMetadata({
     alternates: {
       canonical: url,
     },
+    openGraph,
+    twitter,
   }
   if (title) {
     metadata.title = browserTitle || title
@@ -91,6 +91,7 @@ export function generatePageMetadata({
     openGraph = {
       ...openGraph,
       type: 'article',
+      authors: `${AUTHOR_NAME} (${AUTHOR_URL})`,
       publishedTime: new Date(article.publishedTime).toISOString(),
       tags: article.tags,
     }
