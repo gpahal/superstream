@@ -16,12 +16,12 @@
     "fmt-check": "prettier \"**/*.{js,mjs,cjs,jsx,ts,tsx,css,json,md,mdx}\" --check"
   },
   "devDependencies": {
-    "@gpahal/eslint-config": "^0.0.6",
+    "@gpahal/eslint-config": "^0.0.7",
     "@gpahal/prettier-config": "^0.0.4",
     "@gpahal/tsconfig": "^0.0.11",
     "@turbo/gen": "^1.10.9",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.4.2",
+    "@types/node": "^20.4.3",
     "cross-env": "^7.0.3",
     "esbuild": "^0.18.15",
     "esbuild-register": "^3.4.2",
