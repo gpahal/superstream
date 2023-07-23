@@ -22,7 +22,7 @@
   "dependencies": {
     "@coral-xyz/anchor": "0.28.0",
     "@coral-xyz/spl-token": "0.28.0",
-    "@gpahal/markdoc-react": "^0.0.2",
+    "@gpahal/markdoc-react": "^0.0.5",
     "@gpahal/std": "^0.0.19",
     "@hookform/resolvers": "^3.1.1",
     "@orama/orama": "^1.1.0",
@@ -63,7 +63,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@gpahal/markdoc": "^0.0.52",
+    "@gpahal/markdoc": "^0.0.56",
     "@gpahal/std-node": "^0.0.19",
     "@gpahal/stylelint-config": "^0.0.2",
     "@gpahal/tailwindcss-color-themes": "^0.0.1",

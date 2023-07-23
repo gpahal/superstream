@@ -220,6 +220,7 @@ const config = {
 
             hr: {
               marginTop: '2rem',
+              marginBottom: '2rem',
             },
           },
         },
