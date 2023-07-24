@@ -63,7 +63,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@gpahal/markdoc": "^0.0.58",
+    "@gpahal/markdoc": "^0.0.60",
     "@gpahal/std-node": "^0.0.19",
     "@gpahal/stylelint-config": "^0.0.2",
     "@gpahal/tailwindcss-color-themes": "^0.0.1",
@@ -87,7 +87,7 @@
     "postcss": "^8.4.27",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^9.0.0",
+    "postcss-preset-env": "^9.1.0",
     "shiki": "^0.14.3",
     "storybook": "^7.1.0",
     "stylelint": "^15.10.2",
