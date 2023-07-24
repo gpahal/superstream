@@ -12,8 +12,8 @@ importers:
   .:
     devDependencies:
       '@gpahal/eslint-config':
-        specifier: ^0.0.7
-        version: 0.0.7(@babel/core@7.22.9)(eslint@8.45.0)(tailwindcss@3.3.3)(typescript@5.1.6)
+        specifier: ^0.0.9
+        version: 0.0.9(@babel/core@7.22.9)(eslint@8.45.0)(tailwindcss@3.3.3)(typescript@5.1.6)
       '@gpahal/prettier-config':
         specifier: ^0.0.5
         version: 0.0.5
@@ -54,8 +54,8 @@ importers:
         specifier: ^5.0.1
         version: 5.0.1
       simple-git-hooks:
-        specifier: ^2.8.1
-        version: 2.8.1
+        specifier: ^2.9.0
+        version: 2.9.0
       tsc-alias:
         specifier: ^1.8.7
         version: 1.8.7
@@ -2478,13 +2478,13 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@gpahal/eslint-config@0.0.7(@babel/core@7.22.9)(eslint@8.45.0)(tailwindcss@3.3.3)(typescript@5.1.6):
-    resolution: {integrity: sha512-5pJKsRu7mJIVG6kTNVob7wj4YbrxuACi81A6KEEr5+cYGwUOJIBDjL/bbs7BWUxazfNggmeOoSbmlRvo/AwARA==}
+  /@gpahal/eslint-config@0.0.9(@babel/core@7.22.9)(eslint@8.45.0)(tailwindcss@3.3.3)(typescript@5.1.6):
+    resolution: {integrity: sha512-qiQz+OqjlsfWX6LRoRVNAcpqAhOdveZY+WOlucSR9CtvbtZ1SR99zmEKlw0Hc1KIJ3If+Nbepq2jX624jpR4+Q==}
     dependencies:
       '@babel/eslint-parser': 7.22.9(@babel/core@7.22.9)(eslint@8.45.0)
       '@babel/plugin-syntax-class-properties': 7.12.13(@babel/core@7.22.9)
       '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.22.9)
-      '@next/eslint-plugin-next': 13.4.11
+      '@next/eslint-plugin-next': 13.4.12
       '@types/eslint': 8.44.0
       '@typescript-eslint/eslint-plugin': 6.1.0(@typescript-eslint/parser@6.1.0)(eslint@8.45.0)(typescript@5.1.6)
       '@typescript-eslint/parser': 6.1.0(eslint@8.45.0)(typescript@5.1.6)
@@ -2895,8 +2895,8 @@ packages:
   /@next/env@13.4.12:
     resolution: {integrity: sha512-RmHanbV21saP/6OEPBJ7yJMuys68cIf8OBBWd7+uj40LdpmswVAwe1uzeuFyUsd6SfeITWT3XnQfn6wULeKwDQ==}
 
-  /@next/eslint-plugin-next@13.4.11:
-    resolution: {integrity: sha512-BsxI1DLtTZLX/MEoSg5Rilk2c6tlcjGseByxwasBPeoNH+fda/DZe8RkOmmmncNmTV/OzTBj/Pq6Pc3BqgLuBA==}
+  /@next/eslint-plugin-next@13.4.12:
+    resolution: {integrity: sha512-6rhK9CdxEgj/j1qvXIyLTWEaeFv7zOK8yJMulz3Owel0uek0U9MJCGzmKgYxM3aAUBo3gKeywCZKyQnJKto60A==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -6032,6 +6032,7 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    requiresBuild: true
     dev: true
 
   /@types/jsonfile@6.1.1:
@@ -6042,6 +6043,7 @@ packages:
 
   /@types/linkify-it@3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
+    requiresBuild: true
     optional: true
 
   /@types/lodash@4.14.195:
@@ -6058,6 +6060,7 @@ packages:
 
   /@types/mdurl@1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
+    requiresBuild: true
     optional: true
 
   /@types/mdx@2.0.5:
@@ -11098,6 +11101,7 @@ packages:
   /json5@1.0.2:
     resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
+    requiresBuild: true
     dependencies:
       minimist: 1.2.8
     dev: true
@@ -12238,6 +12242,7 @@ packages:
   /node-gyp-build@4.6.0:
     resolution: {integrity: sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==}
     hasBin: true
+    requiresBuild: true
 
   /node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
@@ -13835,6 +13840,7 @@ packages:
 
   /prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -14702,6 +14708,7 @@ packages:
 
   /sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -14931,8 +14938,8 @@ packages:
       simple-concat: 1.0.1
     dev: false
 
-  /simple-git-hooks@2.8.1:
-    resolution: {integrity: sha512-DYpcVR1AGtSfFUNzlBdHrQGPsOhuuEJ/FkmPOOlFysP60AHd3nsEpkGq/QEOdtUyT1Qhk7w9oLmFoMG+75BDog==}
+  /simple-git-hooks@2.9.0:
+    resolution: {integrity: sha512-waSQ5paUQtyGC0ZxlHmcMmD9I1rRXauikBwX31bX58l5vTOhCEcBC5Bi+ZDkPXTjDnZAF8TbCqKBY+9+sVPScw==}
     hasBin: true
     requiresBuild: true
     dev: true
