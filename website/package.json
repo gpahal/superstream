@@ -63,7 +63,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@gpahal/markdoc": "^0.0.56",
+    "@gpahal/markdoc": "^0.0.58",
     "@gpahal/std-node": "^0.0.19",
     "@gpahal/stylelint-config": "^0.0.2",
     "@gpahal/tailwindcss-color-themes": "^0.0.1",

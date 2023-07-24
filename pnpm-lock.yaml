@@ -284,8 +284,8 @@ importers:
         version: 3.21.4
     devDependencies:
       '@gpahal/markdoc':
-        specifier: ^0.0.56
-        version: 0.0.56(@types/react@18.2.15)(react@18.2.0)
+        specifier: ^0.0.58
+        version: 0.0.58(@types/react@18.2.15)(react@18.2.0)
       '@gpahal/std-node':
         specifier: ^0.0.19
         version: 0.0.19
@@ -2525,8 +2525,8 @@ packages:
       - react
     dev: false
 
-  /@gpahal/markdoc@0.0.56(@types/react@18.2.15)(react@18.2.0):
-    resolution: {integrity: sha512-YA/IH3HCyanXK4n6xwy6a9crB15Of/eNXiBEO9qHekGwjINGGOQN4osp3giy31FYQfNcKlm1xB6xTy1ldffZ/w==}
+  /@gpahal/markdoc@0.0.58(@types/react@18.2.15)(react@18.2.0):
+    resolution: {integrity: sha512-9q0Jt5jB/ru3Zryf9jNHiYfBbVz1V5pRs8uAmiN+jPnyWRcuik7M8jdLr2OPzka8YPFBa/cfNMI09uDypmCayg==}
     dependencies:
       '@gpahal/std': 0.0.19
       '@markdoc/markdoc': 0.3.0(@types/react@18.2.15)(react@18.2.0)
