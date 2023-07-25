@@ -1,14 +1,18 @@
 # Generated files
-src/gen
+
+gen
 public/references
 
 # Node.js
-pnpm-*.yaml
+
+pnpm-\*.yaml
 
 # Turbo
+
 .turbo
 
 # Build output
+
 build
 dist
 target
@@ -20,6 +24,7 @@ out-tsc
 .anchor
 
 # Temporary files
+
 tmp
 .tmp
 .cache
@@ -27,6 +32,7 @@ tmp
 tsconfig.tsbuildinfo
 
 # Node
+
 node_modules
 npm-debug.log*
 yarn-debug.log*
@@ -34,39 +40,46 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Solana
+
 test-ledger
 
 # Rust
-**/*.rs.bk
+
+\*_/_.rs.bk
 
 # Environment variables
+
 .env
-.env.*
+.env.\*
 
 # Editors
 
 ## VS Code
-.vscode/*
+
+.vscode/_
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
-*.code-workspace
+_.code-workspace
 
 ## JetBrains
+
 .idea
 .idea_modules
-*.iml
-*.ipr
-*.iws
+_.iml
+_.ipr
+\*.iws
 
 # OS
 
 ## Linux
-*~
-.Trash-*
+
+_~
+.Trash-_
 
 ## MacOS
-.DS_Store
-._*
+
+.DS*Store
+.*\*
