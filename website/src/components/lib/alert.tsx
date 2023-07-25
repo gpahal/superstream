@@ -6,7 +6,7 @@ import { AlertTriangleIcon, BanIcon, InfoIcon, type LucideIcon, type LucideProps
 import { cn } from '@/lib/styles'
 
 const alertVariants = cva(
-  'relative flex w-full flex-col gap-2.5 rounded-md border px-4 pb-2 pt-[0.8rem] [&:has(svg)]:pl-10 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-3 [&>svg]:top-[0.75rem] [&>svg]:h-[1.25rem] [&>svg]:w-[1.25rem] [&>svg]:text-fg',
+  'relative flex w-full flex-col rounded-md border px-4 pb-2 pt-[0.8rem] [&:has(svg)]:pl-10 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-3 [&>svg]:top-[0.75rem] [&>svg]:h-[1.25rem] [&>svg]:w-[1.25rem] [&>svg]:text-fg',
   {
     variants: {
       variant: {
@@ -48,7 +48,7 @@ export const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttri
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex min-h-[1.5rem] items-center text-base font-medium leading-none tracking-tight', className)}
+      className={cn('flex min-h-[1.5rem] items-center text-base font-semibold leading-none tracking-tight', className)}
       {...props}
     />
   ),

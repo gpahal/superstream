@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { isBrowser } from '@/lib/env'
+import { IS_BROWSER } from '@/lib/env'
 
 export type Viewport = {
   width: number
@@ -84,7 +84,7 @@ export function useWindowViewport() {
 }
 
 function getWindowViewport(): Viewport {
-  return isBrowser
+  return IS_BROWSER
     ? {
         width: window.visualViewport?.width || window.innerWidth,
         height: window.visualViewport?.height || window.innerHeight,

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { LaptopIcon, MoonIcon, SunIcon, type LucideIcon } from 'lucide-react'
 
-import { isServer } from '@/lib/env'
+import { IS_SERVER } from '@/lib/env'
 import { useLocalStorage } from '@/hooks/use-local-storage'
 
 export type Theme = 'light' | 'dark' | 'system'
@@ -34,7 +34,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useLocalStorage<Theme>('theme', 'system')
 
   React.useEffect(() => {
-    if (isServer) {
+    if (IS_SERVER) {
       return
     }
 

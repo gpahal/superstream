@@ -41,10 +41,13 @@ export function generatePageMetadata({
 
   const imagePath = imagePathProp == null ? DEFAULT_IMAGE_PATH : imagePathProp
   const imageUrl = new URL(imagePath, 'http://test.com/')
+  const imageUrlSearchParamsString = imageUrl.searchParams.toString()
   const imagePathname = trim(imageUrl.pathname, '/')
   const image = {
     type: 'image/png',
-    url: `/og-images${imagePathname ? `/${imagePathname}` : ''}?${imageUrl.searchParams.toString()}`,
+    url: `/og-images${imagePathname ? `/${imagePathname}` : ''}${
+      imageUrlSearchParamsString ? `?${imageUrlSearchParamsString}` : ''
+    }`,
     ...ogSize,
   }
   const images = [image]

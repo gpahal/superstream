@@ -1,2 +1,2 @@
-export const isBrowser = typeof window !== 'undefined'
-export const isServer = !isBrowser
+export const IS_BROWSER = typeof window !== 'undefined'
+export const IS_SERVER = !IS_BROWSER
