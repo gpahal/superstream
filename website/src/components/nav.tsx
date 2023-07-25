@@ -210,7 +210,7 @@ export function NavTocVerticalLinkItems({ linkItems, label, className, ...props 
 
 export function getActiveNavTocVerticalItemClassName({ isActive }: Pick<ActiveLinkState, 'isActive'>) {
   return cn(
-    'flex cursor-pointer items-center justify-between gap-2 rounded-none pr-4 py-2 pl-6 md:pl-4 text-base/[1.25rem] text-fg/80 md:rounded md:text-[0.9375rem]/[1.25rem]',
+    'flex cursor-pointer items-center justify-between md:py-1 gap-2 rounded-none pr-4 py-2 pl-6 md:pl-4 text-base/[1.25rem] text-fg/80 md:rounded md:text-[0.9375rem]/[1.25rem]',
     isActive ? 'bg-info-3 text-info-11 text-fg' : 'hocus:bg-neutral-5 hocus:text-fg md:text-fg-subtle',
   )
 }
