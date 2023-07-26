@@ -24,5 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${WEBSITE_ORGIN}/dashboard/create`,
       lastModified,
     },
+    {
+      url: `${WEBSITE_ORGIN}/references/client-sdks/ts/index.html`,
+      lastModified,
+    },
   ]
 }

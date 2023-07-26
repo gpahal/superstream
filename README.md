@@ -60,11 +60,11 @@ React Native).
 
 ## Dashboard
 
-[Dashboard](https://superstream.finance/dashboard/streams) is a web interface maintained by Superstream where you can
+[Dashboard](https://superstream.finance/dashboard) is a web interface maintained by Superstream where you can
 create and manage all of your payment streams. Just connect your wallet and start sending and receiving money real-time.
 Dashboard is built using the [typescript client SDK](https://superstream.finance/docs/client-sdks/ts).
 
-You can [create a stream](https://superstream.finance/dashboard/create-stream) on the dashboard to understand the
+You can [create a stream](https://superstream.finance/dashboard/create) on the dashboard to understand the
 various parameters needed when creating a stream.
 
 ## License
